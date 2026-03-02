@@ -1,8 +1,8 @@
-![Nuevas Energías Logo](https://raw.githubusercontent.com/Nuevas-Energias-Salta/2026NuevasEnergias/main/assets/NE-LOGO_EES-04.png)
+<img width="3392" height="2063" alt="image" src="https://github.com/user-attachments/assets/82c191b6-af07-449b-84cb-2187aa96f4c1" />
+
 
 # Repositorio Central de Proyectos ☀️ Nuevas Energías Salta
 
-![Logo Positivo](https://raw.githubusercontent.com/Nuevas-Energias-Salta/2026NuevasEnergias/main/assets/NE-LOGO_EES-Positivo.png)
 
 ## 🏢 Bienvenidos a nuestro Hub Tecnológico
 Este es el repositorio central de **Nuevas Energías Salta**. Aquí almacenamos, desarrollamos y gestionamos todos nuestros proyectos tecnológicos, desde automatizaciones y sistemas ERP hasta desarrollos web y herramientas de soporte.
