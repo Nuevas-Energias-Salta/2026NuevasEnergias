@@ -1,33 +1,31 @@
-# Nuevas Energías Salta ☀️
+# Repositorio Central de Proyectos ☀️ Nuevas Energías Salta
 
 ![Nuevas Energías Logo](https://raw.githubusercontent.com/Nuevas-Energias-Salta/2026NuevasEnergias/main/assets/NE-LOGO_EES-04.png)
 
-## 🏢 ¿Quiénes Somos?
-**Nuevas Energías Salta** es una empresa líder en el NOA dedicada a brindar soluciones sustentables y eficientes. Nos especializamos en la comercialización e instalación de sistemas de energía solar, ayudando a hogares y empresas a reducir su huella de carbono y optimizar sus costos energéticos.
+## 🏢 Bienvenidos a nuestro Hub Tecnológico
+Este es el repositorio central de **Nuevas Energías Salta**. Aquí almacenamos, desarrollamos y gestionamos todos nuestros proyectos tecnológicos, desde automatizaciones y sistemas ERP hasta desarrollos web y herramientas de soporte.
 
-## 🛠️ ¿Qué Hacemos?
-Ofrecemos un servicio integral que incluye:
-- **Termotanques Solares**: Venta, instalación y mantenimiento especializado.
-- **Energía Fotovoltaica**: Sistemas de paneles solares a medida.
-- **Climatización Sustentable**: Soluciones eficientes para el confort térmico.
-- **Mantenimiento Técnico**: Servicio de post-venta y soporte especializado en toda la provincia de Salta.
+Nuestro objetivo es centralizar el conocimiento y las herramientas para que todo el equipo pueda colaborar de manera eficiente y escalable.
 
----
-
-## 💻 Centro de Desarrollo ERP
-Este repositorio es el **núcleo tecnológico** de nuestra gestión operativa. Aquí almacenamos y trabajamos en equipo para centralizar nuestras finanzas, proyectos y automatizaciones entre Trello, Notion y otros sistemas.
-
-### 👥 Trabajo en Equipo Fácil
-Hemos configurado este espacio para que la colaboración sea sencilla y potente:
-1.  **Antigravity**: Nuestro asistente inteligente nos ayuda a subir cambios sin complicaciones técnicas.
-2.  **Pull Requests**: Todo cambio es revisado antes de integrarse para asegurar la calidad de nuestro sistema.
-3.  **Documentación Centralizada**: Guías claras para que cualquier miembro del equipo pueda sumarse rápidamente.
+## 🚀 Proyectos en este Repositorio
+Para mantener el orden, cada proyecto se encuentra organizado en su propia estructura:
+-   **`/erp`**: Desarrollo y configuración de nuestro sistema de gestión ERP (Notion, Trello, Python).
+-   **`/automatizaciones`**: Scripts y flujos de trabajo para optimizar tareas diarias.
+-   **`/web`**: Futuros desarrollos y activos relacionados con nuestra presencia digital.
 
 ---
 
-## 🚀 Guías Rápidas
-- [📖 Guía para Colaboradores](GUIA_COLABORADORES.md) - Cómo trabajar y subir cambios.
-- [⚙️ Flujo de Trabajo Git para IA](.agents/workflows/git-pr-workflow.md) - Manual de procedimientos para agentes.
+## 👥 Trabajo en Equipo Fácil
+Este espacio ha sido diseñado para que la colaboración sea profesional y sencilla:
+1.  **Antigravity (IA)**: Nuestro asistente de IA nos ayuda a subir cambios sin necesidad de aprender complejos comandos de Git.
+2.  **Pull Requests**: Todo cambio se somete a revisión antes de integrarse a la rama principal (`main`), garantizando la estabilidad de nuestros sistemas.
+3.  **Documentación Unificada**: Las guías están disponibles para que nuevos integrantes se sumen al equipo rápidamente.
 
 ---
-*Transformando la energía de Salta hacia un futuro sustentable.* 🌵☀️
+
+## 📖 Documentación General
+-   [📖 Guía para Colaboradores](GUIA_COLABORADORES.md) - Cómo trabajar y subir cambios en cualquier proyecto.
+-   [⚙️ Flujo de Trabajo Git para IA](.agents/workflows/git-pr-workflow.md) - Estándar técnico para agentes de IA.
+
+---
+*Transformando la energía de Salta hacia un futuro sustentable e innovador.* 🌵☀️
