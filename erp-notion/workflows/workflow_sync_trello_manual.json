@@ -1,0 +1,314 @@
+{
+    "name": "Sincronizar Trello - Manual",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "GET",
+                "path": "sync-trello",
+                "responseMode": "responseNode",
+                "options": {}
+            },
+            "id": "webhook-sync",
+            "name": "Webhook Sync",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1.1,
+            "position": [
+                250,
+                300
+            ],
+            "webhookId": "sync-trello"
+        },
+        {
+            "parameters": {
+                "url": "https://api.trello.com/1/boards/612f6ea39c967b8bef5c2186/cards?key=f529e10ec3bac9427b5c1abcfa2ec821&token=ATTA4a2d8d0148cae05d395044b7779d80db44ae465d82aecdb32b0067daf008eeea7221D17C&customFieldItems=true&fields=name,idList,dateLastActivity",
+                "options": {}
+            },
+            "id": "get-cards",
+            "name": "Get Trello Cards",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                450,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "operation": "getAll",
+                "databaseId": "2e0c81c3-5804-8159-b677-fd8b76761e2f",
+                "returnAll": true,
+                "options": {}
+            },
+            "id": "get-projects",
+            "name": "Get Notion Projects",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Obtener tarjetas de Trello y proyectos existentes\nconst tarjetas = $('Get Trello Cards').all();\nconst proyectos = $('Get Notion Projects').all();\n\n// Nombres de proyectos existentes\nconst existentes = new Set();\nfor (const p of proyectos) {\n  try {\n    const nombre = p.json.properties?.Nombre?.title?.[0]?.text?.content;\n    if (nombre) existentes.add(nombre);\n  } catch {}\n}\n\n// Filtrar tarjetas nuevas\nconst nuevas = [];\nfor (const t of tarjetas) {\n  if (!existentes.has(t.json.name)) {\n    nuevas.push({\n      json: {\n        name: t.json.name,\n        nombreCliente: t.json.name.split('-')[0].trim(),\n        customFieldItems: t.json.customFieldItems || []\n      }\n    });\n  }\n}\n\nreturn nuevas;"
+            },
+            "id": "filter-new",
+            "name": "Filter New Cards",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                850,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "operation": "getAll",
+                "databaseId": "2e0c81c3-5804-8199-8d24-ded823eae751",
+                "returnAll": false,
+                "limit": 1,
+                "filterType": "manual",
+                "matchType": "allFilters",
+                "filters": {
+                    "conditions": [
+                        {
+                            "key": "Nombre",
+                            "condition": "equals",
+                            "string": "={{ $json.nombreCliente }}"
+                        }
+                    ]
+                }
+            },
+            "id": "find-client",
+            "name": "Find Client",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                1050,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "id": "client-exists",
+                            "leftValue": "={{ $json.id }}",
+                            "rightValue": "",
+                            "operator": {
+                                "type": "string",
+                                "operation": "exists"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            },
+            "id": "if-client",
+            "name": "Client Exists?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                1250,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "page",
+                "databaseId": "2e0c81c3-5804-8199-8d24-ded823eae751",
+                "title": "={{ $('Filter New Cards').item.json.nombreCliente }}",
+                "propertiesUi": {
+                    "propertyValues": []
+                }
+            },
+            "id": "create-client",
+            "name": "Create Client",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                1450,
+                400
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "page",
+                "databaseId": "2e0c81c3-5804-8159-b677-fd8b76761e2f",
+                "title": "={{ $('Filter New Cards').item.json.name }}",
+                "propertiesUi": {
+                    "propertyValues": [
+                        {
+                            "key": "Estado",
+                            "selectValue": "Cotización"
+                        },
+                        {
+                            "key": "Cliente",
+                            "relationValue": "={{ [$json.id] }}"
+                        }
+                    ]
+                }
+            },
+            "id": "create-project",
+            "name": "Create Project",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                1650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Contar cuántos proyectos se crearon\nconst creados = $input.all().length;\n\nreturn {\n  success: true,\n  message: `Sincronización completada. ${creados} proyectos nuevos creados.`,\n  creados: creados\n};"
+            },
+            "id": "count-results",
+            "name": "Count Results",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1850,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "respondWith": "json",
+                "responseBody": "={{ $json }}"
+            },
+            "id": "respond",
+            "name": "Respond",
+            "type": "n8n-nodes-base.respondToWebhook",
+            "typeVersion": 1,
+            "position": [
+                2050,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Webhook Sync": {
+            "main": [
+                [
+                    {
+                        "node": "Get Trello Cards",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get Trello Cards": {
+            "main": [
+                [
+                    {
+                        "node": "Get Notion Projects",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get Notion Projects": {
+            "main": [
+                [
+                    {
+                        "node": "Filter New Cards",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Filter New Cards": {
+            "main": [
+                [
+                    {
+                        "node": "Find Client",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Find Client": {
+            "main": [
+                [
+                    {
+                        "node": "Client Exists?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Client Exists?": {
+            "main": [
+                [
+                    {
+                        "node": "Create Project",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "Create Client",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Create Client": {
+            "main": [
+                [
+                    {
+                        "node": "Create Project",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Create Project": {
+            "main": [
+                [
+                    {
+                        "node": "Count Results",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Count Results": {
+            "main": [
+                [
+                    {
+                        "node": "Respond",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "pinData": {},
+    "settings": {
+        "executionOrder": "v1"
+    },
+    "staticData": null,
+    "tags": [],
+    "triggerCount": 0,
+    "updatedAt": "2026-01-12T16:54:00.000Z",
+    "versionId": "1"
+}

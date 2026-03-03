@@ -1,0 +1,274 @@
+{
+    "name": "Calcular Rango CxC desde Notion",
+    "nodes": [
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "databaseId": "REEMPLAZAR_CON_ID_TABLA_SOLICITUDES",
+                "simple": false,
+                "filters": {
+                    "conditions": [
+                        {
+                            "key": "Estado",
+                            "condition": "equals",
+                            "returnValue": "Pendiente"
+                        }
+                    ]
+                }
+            },
+            "name": "Notion - Leer Solicitudes",
+            "type": "n8n-nodes-base.notion",
+            "position": [
+                250,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "databaseId": "2e0c81c3-5804-815a-8755-f4f254257f6a",
+                "returnAll": true,
+                "filters": {
+                    "conditions": [
+                        {
+                            "key": "Fecha Emisión",
+                            "condition": "on_or_after",
+                            "returnValue": "={{$json.properties['Fecha Inicio'].date.start}}"
+                        },
+                        {
+                            "key": "Fecha Emisión",
+                            "condition": "on_or_before",
+                            "returnValue": "={{$json.properties['Fecha Fin'].date.start}}"
+                        }
+                    ]
+                }
+            },
+            "name": "Notion - Obtener CxC Filtradas",
+            "type": "n8n-nodes-base.notion",
+            "position": [
+                450,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "functionCode": "// Calcular totales\nlet totalMonto = 0;\nlet totalCobrado = 0;\n\nfor (const item of items) {\n  const monto = item.json.properties['Monto Base']?.number || item.json.properties['Monto']?.number || 0;\n  \n  const cobradoProp = item.json.properties['Monto Cobrado Base'] || item.json.properties['Monto Cobrado'];\n  let cobrado = 0;\n  \n  if (cobradoProp?.type === 'rollup') {\n    cobrado = cobradoProp.rollup?.number || 0;\n  } else {\n    cobrado = cobradoProp?.number || 0;\n  }\n  \n  totalMonto += monto;\n  totalCobrado += cobrado;\n}\n\nconst totalPendiente = totalMonto - totalCobrado;\n\n// Obtener fechas de la solicitud\nconst fechaInicio = items[0].json.properties['Fecha Inicio'].date.start;\nconst fechaFin = items[0].json.properties['Fecha Fin'].date.start;\nconst periodo = `Rango: ${fechaInicio} a ${fechaFin}`;\n\nreturn [{\n  json: {\n    periodo: periodo,\n    montoTotal: totalMonto,\n    montoCobrado: totalCobrado,\n    saldoPendiente: totalPendiente,\n    solicitudId: items[0].json.id\n  }\n}];"
+            },
+            "name": "Calcular Totales",
+            "type": "n8n-nodes-base.function",
+            "position": [
+                650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "operation": "getAll",
+                "databaseId": "REEMPLAZAR_CON_ID_RESUMEN_CXC",
+                "filters": {
+                    "conditions": [
+                        {
+                            "key": "Período",
+                            "condition": "equals",
+                            "returnValue": "={{$json.periodo}}"
+                        }
+                    ]
+                }
+            },
+            "name": "Buscar Fila Existente",
+            "type": "n8n-nodes-base.notion",
+            "position": [
+                850,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "string": [
+                        {
+                            "value1": "={{$json.id}}",
+                            "operation": "isNotEmpty"
+                        }
+                    ]
+                }
+            },
+            "name": "¿Existe Fila?",
+            "type": "n8n-nodes-base.if",
+            "position": [
+                1050,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "page",
+                "operation": "update",
+                "pageId": "={{$json.id}}",
+                "propertiesUi": {
+                    "propertyValues": [
+                        {
+                            "key": "Monto Total",
+                            "numberValue": "={{$node['Calcular Totales'].json.montoTotal}}"
+                        },
+                        {
+                            "key": "Monto Cobrado",
+                            "numberValue": "={{$node['Calcular Totales'].json.montoCobrado}}"
+                        },
+                        {
+                            "key": "Saldo Pendiente",
+                            "numberValue": "={{$node['Calcular Totales'].json.saldoPendiente}}"
+                        }
+                    ]
+                }
+            },
+            "name": "Actualizar Fila",
+            "type": "n8n-nodes-base.notion",
+            "position": [
+                1250,
+                200
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "page",
+                "operation": "create",
+                "databaseId": "REEMPLAZAR_CON_ID_RESUMEN_CXC",
+                "propertiesUi": {
+                    "propertyValues": [
+                        {
+                            "key": "Período",
+                            "textValue": "={{$node['Calcular Totales'].json.periodo}}"
+                        },
+                        {
+                            "key": "Monto Total",
+                            "numberValue": "={{$node['Calcular Totales'].json.montoTotal}}"
+                        },
+                        {
+                            "key": "Monto Cobrado",
+                            "numberValue": "={{$node['Calcular Totales'].json.montoCobrado}}"
+                        },
+                        {
+                            "key": "Saldo Pendiente",
+                            "numberValue": "={{$node['Calcular Totales'].json.saldoPendiente}}"
+                        }
+                    ]
+                }
+            },
+            "name": "Crear Fila Nueva",
+            "type": "n8n-nodes-base.notion",
+            "position": [
+                1250,
+                400
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "page",
+                "operation": "update",
+                "pageId": "={{$node['Calcular Totales'].json.solicitudId}}",
+                "propertiesUi": {
+                    "propertyValues": [
+                        {
+                            "key": "Estado",
+                            "selectValue": "Procesado"
+                        }
+                    ]
+                }
+            },
+            "name": "Marcar Solicitud como Procesada",
+            "type": "n8n-nodes-base.notion",
+            "position": [
+                1450,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Notion - Leer Solicitudes": {
+            "main": [
+                [
+                    {
+                        "node": "Notion - Obtener CxC Filtradas",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Notion - Obtener CxC Filtradas": {
+            "main": [
+                [
+                    {
+                        "node": "Calcular Totales",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Calcular Totales": {
+            "main": [
+                [
+                    {
+                        "node": "Buscar Fila Existente",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Buscar Fila Existente": {
+            "main": [
+                [
+                    {
+                        "node": "¿Existe Fila?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "¿Existe Fila?": {
+            "main": [
+                [
+                    {
+                        "node": "Actualizar Fila",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "Crear Fila Nueva",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Actualizar Fila": {
+            "main": [
+                [
+                    {
+                        "node": "Marcar Solicitud como Procesada",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Crear Fila Nueva": {
+            "main": [
+                [
+                    {
+                        "node": "Marcar Solicitud como Procesada",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}

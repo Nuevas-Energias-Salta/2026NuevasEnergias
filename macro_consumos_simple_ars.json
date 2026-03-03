@@ -1,0 +1,162 @@
+[
+    {
+        "fecha": "02-12-25",
+        "descripcion": "25 007588 LIBRERIA LerMa SRL C 02/26 12333 33 Dicienbre 25 297428 MERPAGO*PASAJESCDP 55770 30 Diciendre 25 258532 Merpago*Pasajescdp 55770 00",
+        "monto": 12333.33,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "02 Dicieobre 25 007588 LIBRERIA LerMa SRL C,02/26 12333,33 Dicienbre 25 297428 HERPAGO*PASAJESCDP 55..."
+    },
+    {
+        "fecha": "30-12-25",
+        "descripcion": "25 555536 MERPAGO*PASAJESCDP 61347 00 enerc 26 168281 HerpAGO*ALWAYSRENTACA 214998 60 Enerc 26 492966 Merpago-paSAJEScDp 30673 50 Enero 26 078211 MERPAGO*ALWAYSRENTACA 104293 43",
+        "monto": 61347.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "30 Dicienbre 25 555536 MerpaGo*PASAJESCDP 61347,00 enerc 26 168281 HerpAGO*ALWAYSRENTACA 214998,60 E..."
+    },
+    {
+        "fecha": "26-01-26",
+        "descripcion": "678193 YPF SAN LO CHICO 77005 00 Enero 26 956969 MeRP-GO*SERVICIF- 3000 00 Enerc 26 980347 MerpaGO-SERVICAFA 3000 00",
+        "monto": 77005.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "26 Enerc 678193 YPF Sanlo Chico 77005,00 Enero 26 956969 MeRP-GO*SERVICIF- 3000,00 Enerc 26 980347 M..."
+    },
+    {
+        "fecha": "87-01-26",
+        "descripcion": "26 004787 ACA CAFAYATE CCKB 50000 00 enerc 26 039164 PETROGAS SRl 29998 99 Enero 26 335135 MerpaGO*SERVICAFA 5000 28 enero 26 318359 MERPAGO*PANADERIACROCANTE 7500 28 Enero 26 349986 ESTACION SERV JacARAKD 50000 00 Enero 26 381672 MerP-GOFYPFCOMBUSTIBLESDE 4300 00 Enero 26 944387 MerpAGO-LUISACARRIZOYCIAS 75007 98 Enero 26 299386 Merpago ALWAYSRENTACA C.01/e6 8691 15 Enero 26 941858 MERPAGO*ALWAYSRENTACA C.01/e3 27799 54",
+        "monto": 50000.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "87 Enero 26 004787 ACA CAFAYATE CCKB 50000,00 enerc 26 039164 PETROGAS SRl 29998,99 Enero 26 335135 ..."
+    },
+    {
+        "fecha": "21-01-26",
+        "descripcion": "26 508111 Servi Ga 5 8 L Playa 83011 00 TeRJete 6638 Total Consuros GABRIEL RUI 1068781 53 8 00 87 gosto 24 009798 AEROLINEAS. COk.AR C.18/18 11598 51 12 gosto 25 31626e HerpAGO*ALWAYSRENTACA 06/26 18248 33",
+        "monto": 83011.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "21 Enero 26 508111 Servi Ga 5,8,L Playa 83011,00 TeRJete 6638 Total Consuros GABRIEL RUI 1068781,53 ..."
+    },
+    {
+        "fecha": "12-08-26",
+        "descripcion": "653394 Herpago ALNAYSRENTACR",
+        "monto": 16977.79,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "12 AgOSto 653394 Herpago ALNAYSRENTACR C.06/26 16977,79"
+    },
+    {
+        "fecha": "11-09-26",
+        "descripcion": "25 962932 Merpago*ALWAYSRentece C 05/26 14277 25 Septiembre 25 848141 MERPAGO*ALWAYSRENTACA 05/26 14277 25 Movienbre 25 001764 Haster CLEAN C.03/83 1756 66",
+        "monto": 14277.25,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "11 Septiembre 25 962932 Merpago*alkaysRentece C,05/26 14277,25 Septiembre 25 848141 MERPAGO*ALMAYSRE..."
+    },
+    {
+        "fecha": "29-12-25",
+        "descripcion": "25 002784 Master CLEAN C.02/83 4602 21 dicienore 00296- Hester CLERN C.02/23 3775 75 Dicienbre 411822 MerpAGO GRIDOSLCHICO 6800 00",
+        "monto": 4602.21,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "29 Dicienbre 25 002784 Master CLEAN C.02/83 4602,21 dicienore 00296- Hester CLERN C.02/23 3775,75 Di..."
+    },
+    {
+        "fecha": "26-12-25",
+        "descripcion": "25 008953 VIA LATAM",
+        "monto": 52700.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "26 Dicienbre 25 008953 VIA LactEA 52700,00"
+    },
+    {
+        "fecha": "82-01-26",
+        "descripcion": "26 646205 FACEBOOK *32fMs7R262",
+        "monto": 289432.99,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "82 enero 26 646205 Faceek *32fMs7R262 289432,99"
+    },
+    {
+        "fecha": "15-01-26",
+        "descripcion": "26 001268 ZuRIch Segurcse5e2817620000 - 2939 39 IARJETA 6646 Total consuros MARCIA AGUERO 439386 13 20 00 19 -goSto 004977 VIUMI RENTEC C.06/26 78333 33 TARJETA 710 Total consufos AGUSTIN ISASHENDI 78323 33 0 00",
+        "monto": 2939.39,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "15 Enerc 26 001268 ZuRIch Segurcse5e2817620000 - 2939,39 IARJETA 6646 Total consuros MARCIA AGUERO 4..."
+    },
+    {
+        "fecha": "19-12-25",
+        "descripcion": "008817 VIUNI corrALN S4x C 02/26",
+        "monto": 121690.41,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "19 Dicienbre 008817 VIUNI corrALN S4x C,02/26 121690,41"
+    },
+    {
+        "fecha": "26-12-25",
+        "descripcion": "25 524847 MERPAGO*APPYPFCCNB 91001 14 enero 667289 APPYPE 02537 Cchbust 126004 56",
+        "monto": 91001.14,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "26 Dicienbre 25 524847 HERPAGO*APPYPFCCNB 91001,14 enero 667289 APPYPE 02537 Cchbust 126004,56"
+    },
+    {
+        "fecha": "15-01-26",
+        "descripcion": "26 641598 AppypF 31287 PLaYA 122051 56 Enero 007426 PASTELERIA FLOR DEL VALLE 10400 00 TaRjete 3420 Total consugos ZUIS Cornejo costes 271147 67 8 00",
+        "monto": 122051.56,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "15 Enero 26 641598 AppypF 31287 PLaYA 122051,56 Enero 007426 PASTELERIA FLOR DEL VALLE 10400,00 TaRj..."
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "INTERESES FIN-NCI-CIOK",
+        "monto": 7395.9,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "22 Enero INTERESES FIN-NCI-CIOK 7395,90"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "PUNIT Pag MIN.ANTERIOR 635.",
+        "monto": 967.01,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "22 Enerc PUNIT , Pag MIN.ANTERIOR 635. 967,01"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "COMIS MANTEMINIENTO 3587 00 enero IVA 5 Resp InsC. 213 956 34 Enero IVA 3 RESP INSCR.10 57 776 57",
+        "monto": 3587.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "22 Enero COMIS MANTEMINIENTO 3587,00 enero IVA 5 Resp InsC. 213 956,34 Enero IVA 3 RESP INSCR.10,57 ..."
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "PERCEP . IVA RG2488 3 88 B. 4554 81 136 62",
+        "monto": 3.88,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "22 enero PERCEP . IVA RG2488 3,88 B. 4554,81 136,62"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "PERCEP IvA RG2488 1 52 7295 90 110 94",
+        "monto": 1.52,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "22 Enero PERCEP IvA RG2488 1,52 7295,90 110,94"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "IIeE PeRCEP-S-LT 3 682 289422 99 10419 58 enerc DB RG 5617 3e1 318042 99 95412 89",
+        "monto": 3.68,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "22 Enero IIeE PeRCEP-S-LT 3,682( 289422,99) 10419,58 enerc DB ,RG 5617 3e1 318042,99 95412,89"
+    }
+]

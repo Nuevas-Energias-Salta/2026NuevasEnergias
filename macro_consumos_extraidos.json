@@ -1,0 +1,274 @@
+[
+    {
+        "fecha": "02-12-25",
+        "descripcion": "LIBRERIA LeRMA SRL C.02/06",
+        "monto": 12333.33,
+        "moneda": "ARS",
+        "cupon": "007588",
+        "original": "02 Diciembre 25 007588 LIBRERIA LeRMA SRL C.02/06 12333,33"
+    },
+    {
+        "fecha": "81-01-26",
+        "descripcion": "MERPAGO*ALWAYSRENTACA",
+        "monto": 214998.6,
+        "moneda": "ARS",
+        "cupon": "168481",
+        "original": "81 Enerc 26 168481 MERPAGO*ALWAYSRENTACA 214998,60"
+    },
+    {
+        "fecha": "82-01-26",
+        "descripcion": "MERPAGO*PASAJESCDP",
+        "monto": 30673.5,
+        "moneda": "ARS",
+        "cupon": "492966",
+        "original": "82 Enero 26 492966 MERPAGO*PASAJESCDP 30673,50"
+    },
+    {
+        "fecha": "05-01-26",
+        "descripcion": "MERPAGO*ALWAYSRENTACA",
+        "monto": 104293.43,
+        "moneda": "ARS",
+        "cupon": "078211",
+        "original": "05 Enerc 26 078211 MERPAGO*ALWAYSRENTACA 104293,43"
+    },
+    {
+        "fecha": "26-01-26",
+        "descripcion": "YPF SAN LO Chico",
+        "monto": 77005.0,
+        "moneda": "ARS",
+        "cupon": "678193",
+        "original": "26 Enerc 26 678193 YPF SAN LO Chico 77005,00"
+    },
+    {
+        "fecha": "87-01-26",
+        "descripcion": "MERPAGO*SERVICAFA",
+        "monto": 3000.0,
+        "moneda": "ARS",
+        "cupon": "956969",
+        "original": "87 Enero 26 956969 MERPAGO*SERVICAFA 3000,00"
+    },
+    {
+        "fecha": "07-01-26",
+        "descripcion": "MERPAGO*SERVICAFA",
+        "monto": 3000.0,
+        "moneda": "ARS",
+        "cupon": "980347",
+        "original": "07 Enerc 26 980347 MERPAGO*SERVICAFA 3000,00"
+    },
+    {
+        "fecha": "87-01-26",
+        "descripcion": "ACA CAFAYATE CCMB",
+        "monto": 50000.0,
+        "moneda": "ARS",
+        "cupon": "004787",
+        "original": "87 Enerc 26 004787 ACA CAFAYATE CCMB 50000,00"
+    },
+    {
+        "fecha": "87-01-26",
+        "descripcion": "PETROGAS SRL",
+        "monto": 29998.99,
+        "moneda": "ARS",
+        "cupon": "039164",
+        "original": "87 Enero 26 039164 PETROGAS SRL 29998,99"
+    },
+    {
+        "fecha": "07-01-26",
+        "descripcion": "MERPAGO*SERVICAFA",
+        "monto": 5000.0,
+        "moneda": "ARS",
+        "cupon": "335135",
+        "original": "07 Enerc 26 335135 MERPAGO*SERVICAFA 5000,00"
+    },
+    {
+        "fecha": "08-01-26",
+        "descripcion": "MERPAGO*PANADERIACROCANTE",
+        "monto": 7500.0,
+        "moneda": "ARS",
+        "cupon": "318359",
+        "original": "8 Enero 26 318359 MERPAGO*PANADERIACROCANTE 7500,00"
+    },
+    {
+        "fecha": "08-01-26",
+        "descripcion": "ESTACION SeRv JACARAKD",
+        "monto": 50000.0,
+        "moneda": "ARS",
+        "cupon": "349906",
+        "original": "8 Enerc 26 349906 ESTACION SeRv JACARAKD 50000,00"
+    },
+    {
+        "fecha": "21-01-26",
+        "descripcion": "MERPAGO*YPFCOMBUSTIBLESDE",
+        "monto": 4300.0,
+        "moneda": "ARS",
+        "cupon": "381672",
+        "original": "21 Enerc 26 381672 MERPAGO*YPFCOMBUSTIBLESDE 4300,00"
+    },
+    {
+        "fecha": "21-01-26",
+        "descripcion": "MERPAGO*LUISACARRIZOYCIAS",
+        "monto": 75007.98,
+        "moneda": "ARS",
+        "cupon": "944387",
+        "original": "21 Enero 26 944387 MERPAGO*LUISACARRIZOYCIAS 75007,98"
+    },
+    {
+        "fecha": "21-01-26",
+        "descripcion": "MERPAGO*ALWAYSRENTACA C.01/06",
+        "monto": 8691.15,
+        "moneda": "ARS",
+        "cupon": "299306",
+        "original": "21 Enerc 26 299306 MERPAGO*ALWAYSRENTACA C.01/06 8691,15"
+    },
+    {
+        "fecha": "21-01-26",
+        "descripcion": "MERPAGO*ALWAYSRENTACA C.01/83",
+        "monto": 87799.54,
+        "moneda": "ARS",
+        "cupon": "941858",
+        "original": "21 Enerc 26 941858 MERPAGO*ALWAYSRENTACA C.01/83 87799,54"
+    },
+    {
+        "fecha": "87-08-24",
+        "descripcion": "AEROLINEAS .CoM.AR C.18/18",
+        "monto": 11598.51,
+        "moneda": "ARS",
+        "cupon": "009790",
+        "original": "87 Agosto 24 009790 AEROLINEAS .CoM.AR C.18/18 11598,51"
+    },
+    {
+        "fecha": "12-08-25",
+        "descripcion": "MERPAGO*ALNAYSRENTACA C.06/86",
+        "monto": 18248.33,
+        "moneda": "ARS",
+        "cupon": "316868",
+        "original": "12 Agosto 25 316868 MERPAGO*ALNAYSRENTACA C.06/86 18248,33"
+    },
+    {
+        "fecha": "12-08-25",
+        "descripcion": "MERPAGO*ALWAYSRENTACA C.06/06",
+        "monto": 18977.79,
+        "moneda": "ARS",
+        "cupon": "653394",
+        "original": "12 Agosto 25 653394 MERPAGO*ALWAYSRENTACA C.06/06 18977,79"
+    },
+    {
+        "fecha": "11-09-25",
+        "descripcion": "MERPAGO*ALWAYSRENTACA C.05/86",
+        "monto": 14277.25,
+        "moneda": "ARS",
+        "cupon": "962932",
+        "original": "11 Septiembre 25 962932 MERPAGO*ALWAYSRENTACA C.05/86 14277,25"
+    },
+    {
+        "fecha": "12-09-25",
+        "descripcion": "MERPAGO*ALWAYSRENTACA C.05/86",
+        "monto": 14277.25,
+        "moneda": "ARS",
+        "cupon": "848141",
+        "original": "12 Septiembre 25 848141 MERPAGO*ALWAYSRENTACA C.05/86 14277,25"
+    },
+    {
+        "fecha": "11-11-25",
+        "descripcion": "MastER CLEAN C.03/03",
+        "monto": 1756.66,
+        "moneda": "ARS",
+        "cupon": "001764",
+        "original": "11 Noviembre 25 001764 MastER CLEAN C.03/03 1756,66"
+    },
+    {
+        "fecha": "09-12-25",
+        "descripcion": "HASTER CLEAN C.02/03",
+        "monto": 4602.21,
+        "moneda": "ARS",
+        "cupon": "002784",
+        "original": "09 Diciembre 25 002784 HASTER CLEAN C.02/03 4602,21"
+    },
+    {
+        "fecha": "16-12-25",
+        "descripcion": "MaSTER CLEAN C.02/83",
+        "monto": 3775.75,
+        "moneda": "ARS",
+        "cupon": "002964",
+        "original": "16 Diciembre 25 002964 MaSTER CLEAN C.02/83 3775,75"
+    },
+    {
+        "fecha": "26-12-25",
+        "descripcion": "MERPAGO*GRIDOSLCHICO",
+        "monto": 6800.0,
+        "moneda": "ARS",
+        "cupon": "411824",
+        "original": "26 Diciembre 25 411824 MERPAGO*GRIDOSLCHICO 6800,00"
+    },
+    {
+        "fecha": "26-12-25",
+        "descripcion": "VIA LACTEA",
+        "monto": 52700.0,
+        "moneda": "ARS",
+        "cupon": "008953",
+        "original": "26 Diciembre 25 008953 VIA LACTEA 52700,00"
+    },
+    {
+        "fecha": "19-08-25",
+        "descripcion": "VIUMI #RENTEC C.06/86",
+        "monto": 78333.33,
+        "moneda": "ARS",
+        "cupon": "004977",
+        "original": "19 Agosto 25 004977 VIUMI #RENTEC C.06/86 78333,33"
+    },
+    {
+        "fecha": "19-12-25",
+        "descripcion": "VIUMI #CORRALN Sa C.02/06",
+        "monto": 121690.41,
+        "moneda": "ARS",
+        "cupon": "008817",
+        "original": "19 Diciembre 25 008817 VIUMI #CORRALN Sa C.02/06 121690,41"
+    },
+    {
+        "fecha": "26-12-25",
+        "descripcion": "MERPAGO*APPYPFCCKB",
+        "monto": 91001.14,
+        "moneda": "ARS",
+        "cupon": "524847",
+        "original": "26 Dicienbre 25 524847 MERPAGO*APPYPFCCKB 91001,14"
+    },
+    {
+        "fecha": "16-01-26",
+        "descripcion": "PASTELERIA FLOR DEL VALLE",
+        "monto": 10400.0,
+        "moneda": "ARS",
+        "cupon": "007446",
+        "original": "16 Enerc 26 007446 PASTELERIA FLOR DEL VALLE 10400,00"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "Intereses FINAMCIACION",
+        "monto": 7395.9,
+        "moneda": "ARS",
+        "cupon": "S/N",
+        "original": "22 Enerc 26 Intereses FINAMCIACION 7395,90"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "COMIS. MANTENIKIENTO",
+        "monto": 3587.0,
+        "moneda": "ARS",
+        "cupon": "S/N",
+        "original": "22 Enerc 26 COMIS. MANTENIKIENTO 3587,00"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "DB IVA RESP . INSCR.",
+        "monto": 18.51,
+        "moneda": "ARS",
+        "cupon": "S/N",
+        "original": "22 Enero 26 DB IVA RESP . INSCR.18,51"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "IIBB PERCEP-SALT",
+        "monto": 3.68,
+        "moneda": "ARS",
+        "cupon": "S/N",
+        "original": "22 Enero 26 IIBB PERCEP-SALT 3,68"
+    }
+]

@@ -1,0 +1,325 @@
+{
+    "meta": {
+        "templateCreatedBy": "Notion ERP System"
+    },
+    "name": "Calcular Rango CxC - Notion",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "calcular-cxc",
+                "options": {
+                    "allowedOrigins": "*"
+                }
+            },
+            "id": "webhook-trigger",
+            "name": "Webhook - Recibir Fechas",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                240,
+                300
+            ],
+            "webhookId": "calcular-cxc"
+        },
+        {
+            "parameters": {
+                "functionCode": "// Extraer fechas del body\nconst fechaInicio = $input.item.json.body.fechaInicio;\nconst fechaFin = $input.item.json.body.fechaFin;\n\nreturn {\n  fechaInicio,\n  fechaFin\n};"
+            },
+            "id": "extract-dates",
+            "name": "Extraer Fechas",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                460,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "operation": "getAll",
+                "databaseId": "2e0c81c3-5804-815a-8755-f4f254257f6a",
+                "returnAll": true,
+                "filterType": "manual",
+                "matchType": "allFilters",
+                "filters": {
+                    "conditions": [
+                        {
+                            "key": "Fecha Emisión",
+                            "condition": "on_or_after",
+                            "date": "={{ $json.fechaInicio }}"
+                        },
+                        {
+                            "key": "Fecha Emisión",
+                            "condition": "on_or_before",
+                            "date": "={{ $json.fechaFin }}"
+                        }
+                    ]
+                }
+            },
+            "id": "get-cxc-filtered",
+            "name": "Notion - Obtener CxC Filtradas",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                680,
+                300
+            ],
+            "credentials": {
+                "notionApi": {
+                    "id": "REEMPLAZAR_CON_TU_CREDENTIAL_ID",
+                    "name": "Notion API"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "functionCode": "// Calcular totales de las CxC filtradas\nlet totalMonto = 0;\nlet totalCobrado = 0;\n\nfor (const item of $input.all()) {\n  const props = item.json.properties;\n  \n  // Monto\n  const monto = props['Monto Base']?.number || props['Monto']?.number || 0;\n  totalMonto += monto;\n  \n  // Monto Cobrado (puede ser rollup)\n  const cobradoProp = props['Monto Cobrado Base'] || props['Monto Cobrado'];\n  let cobrado = 0;\n  \n  if (cobradoProp?.type === 'rollup') {\n    cobrado = cobradoProp.rollup?.number || 0;\n  } else {\n    cobrado = cobradoProp?.number || 0;\n  }\n  \n  totalCobrado += cobrado;\n}\n\nconst totalPendiente = totalMonto - totalCobrado;\n\n// Obtener fechas del nodo anterior\nconst fechaInicio = $('Extraer Fechas').first().json.fechaInicio;\nconst fechaFin = $('Extraer Fechas').first().json.fechaFin;\n\nreturn {\n  montoTotal: totalMonto,\n  montoCobrado: totalCobrado,\n  saldoPendiente: totalPendiente,\n  periodo: `Rango: ${fechaInicio} a ${fechaFin}`,\n  fechaInicio,\n  fechaFin\n};"
+            },
+            "id": "calculate-totals",
+            "name": "Calcular Totales",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                900,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "respondWith": "json",
+                "responseBody": "={{ {\n  \"success\": true,\n  \"montoTotal\": $json.montoTotal,\n  \"montoCobrado\": $json.montoCobrado,\n  \"saldoPendiente\": $json.saldoPendiente,\n  \"periodo\": $json.periodo\n} }}"
+            },
+            "id": "respond-webhook",
+            "name": "Responder al Formulario",
+            "type": "n8n-nodes-base.respondToWebhook",
+            "typeVersion": 1,
+            "position": [
+                1120,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "operation": "getAll",
+                "databaseId": "REEMPLAZAR_CON_ID_RESUMEN_CXC",
+                "returnAll": false,
+                "limit": 1,
+                "filterType": "manual",
+                "matchType": "allFilters",
+                "filters": {
+                    "conditions": [
+                        {
+                            "key": "Período",
+                            "condition": "equals",
+                            "string": "={{ $json.periodo }}"
+                        }
+                    ]
+                }
+            },
+            "id": "find-existing-row",
+            "name": "Buscar Fila Existente",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                900,
+                500
+            ],
+            "credentials": {
+                "notionApi": {
+                    "id": "REEMPLAZAR_CON_TU_CREDENTIAL_ID",
+                    "name": "Notion API"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "id": "exists-check",
+                            "leftValue": "={{ $json.id }}",
+                            "rightValue": "",
+                            "operator": {
+                                "type": "string",
+                                "operation": "exists"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                },
+                "options": {}
+            },
+            "id": "check-if-exists",
+            "name": "¿Existe Fila?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                1120,
+                500
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "page",
+                "operation": "update",
+                "pageId": "={{ $json.id }}",
+                "propertiesUi": {
+                    "propertyValues": [
+                        {
+                            "key": "Monto Total",
+                            "numberValue": "={{ $('Calcular Totales').item.json.montoTotal }}"
+                        },
+                        {
+                            "key": "Monto Cobrado",
+                            "numberValue": "={{ $('Calcular Totales').item.json.montoCobrado }}"
+                        },
+                        {
+                            "key": "Saldo Pendiente",
+                            "numberValue": "={{ $('Calcular Totales').item.json.saldoPendiente }}"
+                        }
+                    ]
+                }
+            },
+            "id": "update-row",
+            "name": "Actualizar Fila",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                1340,
+                400
+            ],
+            "credentials": {
+                "notionApi": {
+                    "id": "REEMPLAZAR_CON_TU_CREDENTIAL_ID",
+                    "name": "Notion API"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "resource": "page",
+                "databaseId": "REEMPLAZAR_CON_ID_RESUMEN_CXC",
+                "title": "={{ $('Calcular Totales').item.json.periodo }}",
+                "propertiesUi": {
+                    "propertyValues": [
+                        {
+                            "key": "Monto Total",
+                            "numberValue": "={{ $('Calcular Totales').item.json.montoTotal }}"
+                        },
+                        {
+                            "key": "Monto Cobrado",
+                            "numberValue": "={{ $('Calcular Totales').item.json.montoCobrado }}"
+                        },
+                        {
+                            "key": "Saldo Pendiente",
+                            "numberValue": "={{ $('Calcular Totales').item.json.saldoPendiente }}"
+                        }
+                    ]
+                }
+            },
+            "id": "create-row",
+            "name": "Crear Fila Nueva",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                1340,
+                600
+            ],
+            "credentials": {
+                "notionApi": {
+                    "id": "REEMPLAZAR_CON_TU_CREDENTIAL_ID",
+                    "name": "Notion API"
+                }
+            }
+        }
+    ],
+    "connections": {
+        "Webhook - Recibir Fechas": {
+            "main": [
+                [
+                    {
+                        "node": "Extraer Fechas",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Extraer Fechas": {
+            "main": [
+                [
+                    {
+                        "node": "Notion - Obtener CxC Filtradas",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Notion - Obtener CxC Filtradas": {
+            "main": [
+                [
+                    {
+                        "node": "Calcular Totales",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Calcular Totales": {
+            "main": [
+                [
+                    {
+                        "node": "Responder al Formulario",
+                        "type": "main",
+                        "index": 0
+                    },
+                    {
+                        "node": "Buscar Fila Existente",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Buscar Fila Existente": {
+            "main": [
+                [
+                    {
+                        "node": "¿Existe Fila?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "¿Existe Fila?": {
+            "main": [
+                [
+                    {
+                        "node": "Actualizar Fila",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "Crear Fila Nueva",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "pinData": {}
+}

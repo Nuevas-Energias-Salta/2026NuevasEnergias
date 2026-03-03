@@ -1,0 +1,486 @@
+
+FRA [1]: 27 Plaza Empresas CUIT 30-5000100
+   -> SKIP: Month 'Plaza' unknown
+
+FRA [3]: 84 Cart Número de cuenta liq . MACRO 12113262
+   -> SKIP: Month 'Cart' unknown
+
+FRA [5]: 17 NEGOCIOS XXI BUSINESS Resumen
+   -> SKIP: No amounts found
+
+FRA [7]: 13 Cuenta : IVA: RESPONS . INSCRIP TERRA GESTION NECOCHEA 44
+   -> SKIP: No amounts found
+
+FRA [9]: 88 BELGRANO SALTA PROYECTO 1
+   -> SKIP: No amounts found
+
+FRA [11]: 45 CIERRE 
+   -> SKIP: No amounts found
+
+FRA [13]: 22 Ene 
+   -> SKIP: No amounts found
+
+FRA [15]: 26 VENCIMIENT O
+   -> SKIP: No amounts found
+
+FRA [17]: 02 Feb 
+   -> SKIP: No amounts found
+
+FRA [19]: 26 Cierre Ant.:
+   -> SKIP: No amounts found
+
+FRA [21]: 24 Dic 
+   -> SKIP: No amounts found
+
+FRA [23]: 25 vto . Ant.
+   -> SKIP: No amounts found
+
+FRA [25]: 06 Ene 
+   -> SKIP: No amounts found
+
+FRA [27]: 26 Prox .Cierre:
+   -> SKIP: No amounts found
+
+FRA [29]: 19 Feb 
+   -> SKIP: No amounts found
+
+FRA [31]: 26 Prox .Vto.
+   -> SKIP: No amounts found
+
+FRA [33]: 02 Mar 
+   -> SKIP: No amounts found
+
+FRA [35]: 26 SUC ; 1
+   -> SKIP: No amounts found
+
+FRA [37]: 27 LIMITE : Fecha COMPRA 10.000.000,e
+   -> SKIP: Month 'LIMITE' unknown
+
+FRA [39]: 0 FINANCIACI CN $ 10.000.888,
+   -> SKIP: Month 'FINANCIACI' unknown
+
+FRA [41]: 88 Corprobant e Referencia USs SALDO ANTERIOR 2487.856,71 20,80
+   -> SKIP: Month 'Corprobant' unknown
+
+FRA [43]: 86 Enero 
+   -> SKIP: No amounts found
+
+FRA [45]: 26 TRANSFEREN CIA DEUDA 28,88 TC1 29900,00
+   -> SKIP: Month 'TRANSFEREN' unknown
+
+FRA [47]: 08 Enero 26 SU PAGO EN PESOS 2.436.856,71 -
+   -> SKIP: Filtered (SU PAGO EN PESOS)
+
+FRA [49]: 30 Octubre 25 0071
+   -> SKIP: Desc too short (25)
+
+FRA [51]: 92 PINTURERIA S MARTEL .03/83 49282,01
+   -> SKIP: Month 'PINTURERIA' unknown
+
+FRA [53]: 02 Diciembre 25 0075
+   -> SKIP: Desc too short (25)
+
+FRA [55]: 88 LIBRERIA LeRKA SRL C.02/86 12333,33
+   -> SKIP: Month 'LIBRERIA' unknown
+
+FRA [57]: 29 Diciembre 25 2974
+   -> SKIP: Desc too short (25)
+
+FRA [59]: 88 MERPAGO *PASAJESCDP 55770,00
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [61]: 30 Diciembre 25 4585
+   -> SKIP: Desc too short (25)
+
+FRA [63]: 34 MERPAGO *PASAJESCDP 55770,00
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [65]: 30 Dicienbre 25 5555
+   -> SKIP: Desc too short (25)
+
+FRA [67]: 36 MERPAGO *PASAJESCDP 61347,00
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [69]: 81 Enerc 26 1684
+   -> SKIP: Desc too short (26)
+
+FRA [71]: 81 HERPAGO *ALWAYSRENTACA 214998,60
+   -> SKIP: Month 'HERPAGO' unknown
+
+FRA [73]: 82 Enerc 26 4929
+   -> SKIP: Desc too short (26)
+
+FRA [75]: 66 MERPAGO *PASAJESCDP 30673,50
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [77]: 05 Enerc 26 0782
+   -> SKIP: Desc too short (26)
+
+FRA [79]: 11 MERPAGO *ALWAYSRENTACA 104293,43
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [81]: 26 Enerc 26 6781
+   -> SKIP: Desc too short (26)
+
+FRA [83]: 93 YPF Sanlo Chico 77005,00
+   -> SKIP: Month 'YPF' unknown
+
+FRA [85]: 87 Enerc 26 9569
+   -> SKIP: Desc too short (26)
+
+FRA [87]: 69 MERPAGO *SERVICAFA 3000,00
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [89]: 07 Enerc 26 9883
+   -> SKIP: Desc too short (26)
+
+FRA [91]: 47 MERPAGO *SERVICAFA 3000,00
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [93]: 87 Enerc 26 0047
+   -> SKIP: Desc too short (26)
+
+FRA [95]: 87 ACA CAFAYATE CCMB 50000,00
+   -> SKIP: Month 'ACA' unknown
+
+FRA [97]: 87 Enero 26 0391
+   -> SKIP: Desc too short (26)
+
+FRA [99]: 64 PETROGAS SRL 29998,99
+   -> SKIP: Month 'PETROGAS' unknown
+
+FRA [101]: 87 Enerc 26 3351
+   -> SKIP: Desc too short (26)
+
+FRA [103]: 35 MERPAGO *SERVICAFA 5000,00
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [105]: 88 Enerc 26 3183
+   -> SKIP: Desc too short (26)
+
+FRA [107]: 59 MERPAGO *PANADERIACROCANTE 7500,00
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [109]: 08 Enerc 26 3499
+   -> SKIP: Desc too short (26)
+
+FRA [111]: 06 ESTACION SERv JACARAND 50000,00
+   -> SKIP: Month 'ESTACION' unknown
+
+FRA [113]: 21 Enerc 26 3816
+   -> SKIP: Desc too short (26)
+
+FRA [115]: 72 MERPAGO *YPFCONBUSTIBLESDE 4300,00
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [117]: 21 Enerc 26 9443
+   -> SKIP: Desc too short (26)
+
+FRA [119]: 87 MERPAGO *LUISACARRIZOYCIAS 75007,98
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [121]: 21 Enerc 26 2993
+   -> SKIP: Desc too short (26)
+
+FRA [123]: 06 MERPAGO *ALWAYSRENTACA C.01/86 8691,15
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [125]: 21 Enerc 26 9418
+   -> SKIP: Desc too short (26)
+
+FRA [127]: 58 HERPAGO *ALWAYSRENTACA C.01/83 87799,54
+   -> SKIP: Month 'HERPAGO' unknown
+
+FRA [129]: 21 Enerc 26 5081
+   -> SKIP: Desc too short (26)
+
+FRA [131]: 11 Servi Gas S.R.L Playa 83011,
+   -> SKIP: Month 'Servi' unknown
+
+FRA [133]: 00 TARJETA 66
+   -> SKIP: No amounts found
+
+FRA [135]: 38 Total consuncs de GABRIEL RUIZ 1068781,53 8,00
+   -> SKIP: Month 'Total' unknown
+
+FRA [137]: 87 Agosto 24 0097
+   -> SKIP: Desc too short (24)
+
+FRA [139]: 98 AEROLINEAS .COM.AR C.18/18 11598,51
+   -> SKIP: Month 'AEROLINEAS' unknown
+
+FRA [141]: 12 Agcsto 25 3168
+   -> SKIP: Month 'Agcsto' unknown
+
+FRA [143]: 68 MERPAGO *ALWAYSRENTACA C.06/86 18248,33
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [145]: 12 Agosto 25 6533
+   -> SKIP: Desc too short (25)
+
+FRA [147]: 94 MERPAGO *ALWAYSRENTACA C.06/06 18977,79
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [149]: 11 Septiembre 25 9629
+   -> SKIP: Desc too short (25)
+
+FRA [151]: 32 MERPAGO *ALWAYSRENTACA C.05/86 14277,25
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [153]: 12 Septiembre 25 8481
+   -> SKIP: Desc too short (25)
+
+FRA [155]: 41 MERPAGO *ALNAYSRENTACA C.05/86 14277,25
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [157]: 11 Ncviembre 25 0017
+   -> SKIP: Month 'Ncviembre' unknown
+
+FRA [159]: 64 MASTER CLEAN C.03/03 1756,66
+   -> SKIP: Month 'MASTER' unknown
+
+FRA [161]: 09 Diciembre 25 0027
+   -> SKIP: Desc too short (25)
+
+FRA [163]: 84 MaSTER CLEAN C.02/03 4602,21
+   -> SKIP: Month 'MaSTER' unknown
+
+FRA [165]: 16 Diciembre 25 0029
+   -> SKIP: Desc too short (25)
+
+FRA [167]: 64 MASTER CLEAN C.02/03 3775,75
+   -> SKIP: Month 'MASTER' unknown
+
+FRA [169]: 26 Diciembre 25 4118
+   -> SKIP: Desc too short (25)
+
+FRA [171]: 24 MERPAGO *GRIDOSLCHICO 6800,00
+   -> SKIP: Month 'MERPAGO' unknown
+
+FRA [173]: 26 Diciembre 25 0089
+   -> SKIP: Desc too short (25)
+
+FRA [175]: 53 VIA LACTEA 52700,00
+   -> SKIP: Month 'VIA' unknown
+
+FRA [177]: 04 Enerc 26 6462
+   -> SKIP: Desc too short (26)
+
+FRA [179]: 08 FACEBK *32FMS7RA62 289432,99
+   -> SKIP: Month 'FACEBK' unknown
+
+FRA [181]: 87 Enerc 26 6985
+   -> SKIP: Desc too short (26)
+
+FRA [183]: 31 OPENAI *CHATGPT inlSogimcUSD 20,88 20,00
+   -> SKIP: Month 'OPENAI' unknown
+
+FRA [185]: 15 Enerc 26 0012
+   -> SKIP: Desc too short (26)
+
+FRA [187]: 68 ZURICH Seguro5e5e2817640000- 2939,
+   -> SKIP: Month 'ZURICH' unknown
+
+FRA [189]: 39 TARJETA 66
+   -> SKIP: No amounts found
+
+FRA [191]: 46 Total Consumcs de MARCIA M AGUERO 439386,13 28, 00
+   -> SKIP: Month 'Total' unknown
+
+FRA [193]: 19 Agosto 25 0049
+   -> SKIP: Desc too short (25)
+
+FRA [195]: 77 VIUMI *RENTEC C.06/86 78333,
+   -> SKIP: Month 'VIUMI' unknown
+
+FRA [197]: 33 TARJETA 71
+   -> SKIP: No amounts found
+
+FRA [199]: 80 Total Consumos de AGUSTIN ISASMENDI 78333,33 8,00
+   -> SKIP: Month 'Total' unknown
+
+FRA [201]: 19 Diciembre 25 0088
+   -> SKIP: Desc too short (25)
+
+FRA [203]: 17 VIUMI #CORRALN SAn C.02/06 121690,41
+   -> SKIP: Month 'VIUMI' unknown
+
+FRA [205]: 26 Diciembre 25 5248
+   -> SKIP: Desc too short (25)
+
+FRA [207]: 47 HERPAGO *APPYPFCCIB 91001,14
+   -> SKIP: Month 'HERPAGO' unknown
+
+FRA [209]: 81 Enero 26 6674
+   -> SKIP: Desc too short (26)
+
+FRA [211]: 89 APPYPF 025
+   -> SKIP: No amounts found
+
+FRA [213]: 37 CCMBuST 126004,56
+   -> SKIP: Month 'CCMBuST' unknown
+
+FRA [215]: 15 Enerc 26 6415
+   -> SKIP: Desc too short (26)
+
+FRA [217]: 98 APPYPF 312
+   -> SKIP: No amounts found
+
+FRA [219]: 87 PLAYA 122051,56
+   -> SKIP: Month 'PLAYA' unknown
+
+FRA [221]: 16 Enerc 26 0074
+   -> SKIP: Desc too short (26)
+
+FRA [223]: 46 PASTELERIA FLOR DEL VALLE 10400,
+   -> SKIP: Month 'PASTELERIA' unknown
+
+FRA [225]: 00 TARJETA 34
+   -> SKIP: No amounts found
+
+FRA [227]: 20 Total Consumos de LUIS CORNEJO costaS 471147,67 8,00
+   -> SKIP: Month 'Total' unknown
+
+FRA [229]: 22 Enerc 
+   -> SKIP: No amounts found
+
+FRA [231]: 26 InterESES FINANCIACION 7395,90
+   -> SKIP: Month 'InterESES' unknown
+
+FRA [233]: 22 Enerc 
+   -> SKIP: No amounts found
+
+FRA [235]: 26 PUNIT . PAG. MIN. ANTERIOR 635 . 967,01
+   -> SKIP: Month 'PUNIT' unknown
+
+FRA [237]: 22 Enerc 
+   -> SKIP: No amounts found
+
+FRA [239]: 26 COMIS . MANTENIKIENTO 3587,00
+   -> SKIP: Month 'COMIS' unknown
+
+FRA [241]: 22 Enerc 26 DB IVA RESP Insc. 210 956,34
+   -> SKIP: Filtered (DB IVA RESP Insc. 210)
+
+FRA [243]: 22 Enerc 26 DB IVA RESP . INSCR.18,57 776,57
+   -> SKIP: Filtered (DB IVA RESP . INSCR.18,57)
+
+FRA [245]: 22 Enerc 
+   -> SKIP: No amounts found
+
+FRA [247]: 26 PERCEP . IVA RG2488 3,8% B. 4554, 01 136,62
+   -> SKIP: Month 'PERCEP' unknown
+
+FRA [249]: 22 Enerc 
+   -> SKIP: No amounts found
+
+FRA [251]: 26 PERCEP . IVA RG2488 1,5% B. 7395,90 110,94
+   -> SKIP: Month 'PERCEP' unknown
+
+FRA [253]: 22 Enerc 
+   -> SKIP: No amounts found
+
+FRA [255]: 26 IIBB PeRCEP-SALT 3,687( 289432,99) 10419,58
+   -> SKIP: Month 'IIBB' unknown
+
+FRA [257]: 22 Enerc 26 DB .RG 5617 3e8 318042,99 95412,
+   -> FOUND: 22-01-26 | DB .RG 5617 3e8 | 318042.99
+
+FRA [259]: 89 Cuctas vencer: Febrero/
+   -> SKIP: No amounts found
+
+FRA [261]: 26 Marzo /
+   -> SKIP: No amounts found
+
+FRA [263]: 26 Abril /
+   -> SKIP: No amounts found
+
+FRA [265]: 26 Hayo /
+   -> SKIP: No amounts found
+
+FRA [267]: 26 Junio /
+   -> SKIP: No amounts found
+
+FRA [269]: 26 Julio /26 5267.446,84 5230.514,38 5142.714,85 5142.714,85 58.691,11 50,
+   -> FOUND: 26-07-26 | /26 5267.446,84 5230.514,38 5142.714,85 5142.714,85 | 58691.11
+
+FRA [271]: 00 Ingrese 
+   -> SKIP: No amounts found
+
+FRA [273]: 0 Mis tarjetas comerciales y acceda los Reportes de Gestión de su Cuenta. Le informamos que los saldos en délares nc cancelados 9 l fecha de vencimiento del plazo de pago, se convertirán
+   -> SKIP: No amounts found
+
+FRA [275]: 2 Moneda Pesos a
+   -> SKIP: No amounts found
+
+FRA [277]: 1 tipo de cambic vendedor del día hábil anterior l fecha de vencimiento antes Mencionada y serán Le informamos que l ccbertura de seguro de saldo deudor de corresponder, es ctorgada por la Corpañía por Ud_ seleccionada dentro las cías. cfrecidas por el Banco, bajo la póliza correspondiente la contratación e5: Opción Seguros 5,4. Nro. 11404, sancor Ccoperativa de Seguros Linitada Nro. 430889 y San Cristóbal Shsg Nro.17/1004216, cuyo cargo es de 0.8988, calculable sobre el saldo financiado consumcs del mes consignados en el resumen, lo cual constituye el capital asegurado. El capital máximo asegurado por el cliente que cumple con los requisitos de l póliza con ingreso hasta los
+   -> SKIP: Month 'tipo' unknown
+
+FRA [279]: 65 aos inclusive (Permanencia hasta lcs
+   -> SKIP: No amounts found
+
+FRA [281]: 70 aos inclusive) será: 510.000.888 (Opción Seguros S4) y 53.000.000 (Sancor Ccoperativa de Seguros Ltda. y San Cristébal) y con ingreso partir de los
+   -> SKIP: Month 'aos' unknown
+
+FRA [283]: 66 ahos (con permanencia hasta los 85 años inclusive) será: 510.000.800 (Opción Seguros 5.4.) y 51.000.000 (Sancor Cccperativa de Seguros Ltda. y San Cristóbal). Le recordamcs que en todo momento podrá
+   -> SKIP: Month 'ahos' unknown
+
+FRA [1]: 1 sucursal en la que cpera habitualnente siguientes valores Para Cartera Comercial: Mantenimiento nensual $4.484,
+   -> SKIP: Month 'sucursal' unknown
+
+FRA [3]: 00 Renovaci ón Anual visa hasta Tarjetas 514. 858, 00, hasta Tarjetas 512. 101, ee, hasta
+   -> SKIP: No amounts found
+
+FRA [5]: 30 Tarjetas 59.481,00, hasta
+   -> SKIP: Month 'Tarjetas' unknown
+
+FRA [7]: 50 Tarjetas 58.578,00, Más de
+   -> SKIP: Month 'Tarjetas' unknown
+
+FRA [9]: 50 tarjetas 56.970,00, Reposición de Tarjeta 512.828,88.
+   -> SKIP: Month 'tarjetas' unknown
+
+FRA [11]: 4 los precios mencicnados se le debe adicionar el IVA en caso de corresponder. Para consultas y/o mayor información, comuníquese al 0818-555-2112 de Lunes
+   -> SKIP: Month 'los' unknown
+
+FRA [13]: 1 viernes de 1 18 hs. , ingrese Macro.com.ar{empresas, Banca Internet empresas, 1a APP, diríjase cualquiera de nuestras sucursales  Los saldos por consumnos en dólares de sus tarjetas de crédito pcdrán ser cancelados en esa noneda extranjera en pesos. Los saldos en délares no cancelados la fecha de vencimiento del plazo de pago, se convertirán
+   -> SKIP: No amounts found
+
+FRA [15]: 0 Moneda pesos al tipo de cambio vendedor de Banco Macro del día hábil antericr la fecha de vencimiento antes mencionada y serán Si previo a la fecha de vencimiento del plazo de pago Ud. realiza un pago en Mcneda pesos con el cbjeto de cancelar saldos deudores por consumcs en délares, tenga en cuenta que se aplicará el tipo de cambio vendedor de Banco Macro correspondiente al día hábil antericr la fecha de pago, independientemente del canal donde se efectúen (Banca Internet Enpresas, APP, ventanilla, débito autcmático u otros canales de pago habilitados) financiados devengaran como máximo, la siguiente tasa de interés compensatorio y Punitorio hasta el efectivo pago: TMA Tasa Nominal Anual 128.888, CFTNA Costo Financiero Total Nominal Anval CON IVA 146.398; Tasa de interés punitorio en Pesos TNA 68.88%, CFTNA CON IVA 73.79%_ Recordar que puede pre cancelar total Parcialmente los saldcs financiados en cualquier momento. Si la operación se acordó en cuotas, el Mcnto indicado en este resumen (y en el importe del cupón correspondiente) incluye los intereses por financiación ccnforme 9 la tasa que el comercio infornó al efectuarse la transacción. Si Usted es Monotributista, el crédito fiscal discriminado en el presente ccmprobante, sól
+   -> SKIP: Month 'Moneda' unknown
+
+FRA [17]: 0 pcdr á ser computado a efectos del Réginen de Sostenimiento Inclusión Fiscal para Pequeños Contribuyentes de la Ley #' 27 .618 Si los funcionarios de
+   -> SKIP: No amounts found
+
+FRA [19]: 10 empresa viajan al exterior, comuníquese con visa para conocer el alcance de las coberturas y servicios vigentes de la tarjeta Centro de atención exclusivo visa Commercial Cards (011)4379-33
+   -> SKIP: Month 'empresa' unknown
+
+FRA [21]: 38 Desde el exterior, por cobro revertido: (54 11)4379-3434. Los intereses de financiación se calculan desde el Vto. de S
+   -> SKIP: Month 'Desde' unknown
+
+FRA [23]: 0 resumen anterior. La tasa de interés punitorio sobre pago nínino impago en pesos es TEM 2,280K TNA 27 7501. Los intereses punitorios se calculan desde el vto. de su resumen anterior
+   -> SKIP: Month 'resumen' unknown
+
+FRA [25]: 4 DEBITAREMO S DE SU C.[.00009420573947 LA SUMA DE 5 2177511,
+   -> SKIP: Month 'DEBITAREMO' unknown
+
+FRA [27]: 51 Uss 20,00 *USTED DISPONE DE
+   -> SKIP: Month 'Uss' unknown
+
+FRA [29]: 38 DIAS DESDE LA RECEPCION PARA CUESTICNAR ESTE RESUMEN* TNA 55,
+   -> SKIP: No amounts found
+
+FRA [31]: 50 TEM 4,
+   -> SKIP: No amounts found
+
+FRA [33]: 56 TNA 0.
+   -> SKIP: No amounts found
+
+FRA [35]: 00 TEM 0.
+   -> SKIP: No amounts found
+
+FRA [37]: 00 Saldo Aclual (S) (S} (USS) Pago Mínimo S.E.U.O. 52.177.511,51 5 506.726,
+   -> SKIP: Month 'Saldo' unknown
+
+FRA [39]: 00 Uss 20,00
+   -> SKIP: Month 'Uss' unknown

@@ -1,0 +1,94 @@
+[
+    {
+        "fecha": "28-12-25",
+        "descripcion": "OPENAI *CHATGPT in1SjRRyC",
+        "monto": 20.0,
+        "moneda": "USD",
+        "banco": "GALICIA",
+        "original": "28-12-25 K OPENAI *CHATGPT in1SjRRyCUSD 20,00 188369 20,00"
+    },
+    {
+        "fecha": "28-12-25",
+        "descripcion": "LinkedIn SN P696 LinkedIn",
+        "monto": 6.4,
+        "moneda": "USD",
+        "banco": "GALICIA",
+        "original": "28-12-25 F LinkedIn SN P696 LinkedIn USD 6,40 302622 6,40"
+    },
+    {
+        "fecha": "06-01-26",
+        "descripcion": "NOCRM.IO",
+        "monto": 160.0,
+        "moneda": "USD",
+        "banco": "GALICIA",
+        "original": "06-01-26 E NOCRM.IO USD 160,00 494224 160,00"
+    },
+    {
+        "fecha": "10-01-26",
+        "descripcion": "GOOGLE *Google O P1hGQsii",
+        "monto": 19.99,
+        "moneda": "USD",
+        "banco": "GALICIA",
+        "original": "10-01-26 GOOGLE *Google O P1hGQsii USD 19,99 457354 19,99"
+    },
+    {
+        "fecha": "10-01-26",
+        "descripcion": "GOOGLE *Instagra P1hIXnfU",
+        "monto": 11.99,
+        "moneda": "USD",
+        "banco": "GALICIA",
+        "original": "10-01-26 GOOGLE *Instagra P1hIXnfU USD 11,99 505985 11,99"
+    },
+    {
+        "fecha": "13-01-26",
+        "descripcion": "SLACK T08S0A7LAFR",
+        "monto": 50.58,
+        "moneda": "USD",
+        "banco": "GALICIA",
+        "original": "13-01-26 F SLACK T08S0A7LAFR USD 50,58 167128 50,58"
+    },
+    {
+        "fecha": "13-01-26",
+        "descripcion": "TRELLO.COM* ATLA",
+        "monto": 42.0,
+        "moneda": "USD",
+        "banco": "GALICIA",
+        "original": "13-01-26 K TRELLO.COM* ATLA USD 42,00 496481 42,00"
+    },
+    {
+        "fecha": "18-01-26",
+        "descripcion": "NOCRM.IO",
+        "monto": 32.0,
+        "moneda": "USD",
+        "banco": "GALICIA",
+        "original": "18-01-26 F NOCRM.IO USD 32,00 322263 32,00"
+    },
+    {
+        "fecha": "11-01-26",
+        "descripcion": "WHATICKET in1SoU4VC",
+        "monto": 49.0,
+        "moneda": "USD",
+        "banco": "GALICIA",
+        "original": "11-01-26 K WHATICKET in1SoU4VCUSD 49,00 588264 49,00"
+    },
+    {
+        "fecha": "29-01-26",
+        "descripcion": "DB IVA $ RESP INSC. 21%",
+        "monto": 7128.1,
+        "moneda": "USD",
+        "banco": "BBVA",
+        "seccion": "IMPUESTOS",
+        "titular": null,
+        "original": "29-Ene-26 DB IVA $ RESP INSC. 21% 7.128,10 1.496,90"
+    },
+    {
+        "fecha": "29-01-26",
+        "descripcion": "PERCEP.IVA RG2408 3,0% B.",
+        "monto": 7128.1,
+        "moneda": "USD",
+        "banco": "BBVA",
+        "seccion": "IMPUESTOS",
+        "titular": null,
+        "original": "29-Ene-26 PERCEP.IVA RG2408 3,0% B. 7128,10 213,84"
+    }
+]

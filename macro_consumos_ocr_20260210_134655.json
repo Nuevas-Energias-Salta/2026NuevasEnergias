@@ -1,0 +1,72 @@
+[
+  {
+    "linea": 35,
+    "texto": "21 Enero 26 299306 * MERPAGO*ALWAYSRENTACA C.61/86 8691,15",
+    "fecha": null,
+    "monto": null,
+    "descripcion": "21 Enero 26 299306 * MERPAGO*ALWAYSRENTACA C.61/86 8691,15"
+  },
+  {
+    "linea": 36,
+    "texto": "21 Enero 26 94185@ * MERPAGO*ALWAYSRENTACA c.61/83 87799,54",
+    "fecha": null,
+    "monto": null,
+    "descripcion": "21 Enero 26 94185@ * MERPAGO*ALWAYSRENTACA c.61/83 87799,54"
+  },
+  {
+    "linea": 39,
+    "texto": "@7 Agosto 24 869790 * AEROLINEAS.COM.AR c.18/18 11598,51",
+    "fecha": null,
+    "monto": null,
+    "descripcion": "@7 Agosto 24 869790 * AEROLINEAS.COM.AR c.18/18 11598,51"
+  },
+  {
+    "linea": 40,
+    "texto": "12 Agosto 25 316068 * MERPAGO*ALWAYSRENTACA C.66/86 18248,33",
+    "fecha": null,
+    "monto": null,
+    "descripcion": "12 Agosto 25 316068 * MERPAGO*ALWAYSRENTACA C.66/86 18248,33"
+  },
+  {
+    "linea": 41,
+    "texto": "12 Agosto 25 653394 * MERPAGO*ALWAYSRENTACA C.06/86 18977,79",
+    "fecha": null,
+    "monto": null,
+    "descripcion": "12 Agosto 25 653394 * MERPAGO*ALWAYSRENTACA C.06/86 18977,79"
+  },
+  {
+    "linea": 42,
+    "texto": "11 Septiembre 25 962932 * MERPAGO*ALWAYSRENTACA C.05/86 14277,25",
+    "fecha": null,
+    "monto": null,
+    "descripcion": "11 Septiembre 25 962932 * MERPAGO*ALWAYSRENTACA C.05/86 14277,25"
+  },
+  {
+    "linea": 43,
+    "texto": "12 Septiembre 25 840141 * MERPAGO*ALWAYSRENTACA C.05/86 14277,25",
+    "fecha": null,
+    "monto": null,
+    "descripcion": "12 Septiembre 25 840141 * MERPAGO*ALWAYSRENTACA C.05/86 14277,25"
+  },
+  {
+    "linea": 44,
+    "texto": "11 Noviembre 25 001764 * MASTER CLEAN C.63/83 1756,66",
+    "fecha": null,
+    "monto": null,
+    "descripcion": "11 Noviembre 25 001764 * MASTER CLEAN C.63/83 1756,66"
+  },
+  {
+    "linea": 45,
+    "texto": "@9 Diciembre 25 862704 * MASTER CLEAN C.62/83 4602,21",
+    "fecha": null,
+    "monto": null,
+    "descripcion": "@9 Diciembre 25 862704 * MASTER CLEAN C.62/83 4602,21"
+  },
+  {
+    "linea": 53,
+    "texto": "19 Agosto 25 004977 * VIUMI *RENTEC C.06/86 78333,33",
+    "fecha": null,
+    "monto": null,
+    "descripcion": "19 Agosto 25 004977 * VIUMI *RENTEC C.06/86 78333,33"
+  }
+]

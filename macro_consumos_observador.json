@@ -1,0 +1,218 @@
+[
+    {
+        "fecha": "26-01-26",
+        "descripcion": "TRANSFERENCIA DEUD -",
+        "monto": 20.88,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "26 Enero TRANSFERENCIA DEUD - 20,88 IC1 29900,00 Enero SU Pago EN"
+    },
+    {
+        "fecha": "32-08-26",
+        "descripcion": "*Pasajescdp",
+        "monto": 770.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "5 258532 Merpago*Pasajescdp 55770,00 30 Dicienbre 25 555536 MerpaG"
+    },
+    {
+        "fecha": "36-08-26",
+        "descripcion": "*PASAJESCDP",
+        "monto": 347.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "5 555536 MerpaGo*PASAJESCDP 61347,00 enerc 26 168281 HerpAGO*ALWAY"
+    },
+    {
+        "fecha": "81-08-26",
+        "descripcion": "*ALWAYSRENTACA",
+        "monto": 998.6,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "8281 HerpAGO*ALWAYSRENTACA 214998,60 Enerc 26 492966 Merpago-paSAJ"
+    },
+    {
+        "fecha": "66-08-26",
+        "descripcion": "-paSAJEScDp",
+        "monto": 673.5,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "6 492966 Merpago-paSAJEScDp 30673,50 Enero 26 078211 MERPAGO*ALMAY"
+    },
+    {
+        "fecha": "11-08-26",
+        "descripcion": "*ALWAYSRENTACA",
+        "monto": 293.43,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "8211 MERPAGO*ALMAYSRENTACA 104293,43 26 Enerc 678193 YPF Sanlo Chi"
+    },
+    {
+        "fecha": "87-08-26",
+        "descripcion": "-LUISACARRIZOYCIAS",
+        "monto": 7.98,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "7 MerpAGO-LUISACARRIZOYCIAS 75007,98 Enero 26 299386 Merpago ALMAY"
+    },
+    {
+        "fecha": "86-08-26",
+        "descripcion": "ALWAYSRENTACA C.01/e6",
+        "monto": 691.15,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "erpago ALMAYSRENTACA C.01/e6 8691,15 Enero 26 941858 MERPAGO*ALMAY"
+    },
+    {
+        "fecha": "58-08-26",
+        "descripcion": "*ALWAYSRENTACA C.01/e3",
+        "monto": 799.54,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "RPAGO*ALMAYSRENTACA C.01/e3 27799,54 21 Enero 26 508111 Servi Ga 5"
+    },
+    {
+        "fecha": "94-08-26",
+        "descripcion": "ALNAYSRENTACR",
+        "monto": 977.79,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "rpago ALNAYSRENTACR C.06/26 16977,79 11 Septiembre 25 962932 Merpa"
+    },
+    {
+        "fecha": "32-08-26",
+        "descripcion": "*alkaysRentece C 05/26",
+        "monto": 277.25,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "rpago*alkaysRentece C,05/26 14277,25 Septiembre 25 848141 MERPAGO*"
+    },
+    {
+        "fecha": "41-08-26",
+        "descripcion": "*ALWAYSRENTACA 05/26",
+        "monto": 277.25,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "MERPAGO*ALMAYSRENTACA 05/26 14277,25 Movienbre 25 001764 Haster CL"
+    },
+    {
+        "fecha": "21-12-25",
+        "descripcion": "00296- Hester CLERN",
+        "monto": 775.75,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": " 00296- Hester CLERN C.02/23 3775,75 Dicienbre 411822 MerpAGO'GRID"
+    },
+    {
+        "fecha": "22-08-26",
+        "descripcion": "GRIDOSLCHICO",
+        "monto": 800.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": " 411822 MerpAGO'GRIDOSLCHICO 6800,00 26 Dicienbre 25 008953 VIA La"
+    },
+    {
+        "fecha": "47-08-26",
+        "descripcion": "*APPYPFCCNB",
+        "monto": 1.14,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "5 524847 HERPAGO*APPYPFCCNB 91001,14 enero 667289 APPYPE 02537 Cch"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "INTERESES FIN-NCI-CIOK",
+        "monto": 395.9,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "Enero INTERESES FIN-NCI-CIOK 7395,90 22 Enerc PUNIT , Pag MIN.ANTE"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "PUNIT Pag MIN.ANTERIOR 635.",
+        "monto": 967.01,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "PUNIT , Pag MIN.ANTERIOR 635. 967,01 22 Enero COMIS MANTEMINIENTO "
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "COMIS MANTEMINIENTO",
+        "monto": 587.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "22 Enero COMIS MANTEMINIENTO 3587,00 enero IVA 5 Resp InsC. 213 95"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "PERCEP . IVA RG2488",
+        "monto": 3.88,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": " 22 enero PERCEP . IVA RG2488 3,88 B. 4554,81 136,62 22 Enero PE"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "PERCEP IvA RG2488",
+        "monto": 1.52,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "62 22 Enero PERCEP IvA RG2488 1,52 7295,90 110,94 22 Enero IIeE "
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "PERCEP IvA RG2488",
+        "monto": 295.9,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "Enero PERCEP IvA RG2488 1,52 7295,90 110,94 22 Enero IIeE PeRCEP-S"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "PERCEP IvA RG2488",
+        "monto": 110.94,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "ERCEP IvA RG2488 1,52 7295,90 110,94 22 Enero IIeE PeRCEP-S-LT 3,6"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "IIeE PeRCEP-S-LT",
+        "monto": 3.68,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": ",94 22 Enero IIeE PeRCEP-S-LT 3,682( 289422,99) 10419,58 enerc D"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "IIeE PeRCEP-S-LT 3 682",
+        "monto": 422.99,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "ro IIeE PeRCEP-S-LT 3,682( 289422,99) 10419,58 enerc DB ,RG 5617 3"
+    },
+    {
+        "fecha": "22-01-26",
+        "descripcion": "IIeE PeRCEP-S-LT 3 682 289422 99",
+        "monto": 419.58,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "RCEP-S-LT 3,682( 289422,99) 10419,58 enerc DB ,RG 5617 3e1 318042,"
+    },
+    {
+        "fecha": "58-01-26",
+        "descripcion": "DB RG",
+        "monto": 42.99,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "9,58 enerc DB ,RG 5617 3e1 318042,99 95412,89"
+    },
+    {
+        "fecha": "58-01-26",
+        "descripcion": "DB RG",
+        "monto": 412.89,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "c DB ,RG 5617 3e1 318042,99 95412,89"
+    }
+]

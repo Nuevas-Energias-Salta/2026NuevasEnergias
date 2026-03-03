@@ -1,0 +1,844 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EES - Dashboard Financiero</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --ees-red: #E31E24;
+            --ees-yellow: #FFB81C;
+            --ees-dark: #1A1A19;
+            /* Deeper dark */
+            --ees-card-bg: rgba(45, 45, 45, 0.7);
+            --ees-silver: #BCBEC0;
+            --ees-light: #F8F9FA;
+            --bg-gradient: radial-gradient(circle at top right, #3c3c3b, #1a1a19);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--ees-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Glows */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -10%;
+            right: -10%;
+            width: 40%;
+            height: 40%;
+            background: radial-gradient(circle, rgba(227, 30, 36, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -5%;
+            left: -5%;
+            width: 30%;
+            height: 30%;
+            background: radial-gradient(circle, rgba(255, 184, 28, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Header Premium (Glassmorphism) --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 25px 40px;
+            border-radius: 28px;
+            box-shadow: var(--card-shadow);
+            border: var(--border);
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .logo-img {
+            height: 70px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+            transition: var(--transition);
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .brand-text h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .brand-text span {
+            color: var(--ees-red);
+            position: relative;
+        }
+
+        .brand-text span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--ees-red);
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--ees-red);
+        }
+
+        .header-actions {
+            text-align: right;
+        }
+
+        .timestamp {
+            font-size: 0.8rem;
+            color: var(--ees-silver);
+            margin-bottom: 12px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, var(--ees-red) 0%, #aa151a 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(227, 30, 36, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(227, 30, 36, 0.6);
+            filter: brightness(1.1);
+        }
+
+        /* --- Grid & Cards --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--ees-card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            border: var(--border);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: 0.5s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(60, 60, 59, 0.8);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .large-card {
+            grid-column: span 8;
+        }
+
+        .side-card {
+            grid-column: span 4;
+        }
+
+        .full-card {
+            grid-column: span 12;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--ees-silver);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- Metrics Aesthetics --- */
+        .metrics-subgrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .metric {
+            padding: 24px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .metric:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--ees-silver);
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+
+        .metric-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: white;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -1px;
+        }
+
+        /* Accent Colors */
+        .income .metric-value {
+            color: var(--ees-yellow);
+            text-shadow: 0 0 20px rgba(255, 184, 28, 0.3);
+        }
+
+        .expense .metric-value {
+            color: var(--ees-red);
+            text-shadow: 0 0 20px rgba(227, 30, 36, 0.3);
+        }
+
+        .net .metric-value {
+            color: #10b981;
+            text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .currency-tag {
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- Global Summary Banner --- */
+        .summary-banner {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 45px;
+            border-radius: 32px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: var(--border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-label {
+            font-size: 0.85rem;
+            color: var(--ees-silver);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .summary-value {
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .summary-value.net-positive {
+            color: #10b981;
+            text-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .summary-value.net-negative {
+            color: var(--ees-red);
+            text-shadow: 0 0 30px rgba(227, 30, 36, 0.4);
+        }
+
+        /* --- Alerts --- */
+        .alert-item {
+            padding: 18px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.9rem;
+            border: 1px solid transparent;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .alert-error {
+            background: rgba(227, 30, 36, 0.1);
+            color: #ffa4a8;
+            border-color: rgba(227, 30, 36, 0.2);
+        }
+
+        .alert-warning {
+            background: rgba(255, 184, 28, 0.1);
+            color: #ffe09d;
+            border-color: rgba(255, 184, 28, 0.2);
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.1);
+            color: #93c5fd;
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        /* --- Cost Center Table --- */
+        .cc-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            margin-top: -10px;
+        }
+
+        .cc-table th {
+            text-align: left;
+            padding: 15px 25px;
+            color: var(--ees-silver);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .cc-table tr {
+            background: rgba(255, 255, 255, 0.02);
+            transition: var(--transition);
+        }
+
+        .cc-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: scale(1.005);
+        }
+
+        .cc-table td {
+            padding: 20px 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cc-table td:first-child {
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px 0 0 16px;
+        }
+
+        .cc-table td:last-child {
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 0 16px 16px 0;
+        }
+
+        .cc-name {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .cc-value {
+            font-family: 'Outfit', sans-serif;
+            font-variant-numeric: tabular-nums;
+            font-weight: 500;
+        }
+
+        /* --- Loading Spinner --- */
+        .spinner {
+            width: 22px;
+            height: 22px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s infinite cubic-bezier(0.5, 0, 0.5, 1);
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Skeleton Pulse */
+        .loading-skeleton {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+            color: transparent !important;
+        }
+
+        @keyframes skeleton-loading {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+
+            .large-card,
+            .side-card {
+                grid-column: span 12;
+            }
+
+            .header {
+                flex-direction: column;
+                padding: 30px;
+                gap: 25px;
+            }
+
+            .brand-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .summary-banner {
+                flex-direction: column;
+                gap: 40px;
+                padding: 40px 20px;
+            }
+
+            .summary-value {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="brand-container">
+                <img src="/NE-LOGO_EES-04.png" alt="EES Logo" class="logo-img">
+                <div class="brand-text">
+                    <h1>SISTEMA <span>GESTIÓN</span> FINANCIERA</h1>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="timestamp">ACTUALIZACIÓN: <span id="timestamp">--:--</span></div>
+                <button class="refresh-btn" onclick="refreshDashboard()">
+                    REFRESCAR DATOS
+                </button>
+            </div>
+        </header>
+
+        <!-- BANNER GLOBAL -->
+        <section class="summary-banner">
+            <div class="summary-item">
+                <div class="summary-label">Flujo de Caja Real (ARS)</div>
+                <div class="summary-value" id="net-profit">$0</div>
+                <div style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">Cobrado Real - Pagado Real (+USD)</div>
+            </div>
+            <div style="width: 1px; height: 60px; background: rgba(255,255,255,0.1);"></div>
+            <div class="summary-item">
+                <div class="summary-label">Proyectos Activos</div>
+                <div class="summary-value" id="projects-total">0</div>
+            </div>
+            <div style="width: 1px; height: 60px; background: rgba(255,255,255,0.1);"></div>
+            <div class="summary-item">
+                <div class="summary-label">Beneficio Proyectado</div>
+                <div class="summary-value" id="projected-profit">$0</div>
+                <div style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">Total Facturado - Total Gastos (+USD)
+                </div>
+            </div>
+        </section>
+
+        <div class="grid-container">
+            <!-- INGRESOS -->
+            <div class="card full-card">
+                <div class="card-title">
+                    <span>🏢 Cuentas por Cobrar (Ingresos)</span>
+                    <span class="currency-tag">ARS</span>
+                </div>
+                <div class="metrics-subgrid income">
+                    <div class="metric">
+                        <div class="metric-label">Facturado Total</div>
+                        <div class="metric-value" id="total-revenue">$0</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Total Real Cobrado</div>
+                        <div class="metric-value" id="income-collected">$0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EGRESOS PESOS -->
+            <div class="card large-card">
+                <div class="card-title">
+                    <span>📉 Cuentas por Pagar (Pesos)</span>
+                    <span class="currency-tag">ARS</span>
+                </div>
+                <div class="metrics-subgrid expense">
+                    <div class="metric">
+                        <div class="metric-label">Gasto Total</div>
+                        <div class="metric-value" id="total-expenses">$0</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Total Pagado</div>
+                        <div class="metric-value" id="expenses-paid">$0</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Saldo Pendiente</div>
+                        <div class="metric-value" id="expenses-pending">$0</div>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; font-size: 0.8rem; color: var(--ees-silver);">
+                    Basado en <span id="cxp-count" style="font-weight: 700;">0</span> comprobantes registrados.
+                </div>
+            </div>
+
+            <!-- EGRESOS DOLARES -->
+            <div class="card side-card">
+                <div class="card-title">
+                    <span>🌎 Cuentas por Pagar (Dólares)</span>
+                    <span class="currency-tag">USD</span>
+                </div>
+                <div class="expense" style="display: flex; flex-direction: column; gap: 15px;">
+                    <div class="metric">
+                        <div class="metric-label">Total Gasto USD</div>
+                        <div class="metric-value" id="total-expenses-usd">U$S 0</div>
+                        <div id="total-expenses-usd-converted"
+                            style="font-size: 0.85rem; color: var(--ees-silver); margin-top: 5px;">≈ $0 ARS</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Saldo Pendiente USD</div>
+                        <div class="metric-value" id="expenses-pending-usd">U$S 0</div>
+                        <div id="expenses-pending-usd-converted"
+                            style="font-size: 0.85rem; color: var(--ees-silver); margin-top: 5px;">≈ $0 ARS</div>
+                    </div>
+                    <div
+                        style="padding: 10px; background: #f0f0f0; border-radius: 8px; font-size: 0.75rem; text-align: center;">
+                        Tipo de Cambio aplicado: <strong>$1420</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALERTAS Y ESTADO -->
+            <div class="card side-card">
+                <div class="card-title">🚨 Notificaciones</div>
+                <div id="alerts-container">
+                    <div class="alert-item alert-info">Sincronizando con Notion...</div>
+                </div>
+            </div>
+
+            <div class="card large-card">
+                <div class="card-title">⚡ Estado del Motor</div>
+                <div class="metrics-subgrid">
+                    <div class="metric">
+                        <div class="metric-label">Salud API</div>
+                        <div class="metric-value" id="system-health" style="font-size: 1.5rem;">0%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Latencia</div>
+                        <div class="metric-value" id="api-response-time" style="font-size: 1.5rem;">0s</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Peticiones</div>
+                        <div class="metric-value" id="api-calls" style="font-size: 1.5rem;">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ANEXO COST CENTERS -->
+            <div class="card full-card">
+                <div class="card-title">
+                    <span>🏢 Desglose por Centro de Costo (Proyecto)</span>
+                    <span class="refresh-btn" style="padding: 5px 15px; font-size: 0.7rem;">DETALLE COMPLETO</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="cc-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Proyecto</th>
+                                <th>Ingresos (ARS)</th>
+                                <th>Egresos (ARS)</th>
+                                <th>Egresos (USD)</th>
+                                <th>Saldo Bruto (ARS)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cc-table-body">
+                            <!-- Se carga vía JS -->
+                            <tr>
+                                <td colspan="5" style="text-align: center; color: var(--ees-silver);">Cargando
+                                    desglose...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuración
+        const API_BASE = window.location.origin;
+        let dashboardData = null;
+
+        // Funciones de actualización
+        async function fetchDashboardData() {
+            try {
+                const response = await fetch(`${API_BASE}/api/dashboard`);
+                if (response.ok) {
+                    dashboardData = await response.json();
+                    updateDashboard();
+                } else {
+                    showError('No se pudieron cargar los datos');
+                }
+            } catch (error) {
+                showError('Error de conexión con el servidor');
+            }
+        }
+
+        function updateDashboard() {
+            if (!dashboardData) return;
+
+            // Actualizar timestamp
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ':' +
+                now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('timestamp').textContent = timeStr;
+
+            const metrics = dashboardData.metrics;
+
+            // --- BANNER GLOBAL ---
+            const netProfit = metrics.net_profit || 0;
+            const netEl = document.getElementById('net-profit');
+            netEl.textContent = `$${netProfit.toLocaleString('es-AR')}`;
+            netEl.className = 'summary-value ' + (netProfit >= 0 ? 'net-positive' : 'net-negative');
+
+            const projectedProfit = metrics.projected_profit || 0;
+            const projEl = document.getElementById('projected-profit');
+            projEl.textContent = `$${projectedProfit.toLocaleString('es-AR')}`;
+            projEl.className = 'summary-value ' + (projectedProfit >= 0 ? 'net-positive' : 'net-negative');
+
+            document.getElementById('projects-total').textContent = metrics.projects_total || 0;
+
+            // --- INGRESOS ---
+            updateMetric('total-revenue', `$${(metrics.income_total || 0).toLocaleString('es-AR')}`);
+            updateMetric('income-collected', `$${(metrics.income_collected || 0).toLocaleString('es-AR')}`);
+
+            // --- EGRESOS ARS ---
+            updateMetric('total-expenses', `$${(metrics.expenses_total || 0).toLocaleString('es-AR')}`);
+            updateMetric('expenses-paid', `$${(metrics.expenses_paid || 0).toLocaleString('es-AR')}`);
+            updateMetric('expenses-pending', `$${(metrics.expenses_pending || 0).toLocaleString('es-AR')}`);
+            document.getElementById('cxp-count').textContent = metrics.cxp_count || 0;
+
+            // --- EGRESOS USD ---
+            const usd_rate = 1420;
+            const total_usd = metrics.expenses_total_usd || 0;
+            const pending_usd = metrics.expenses_pending_usd || 0;
+
+            updateMetric('total-expenses-usd', `U$S ${total_usd.toLocaleString('en-US')}`);
+            updateMetric('total-expenses-usd-converted', `≈ $${(total_usd * usd_rate).toLocaleString('es-AR')} ARS`);
+
+            updateMetric('expenses-pending-usd', `U$S ${pending_usd.toLocaleString('en-US')}`);
+            updateMetric('expenses-pending-usd-converted', `≈ $${(pending_usd * usd_rate).toLocaleString('es-AR')} ARS`);
+
+            // --- MOTOR ---
+            updateMetric('system-health', `${metrics.system_health || 100}%`);
+            updateMetric('api-response-time', `${(metrics.api_response_time || 0).toFixed(2)}s`);
+            updateMetric('api-calls', metrics.api_calls || 0);
+
+            // --- DESGLOSE POR CENTRO DE COSTO ---
+            updateCostCenters(metrics.cost_centers);
+
+            // Alertas
+            updateAlerts();
+        }
+
+        function updateCostCenters(costCenters) {
+            const tbody = document.getElementById('cc-table-body');
+            if (!tbody || !costCenters) return;
+
+            const sortedCC = Object.values(costCenters).sort((a, b) => b.income - a.income);
+
+            if (sortedCC.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center;">No hay centros de costo registrados</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = sortedCC.map(cc => {
+                const balanceClass = cc.balance >= 0 ? 'cc-positive' : 'cc-negative';
+                return `
+                    <tr>
+                        <td class="cc-name">${cc.name}</td>
+                        <td class="cc-value">$${cc.income.toLocaleString('es-AR')}</td>
+                        <td class="cc-value">$${cc.expenses.toLocaleString('es-AR')}</td>
+                        <td class="cc-value">U$S ${cc.expenses_usd.toLocaleString('en-US')} ${cc.expenses_usd > 0 ? '<span class="tag tag-usd">USD</span>' : ''}</td>
+                        <td class="cc-value ${balanceClass}">$${cc.balance.toLocaleString('es-AR')}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function updateMetric(id, value) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.textContent = value;
+                el.classList.remove('loading-skeleton');
+                // Agregar animación de fade-in al valor
+                el.style.animation = 'none';
+                el.offsetHeight; // trigger reflow
+                el.style.animation = 'fadeIn 0.5s ease-out';
+            }
+        }
+
+        function updateAlerts() {
+            const container = document.getElementById('alerts-container');
+            if (!container || !dashboardData.alerts) return;
+
+            if (dashboardData.alerts.length === 0) {
+                container.innerHTML = '<div class="alert-item alert-info">Sistema operando con normalidad.</div>';
+                return;
+            }
+
+            container.innerHTML = dashboardData.alerts.map(alert => `
+                <div class="alert-item alert-${alert.level}">
+                    <strong>${alert.level.toUpperCase()}:</strong> ${alert.message}
+                </div>
+            `).join('');
+        }
+
+        function showError(message) {
+            const container = document.getElementById('alerts-container');
+            if (container) {
+                container.innerHTML = `<div class="alert-item alert-error">${message}</div>`;
+            }
+        }
+
+        function refreshDashboard() {
+            const btn = document.querySelector('.refresh-btn');
+            btn.innerHTML = '<div class="spinner"></div>';
+            fetchDashboardData().finally(() => {
+                setTimeout(() => {
+                    btn.innerHTML = 'REFRESCAR DATOS';
+                }, 500);
+            });
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mostrar skeletons iniciales
+            const metrics = ['net-profit', 'projected-profit', 'total-revenue', 'income-collected',
+                'total-expenses', 'expenses-paid', 'expenses-pending', 'total-expenses-usd',
+                'expenses-pending-usd', 'system-health', 'api-response-time', 'api-calls'];
+            metrics.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('loading-skeleton');
+            });
+
+            fetchDashboardData();
+            setInterval(fetchDashboardData, 60000);
+        });
+    </script>
+</body>
+
+</html>

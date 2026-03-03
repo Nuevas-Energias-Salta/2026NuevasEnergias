@@ -1,0 +1,105 @@
+              30 Octubre     25 007192 *  PINTURERIAS MARTEL          C.03/03          49282,01
+ 
+               02 Diciembre   25 007588 *  LIBRERIA LERMA SRL          C.02/06          12333,33
+ 
+               29 Diciembre   25 297400 *  MERPAGO*PASAJESCDP                           55770,00
+ 
+               30 Diciembre   25 458534 *  MERPAGO*PASAJESCDP                           55770,00
+ 
+               30 Diciembre   25 555536 *  MERPAGO*PASAJESCDP                           61347,00
+ 
+               01 Enero       26 160481 *  MERPAGO*ALWAYSRENTACA                       214998,60
+ 
+               02 Enero       26 492966 *  MERPAGO*PASAJESCDP                           30673,50
+ 
+               05 Enero       26 070211 *  MERPAGO*ALWAYSRENTACA                       104293,43
+ 
+               06 Enero       26 678193 *  YPF Sanlo Chico                              77005,00
+ 
+               07 Enero       26 956969 *  MERPAGO*SERVICAFA                             3000,00
+ 
+               07 Enero       26 980347 *  MERPAGO*SERVICAFA                             3000,00
+ 
+               07 Enero       26 004787 *  ACA CAFAYATE COMB                            50000,00
+ 
+               07 Enero       26 039164 *  PETROGAS SRL                                 29998,99
+ 
+               07 Enero       26 335135 *  MERPAGO*SERVICAFA                             5000,00
+ 
+               08 Enero       26 318359 *  MERPAGO*PANADERIACROCANTE                     7500,00
+ 
+               08 Enero       26 349906 *  ESTACION SERV JACARAND                       50000,00
+ 
+               21 Enero       26 381672 *  MERPAGO*YPFCOMBUSTIBLESDE                     4300,00
+ 
+               21 Enero       26 944387 *  MERPAGO*LUISACARRIZOYCIAS                    75007,98
+ 
+               21 Enero       26 299306 *  MERPAGO*ALWAYSRENTACA       C.01/06           8691,15
+ 
+               21 Enero       26 941850 *  MERPAGO*ALWAYSRENTACA       C.01/03          87799,54
+ 
+               21 Enero       26 508111 *  Servi Gas S.R.L Playa                        83011,00
+ 
+               TARJETA 6638 Total Consumos de GABRIEL I RUIZ                          1068781,53 *        0,00 *
+ 
+               07 Agosto      24 009790 *  AEROLINEAS.COM.AR           C.18/18          11598,51
+ 
+               12 Agosto      25 316060 *  MERPAGO*ALWAYSRENTACA       C.06/06          18248,33
+ 
+               12 Agosto      25 653394 *  MERPAGO*ALWAYSRENTACA       C.06/06          18977,79
+ 
+               11 Septiembre  25 962932 *  MERPAGO*ALWAYSRENTACA       C.05/06          14277,25
+ 
+               12 Septiembre  25 840141 *  MERPAGO*ALWAYSRENTACA       C.05/06          14277,25
+ 
+               11 Noviembre   25 001764 *  MASTER CLEAN                C.03/03           1756,66
+ 
+               09 Diciembre   25 002704 *  MASTER CLEAN                C.02/03           4602,21
+ 
+               16 Diciembre   25 002964 *  MASTER CLEAN                C.02/03           3775,75
+ 
+               26 Diciembre   25 411024 *  MERPAGO*GRIDOSLCHICO                          6800,00
+ 
+               26 Diciembre   25 008953 *  VIA LACTEA                                   52700,00
+ 
+               04 Enero       26 646208 *  FACEBK *32FMS7RA62                          289432,99
+ 
+               07 Enero       26 698531 *  OPENAI *CHATGPT  in1SmgimCUSD       20,00                       20,00
+ 
+               15 Enero       26 001268 *  ZURICH SEGUROS0502817640000-   -              2939,39
+ 
+               TARJETA 6646 Total Consumos de MARCIA M AGUERO                          439386,13 *       20,00 *
+ 
+               19 Agosto      25 004977 *  VIUMI  *RENTEC              C.06/06          78333,33
+ 
+               TARJETA 7180 Total Consumos de AGUSTIN ISASMENDI                         78333,33 *        0,00 *
+ 
+               19 Diciembre   25 008817 *  VIUMI  *CORRALN SAN         C.02/06         121690,41
+ 
+               26 Diciembre   25 524847 *  MERPAGO*APPYPFCOMB                           91001,14
+ 
+               01 Enero       26 667409 *  APPYPF 02537 COMBUST                        126004,56
+ 
+               15 Enero       26 641598 *  APPYPF 31287 PLAYA                          122051,56
+ 
+               16 Enero       26 007446 *  PASTELERIA FLOR DEL VALLE                    10400,00
+ 
+               TARJETA 3420 Total Consumos de LUIS CORNEJO COSTAS                      471147,67 *        0,00 *
+ 
+               22 Enero       26           INTERESES FINANCIACION    $                  7395,90
+ 
+               22 Enero       26           PUNIT. PAG.MIN.ANTERIOR   $            635.   967,01
+ 
+               22 Enero       26           COMIS. MANTENIMIENTO                         3587,00
+ 
+               22 Enero       26           DB IVA $ RESP INSC. 21%                  4.   956,34
+ 
+               22 Enero       26           DB IVA $ RESP.INSCR.10,5%                7.   776,57
+ 
+               22 Enero       26           PERCEP.IVA RG2408 3,0% B.   4554,01           136,62
+ 
+               22 Enero       26           PERCEP.IVA RG2408 1,5% B.   7395,90           110,94
+ 
+               22 Enero       26           IIBB PERCEP-SALT 3,60%(  289432,99)         10419,58
+ 
+               22 Enero       26           DB.RG 5617  30% (   318042,99 )             95412,89

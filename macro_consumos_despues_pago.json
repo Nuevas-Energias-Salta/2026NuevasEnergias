@@ -1,0 +1,90 @@
+[
+    {
+        "fecha": "02-12-25",
+        "descripcion": "25 007588 LIBRERIA LerMa SRL C 02/26",
+        "monto": 12333.33,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "a Uss SALDO ANTERIOR 2407.256,71 Z0,e8 26 Enero TRANSFERENCIA DEUD - 20,88 IC1 29900,00 Enero SU Pago EN PES"
+    },
+    {
+        "fecha": "26-01-26",
+        "descripcion": "678193 YPF SAN LO CHICO",
+        "monto": 77005.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": " 25 555536 MerpaGo*PASAJESCDP 61347,00 enerc 26 168281 HerpAGO*ALWAYSRENTACA 214998,60 Ene"
+    },
+    {
+        "fecha": "87-01-26",
+        "descripcion": "26 004787 ACA CAFAYATE CCKB",
+        "monto": 50000.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "73,50 Enero 26 078211 MERPAGO*ALMAYSRENTACA 104293,43 26 Enerc 678193 YPF Sanlo Chico 77005,00 "
+    },
+    {
+        "fecha": "21-01-26",
+        "descripcion": "26 508111 Servi Ga 5 8 L Playa",
+        "monto": 83011.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "USTIBLESDE 4300,00 Enero 26 944387 MerpAGO-LUISACARRIZOYCIAS 75007,98 Enero 26 299386 Merpago ALMA"
+    },
+    {
+        "fecha": "29-12-25",
+        "descripcion": "25 002784 Master CLEAN C.02/83",
+        "monto": 4602.21,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "16977,79 11 Septiembre 25 962932 Merpago*alkaysRentece C,05/26 14277,25 Septiembre 25 848141 MERPAGO*"
+    },
+    {
+        "fecha": "26-12-25",
+        "descripcion": "25 008953 VIA LactEA",
+        "monto": 52700.0,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "01764 Haster CLEAN C.03/83 1756,66 29 Dicienbre 25 002784 Master CLEAN C.02/83 4602,21 dicie"
+    },
+    {
+        "fecha": "82-01-26",
+        "descripcion": "26 646205 Faceek *32fMs7R262",
+        "monto": 289432.99,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "nbre 25 002784 Master CLEAN C.02/83 4602,21 dicienore 00296- Hester CLERN C.02/23 3775,75 Dicienb"
+    },
+    {
+        "fecha": "87-01-26",
+        "descripcion": "26 698531 OPENAI *ChaTGPT inismgimcusd 20 e8",
+        "monto": 20.0,
+        "moneda": "USD",
+        "banco": "MACRO",
+        "original": "enore 00296- Hester CLERN C.02/23 3775,75 Dicienbre 411822 MerpAGO'GRIDOSLCHICO 6800,00 26 Dicienbre 25 00895"
+    },
+    {
+        "fecha": "15-01-26",
+        "descripcion": "26 001268 ZuRIch Segurcse5e2817620000 -",
+        "monto": 2939.39,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "erpAGO'GRIDOSLCHICO 6800,00 26 Dicienbre 25 008953 VIA LactEA 52700,00 82 enero 26 646205 Faceek *32fMs7R2"
+    },
+    {
+        "fecha": "19-12-25",
+        "descripcion": "008817 VIUNI corrALN S4x C 02/26",
+        "monto": 121690.41,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "000 - 2939,39 IARJETA 6646 Total consuros MARCIA AGUERO 439386,13 20,00 19 -goSto 004977 VIUMI \"RENTEC C."
+    },
+    {
+        "fecha": "15-01-26",
+        "descripcion": "26 641598 AppypF 31287 PLaYA",
+        "monto": 122051.56,
+        "moneda": "ARS",
+        "banco": "MACRO",
+        "original": "TIN ISASHENDI 78323,33 0,00 19 Dicienbre 008817 VIUNI corrALN S4x C,02/26 121690,41 26 Dicienbre "
+    }
+]

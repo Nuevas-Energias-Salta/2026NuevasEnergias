@@ -1,0 +1,16 @@
+2026-02-05 17:44:09 | INFO     | ALERTS | ✅ Regla de alerta agregada: Alta Tasa de Errores
+2026-02-05 17:44:09 | INFO     | ALERTS | ✅ Regla de alerta agregada: Monto Pendiente Elevado
+2026-02-05 17:44:09 | INFO     | ALERTS | ✅ Regla de alerta agregada: Múltiples Fallos
+2026-02-05 17:44:09 | INFO     | ALERTS | ✅ Regla de alerta agregada: API Lenta
+2026-02-05 17:44:09 | INFO     | ERP_MAIN | 🚀 Iniciando script: Enhanced ERP System
+2026-02-05 17:44:09 | ERROR    | ERP_MAIN | ❌ Configuración inválida - revisa tus tokens | {"error_type": null, "error_message": null, "traceback": null}
+2026-02-05 17:44:09 | INFO     | ERP_MAIN | 🛑 Iniciando apagado del sistema...
+2026-02-05 17:44:09 | INFO     | MONITORING | 🛑 Sistema de monitoreo detenido
+2026-02-05 17:44:09 | INFO     | ALERTS | 🛑 Monitoreo automatizado detenido
+2026-02-05 17:44:09 | ERROR    | MONITORING | Error guardando dashboard | {"error_type": "KeyError", "error_message": "' font-family'", "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Gonza\\Desktop\\Notion-project\\src\\utils\\monitoring.py\", line 396, in save_dashboard\n    html_content = self.generate_dashboard_html()\n  File \"C:\\Users\\Gonza\\Desktop\\Notion-project\\src\\utils\\monitoring.py\", line 362, in generate_dashboard_html\n    \"\"\".format(\n        ~~~~~~^\n        last_updated=data.get(\"last_updated\", \"N/A\"),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<7 lines>...\n        success_rate_class=\"status\" if data.get(\"summary\", {}).get(\"success_rate\", 0) > 0.9 else \"status warning\" if data.get(\"summary\", {}).get(\"success_rate\", 0) > 0.7 else \"status error\"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\nKeyError: ' font-family'\n"}
+2026-02-05 17:44:09 | ERROR    | ALERTS | Error guardando alertas | {"error_type": "AttributeError", "error_message": "'ERPLogger' object has no attribute 'debug'", "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Gonza\\Desktop\\Notion-project\\src\\utils\\alerts.py\", line 544, in save_alerts\n    self.logger.debug(\"✅ Alertas guardadas en archivo\")\n    ^^^^^^^^^^^^^^^^^\nAttributeError: 'ERPLogger' object has no attribute 'debug'\n"}
+2026-02-05 17:44:09 | INFO     | ERP_MAIN | ✅ 🏁 Finalizado script: Enhanced ERP System | {"duration_seconds": 0.009937, "duration_formatted": "0:00:00", "duration": "0:00:00.009439", "alerts_generated": 0, "cache_hit_rate": 0}
+2026-02-05 19:25:55 | INFO     | ALERTS | ✅ Regla de alerta agregada: Alta Tasa de Errores
+2026-02-05 19:25:55 | INFO     | ALERTS | ✅ Regla de alerta agregada: Monto Pendiente Elevado
+2026-02-05 19:25:55 | INFO     | ALERTS | ✅ Regla de alerta agregada: Múltiples Fallos
+2026-02-05 19:25:55 | INFO     | ALERTS | ✅ Regla de alerta agregada: API Lenta

@@ -1,0 +1,92 @@
+[
+  {
+    "fecha": "21/01/26",
+    "monto": 8691.15,
+    "descripcion": "299306 * MERPAGO*ALWAYSRENTACA C.61/86",
+    "texto_original": "21 Enero 26 299306 * MERPAGO*ALWAYSRENTACA C.61/86 8691,15",
+    "moneda": "ARS",
+    "linea_numero": 35,
+    "categoria": "ALQUILER"
+  },
+  {
+    "fecha": "21/01/26",
+    "monto": 87799.54,
+    "descripcion": "94185@ * MERPAGO*ALWAYSRENTACA c.61/83",
+    "texto_original": "21 Enero 26 94185@ * MERPAGO*ALWAYSRENTACA c.61/83 87799,54",
+    "moneda": "ARS",
+    "linea_numero": 36,
+    "categoria": "ALQUILER"
+  },
+  {
+    "fecha": "07/08/24",
+    "monto": 11598.51,
+    "descripcion": "@ 869790 * AEROLINEAS.COM.AR c.18/18",
+    "texto_original": "@7 Agosto 24 869790 * AEROLINEAS.COM.AR c.18/18 11598,51",
+    "moneda": "ARS",
+    "linea_numero": 39,
+    "categoria": "AEROLINEAS"
+  },
+  {
+    "fecha": "12/08/25",
+    "monto": 18248.33,
+    "descripcion": "316068 * MERPAGO*ALWAYSRENTACA C.66/86",
+    "texto_original": "12 Agosto 25 316068 * MERPAGO*ALWAYSRENTACA C.66/86 18248,33",
+    "moneda": "ARS",
+    "linea_numero": 40,
+    "categoria": "ALQUILER"
+  },
+  {
+    "fecha": "12/08/25",
+    "monto": 18977.79,
+    "descripcion": "653394 * MERPAGO*ALWAYSRENTACA C.06/86",
+    "texto_original": "12 Agosto 25 653394 * MERPAGO*ALWAYSRENTACA C.06/86 18977,79",
+    "moneda": "ARS",
+    "linea_numero": 41,
+    "categoria": "ALQUILER"
+  },
+  {
+    "fecha": "11/09/25",
+    "monto": 14277.25,
+    "descripcion": "962932 * MERPAGO*ALWAYSRENTACA C.05/86",
+    "texto_original": "11 Septiembre 25 962932 * MERPAGO*ALWAYSRENTACA C.05/86 14277,25",
+    "moneda": "ARS",
+    "linea_numero": 42,
+    "categoria": "ALQUILER"
+  },
+  {
+    "fecha": "12/09/25",
+    "monto": 14277.25,
+    "descripcion": "840141 * MERPAGO*ALWAYSRENTACA C.05/86",
+    "texto_original": "12 Septiembre 25 840141 * MERPAGO*ALWAYSRENTACA C.05/86 14277,25",
+    "moneda": "ARS",
+    "linea_numero": 43,
+    "categoria": "ALQUILER"
+  },
+  {
+    "fecha": "11/11/25",
+    "monto": 1756.66,
+    "descripcion": "001764 * MASTER CLEAN C.63/83",
+    "texto_original": "11 Noviembre 25 001764 * MASTER CLEAN C.63/83 1756,66",
+    "moneda": "ARS",
+    "linea_numero": 44,
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "fecha": "09/12/25",
+    "monto": 4602.21,
+    "descripcion": "@ 862704 * MASTER CLEAN C.62/83",
+    "texto_original": "@9 Diciembre 25 862704 * MASTER CLEAN C.62/83 4602,21",
+    "moneda": "ARS",
+    "linea_numero": 45,
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "fecha": "19/08/25",
+    "monto": 78333.33,
+    "descripcion": "004977 * VIUMI *RENTEC C.06/86",
+    "texto_original": "19 Agosto 25 004977 * VIUMI *RENTEC C.06/86 78333,33",
+    "moneda": "ARS",
+    "linea_numero": 53,
+    "categoria": "SERVICIOS"
+  }
+]

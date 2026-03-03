@@ -1,0 +1,559 @@
+{
+    "name": "Trello → Notion (HTTP Request)",
+    "nodes": [
+        {
+            "parameters": {
+                "event": "cardCreated",
+                "id": "612f6ea39c967b8bef5c2186"
+            },
+            "id": "trello-trigger",
+            "name": "Trello Trigger",
+            "type": "n8n-nodes-base.trelloTrigger",
+            "typeVersion": 1,
+            "position": [
+                250,
+                300
+            ],
+            "credentials": {
+                "trelloApi": {
+                    "id": "atTJILtzbcg3SKBa",
+                    "name": "Trello account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "url": "=https://api.trello.com/1/cards/{{ $json.card.id }}?key=f529e10ec3bac9427b5c1abcfa2ec821&token=ATTA4a2d8d0148cae05d395044b7779d80db44ae465d82aecdb32b0067daf008eeea7221D17C&customFieldItems=true",
+                "options": {}
+            },
+            "id": "get-card-details",
+            "name": "Get Card Details",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                450,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "url": "=https://api.trello.com/1/boards/612f6ea39c967b8bef5c2186/customFields?key=f529e10ec3bac9427b5c1abcfa2ec821&token=ATTA4a2d8d0148cae05d395044b7779d80db44ae465d82aecdb32b0067daf008eeea7221D17C",
+                "options": {}
+            },
+            "id": "get-cf-defs",
+            "name": "Get Custom Fields Defs",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Extraer datos de la tarjeta\nconst tarjeta = $('Get Card Details').item.json;\n\n// Obtener todos los custom field definitions\nconst cfDefItems = $items('Get Custom Fields Defs');\nconst customFieldDefs = cfDefItems.map(item => item.json);\n\n// Mapa de custom fields: id -> name\nconst cfMap = {};\nfor (const cf of customFieldDefs) {\n  cfMap[cf.id] = cf.name;\n}\n\nlet email = null;\nlet celular = null;\nlet monto = 0;\n\nfor (const cf of (tarjeta.customFieldItems || [])) {\n  const fieldName = (cfMap[cf.idCustomField] || '').toLowerCase();\n  const val = cf.value || {};\n  \n  if (fieldName.includes('mail') && val.text) {\n    email = val.text;\n  }\n  if (fieldName.includes('celular') && (val.number || val.text)) {\n    celular = val.number || val.text;\n  }\n  if (fieldName.includes('monto') && val.number) {\n    monto = parseFloat(val.number);\n  }\n}\n\n// Extraer labels y determinar Centro de Costo\nconst labels = tarjeta.labels || [];\nlet ccSearchTerm = 'Varios';\n\nconst mapeoCC = {\n  'fv': 'Solar Fotovoltaico',\n  'solar': 'Solar Fotovoltaico',\n  'fotovoltaico': 'Solar Fotovoltaico',\n  'piletas': 'Climatización Piletas',\n  'climat': 'Climatización Piletas',\n  'climatizacion': 'Climatización Piletas',\n  'acs': 'ACS',\n  'agua caliente': 'ACS',\n  'biomasa': 'Biomasa',\n  'calefaccion': 'Calefacción Eléctrica',\n  'calefacción': 'Calefacción Eléctrica',\n  'pre': 'Calefacción Eléctrica',\n  'piso radiante': 'Calefacción Eléctrica',\n  'luminaria': 'Luminaria Solar',\n  'consultoria': 'Varios',\n  'consultoría': 'Varios',\n  'monitoreo': 'Varios',\n  'gestoria': 'Varios',\n  'gestoría': 'Varios',\n  'varios': 'Varios'\n};\n\nfor (const label of labels) {\n  const labelName = (label.name || '').toLowerCase();\n  for (const [key, value] of Object.entries(mapeoCC)) {\n    if (labelName.includes(key)) {\n      ccSearchTerm = value;\n      break;\n    }\n  }\n  if (ccSearchTerm !== 'Varios') break;\n}\n\n// Extraer nombre del cliente - manejar nombres con guiones\nlet cardName = tarjeta.name || '';\n// Quitar guiones iniciales y espacios\ncardName = cardName.replace(/^[-\\s]+/, '');\n// Dividir por ' - ' para obtener cliente\nconst parts = cardName.split(' - ');\nlet nombreCliente = parts[0]?.trim() || cardName;\n\n// Si quedó vacío, usar el nombre completo\nif (!nombreCliente) {\n  nombreCliente = tarjeta.name || 'Sin Cliente';\n}\n\nreturn {\n  nombreTarjeta: tarjeta.name,\n  nombreCliente: nombreCliente,\n  email: email,\n  celular: celular,\n  monto: monto,\n  ccSearchTerm: ccSearchTerm\n};"
+            },
+            "id": "extract-data",
+            "name": "Extract Data",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                850,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "https://api.notion.com/v1/databases/2e0c81c3-5804-8159-b677-fd8b76761e2f/query",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "bodyParameters": {
+                    "parameters": []
+                },
+                "specifyBody": "json",
+                "jsonBody": "={\"filter\":{\"property\":\"Nombre\",\"title\":{\"equals\":\"{{ $json.nombreTarjeta }}\"}}}"
+            },
+            "id": "check-project-exists",
+            "name": "Check Project Exists",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                1050,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "id": "no-results",
+                            "leftValue": "={{ $json.results.length }}",
+                            "rightValue": 0,
+                            "operator": {
+                                "type": "number",
+                                "operation": "equals"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            },
+            "id": "if-not-exists",
+            "name": "If NOT Exists",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                1250,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "https://api.notion.com/v1/databases/2e0c81c3-5804-81e7-80a0-dc51608efdd4/query",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={\"filter\":{\"property\":\"Nombre\",\"title\":{\"contains\":\"{{ $('Extract Data').item.json.ccSearchTerm }}\"}}}"
+            },
+            "id": "find-cc",
+            "name": "Find Centro de Costo",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                1450,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "https://api.notion.com/v1/databases/2e0c81c3-5804-8199-8d24-ded823eae751/query",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={\"filter\":{\"property\":\"Nombre\",\"title\":{\"equals\":\"{{ $('Extract Data').item.json.nombreCliente }}\"}}}"
+            },
+            "id": "find-client",
+            "name": "Find Client",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                1650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Recopilar todos los datos\nconst extractData = $('Extract Data').item.json;\nconst ccResults = $('Find Centro de Costo').item.json.results || [];\nconst clientResults = $input.item.json.results || [];\n\nlet ccId = null;\nif (ccResults.length > 0) {\n  ccId = ccResults[0].id;\n}\n\nlet clientId = null;\nlet clientExists = false;\nif (clientResults.length > 0) {\n  clientId = clientResults[0].id;\n  clientExists = true;\n}\n\nreturn {\n  ...extractData,\n  ccId: ccId,\n  clientId: clientId,\n  clientExists: clientExists\n};"
+            },
+            "id": "merge-all",
+            "name": "Merge All Data",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1850,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "id": "client-exists",
+                            "leftValue": "={{ $json.clientExists }}",
+                            "rightValue": true,
+                            "operator": {
+                                "type": "boolean",
+                                "operation": "equals"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            },
+            "id": "client-exists-if",
+            "name": "Client Exists?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                2050,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "https://api.notion.com/v1/pages",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={\"parent\":{\"database_id\":\"2e0c81c3-5804-8199-8d24-ded823eae751\"},\"properties\":{\"Nombre\":{\"title\":[{\"text\":{\"content\":\"{{ $json.nombreCliente }}\"}}]}}}"
+            },
+            "id": "create-client",
+            "name": "Create Client (HTTP)",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                2250,
+                400
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Ya existe cliente, pasar datos\nconst data = $input.item.json;\nreturn data;"
+            },
+            "id": "pass-existing",
+            "name": "Pass Existing Client",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                2250,
+                200
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Actualizar clientId con el nuevo cliente creado\nconst prevData = $('Merge All Data').item.json;\nconst newClient = $input.item.json;\n\nreturn {\n  ...prevData,\n  clientId: newClient.id\n};"
+            },
+            "id": "update-client-id",
+            "name": "Update Client ID",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                2450,
+                400
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "https://api.notion.com/v1/pages",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={\n  \"parent\": {\"database_id\": \"2e0c81c3-5804-8159-b677-fd8b76761e2f\"},\n  \"properties\": {\n    \"Nombre\": {\"title\": [{\"text\": {\"content\": \"{{ $json.nombreTarjeta }}\"}}]},\n    \"Estado\": {\"select\": {\"name\": \"Aprobado\"}},\n    \"Monto Contrato\": {\"number\": {{ $json.monto || 0 }}},\n    \"Cliente\": {\"relation\": [{{ $json.clientId ? '{\"id\": \"' + $json.clientId + '\"}' : '' }}]},\n    \"Centro de Costo\": {\"relation\": [{{ $json.ccId ? '{\"id\": \"' + $json.ccId + '\"}' : '' }}]}\n  }\n}"
+            },
+            "id": "create-project",
+            "name": "Create Project (HTTP)",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                2650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Preparar datos para CxC\nconst projectResult = $input.item.json;\nlet prevData = {};\n\ntry {\n  prevData = $('Pass Existing Client').item?.json || $('Update Client ID').item?.json || {};\n} catch(e) {\n  try {\n    prevData = $('Update Client ID').item?.json || {};\n  } catch(e2) {\n    prevData = $('Merge All Data').item?.json || {};\n  }\n}\n\nreturn {\n  projectId: projectResult.id,\n  nombreTarjeta: prevData.nombreTarjeta || projectResult.properties?.Nombre?.title?.[0]?.text?.content || 'Sin nombre',\n  monto: prevData.monto || 0,\n  ccId: prevData.ccId || null\n};"
+            },
+            "id": "prep-cxc",
+            "name": "Prep CxC Data",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                2850,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "https://api.notion.com/v1/pages",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={\n  \"parent\": {\"database_id\": \"2e0c81c3-5804-815a-8755-f4f254257f6a\"},\n  \"properties\": {\n    \"Concepto\": {\"title\": [{\"text\": {\"content\": \"{{ $json.nombreTarjeta }}\"}}]},\n    \"Proyecto\": {\"relation\": [{\"id\": \"{{ $json.projectId }}\"}]},\n    \"Monto\": {\"number\": {{ $json.monto || 0 }}},\n    \"Estado\": {\"select\": {\"name\": \"Pendiente\"}},\n    \"Centro de Costo\": {\"relation\": [{{ $json.ccId ? '{\"id\": \"' + $json.ccId + '\"}' : '' }}]}\n  }\n}"
+            },
+            "id": "create-cxc",
+            "name": "Create CxC (HTTP)",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                3050,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Trello Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Get Card Details",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get Card Details": {
+            "main": [
+                [
+                    {
+                        "node": "Get Custom Fields Defs",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get Custom Fields Defs": {
+            "main": [
+                [
+                    {
+                        "node": "Extract Data",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Extract Data": {
+            "main": [
+                [
+                    {
+                        "node": "Check Project Exists",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Check Project Exists": {
+            "main": [
+                [
+                    {
+                        "node": "If NOT Exists",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "If NOT Exists": {
+            "main": [
+                [
+                    {
+                        "node": "Find Centro de Costo",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                []
+            ]
+        },
+        "Find Centro de Costo": {
+            "main": [
+                [
+                    {
+                        "node": "Find Client",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Find Client": {
+            "main": [
+                [
+                    {
+                        "node": "Merge All Data",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Merge All Data": {
+            "main": [
+                [
+                    {
+                        "node": "Client Exists?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Client Exists?": {
+            "main": [
+                [
+                    {
+                        "node": "Pass Existing Client",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "Create Client (HTTP)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Create Client (HTTP)": {
+            "main": [
+                [
+                    {
+                        "node": "Update Client ID",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Pass Existing Client": {
+            "main": [
+                [
+                    {
+                        "node": "Create Project (HTTP)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Update Client ID": {
+            "main": [
+                [
+                    {
+                        "node": "Create Project (HTTP)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Create Project (HTTP)": {
+            "main": [
+                [
+                    {
+                        "node": "Prep CxC Data",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Prep CxC Data": {
+            "main": [
+                [
+                    {
+                        "node": "Create CxC (HTTP)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "pinData": {},
+    "settings": {
+        "executionOrder": "v1"
+    },
+    "staticData": null,
+    "tags": [],
+    "triggerCount": 0,
+    "updatedAt": "2026-01-14T14:12:00.000Z",
+    "versionId": "6"
+}

@@ -1,0 +1,103 @@
+{
+    "banco": "MACRO",
+    "fecha_procesamiento": "2026-02-10 16:12:19",
+    "total_consumos": 0,
+    "total_otros_cargos": 11,
+    "consumos": [],
+    "otros_cargos": [
+        {
+            "fecha": null,
+            "descripcion": "Comisión Mantenimiento",
+            "monto": 2587.0,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        },
+        {
+            "fecha": null,
+            "descripcion": "IVA Débito",
+            "monto": 18.53,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        },
+        {
+            "fecha": null,
+            "descripcion": "IIBB Percepción",
+            "monto": 3.68,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        },
+        {
+            "fecha": null,
+            "descripcion": "IVA",
+            "monto": 18.53,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        },
+        {
+            "fecha": null,
+            "descripcion": "IVA",
+            "monto": 3.88,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        },
+        {
+            "fecha": null,
+            "descripcion": "IVA",
+            "monto": 1.58,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        },
+        {
+            "fecha": null,
+            "descripcion": "IVA",
+            "monto": 51000.0,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        },
+        {
+            "fecha": null,
+            "descripcion": "IVA",
+            "monto": 51000.0,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        },
+        {
+            "fecha": null,
+            "descripcion": "IVA",
+            "monto": 12828.0,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        },
+        {
+            "fecha": null,
+            "descripcion": "IVA",
+            "monto": 14639.0,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        },
+        {
+            "fecha": null,
+            "descripcion": "IVA",
+            "monto": 7379.0,
+            "moneda": "ARS",
+            "tipo": "otro_cargo",
+            "banco": "MACRO"
+        }
+    ],
+    "estadisticas": {
+        "consumos_ars": 0,
+        "consumos_usd": 0,
+        "monto_total_ars": 0,
+        "monto_total_usd": 0
+    }
+}
