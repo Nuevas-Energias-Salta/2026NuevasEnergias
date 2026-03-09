@@ -1,0 +1,627 @@
+{
+    "name": "Asignacion de Pagos - Polling 30s",
+    "nodes": [
+        {
+            "parameters": {
+                "jsCode": "const data = $input.item.json;\n\n// Obtener datos directamente (el trigger ya los formatea)\nconst cxpRelation = data['Cuenta Por Pagar'] || [];\nconst monto = data['Monto'] || 0;\n\n// Solo procesar si tiene CxP vinculadas y monto > 0\nif (cxpRelation.length > 0 && monto > 0) {\n  return [{\n    pagoId: data.id,\n    monto: monto,\n    cxpIds: cxpRelation,\n    fechaPago: data['Fecha Pago'] || new Date().toISOString().split('T')[0],\n    concepto: data['Concepto'] || 'Pago'\n  }];\n}\n\nreturn [];"
+            },
+            "id": "ebb58cbe-5b61-4653-afbb-58b768a1d582",
+            "name": "Extract Pagos con CxP",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                -1600,
+                208
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "=https://api.notion.com/v1/databases/2eec81c3-5804-8198-837b-c13a979dd872/query",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={\"filter\":{\"property\":\"Pago\",\"relation\":{\"contains\":\"{{ $json.pagoId }}\"}}}",
+                "options": {}
+            },
+            "id": "05dc732e-55c7-4f1a-92dc-9702e0ff9203",
+            "name": "Check Existing Asignaciones",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                -1408,
+                208
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict",
+                        "version": 1
+                    },
+                    "conditions": [
+                        {
+                            "id": "no-existing",
+                            "leftValue": "={{ $json.results.length }}",
+                            "rightValue": 0,
+                            "operator": {
+                                "type": "number",
+                                "operation": "gte"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                },
+                "options": {}
+            },
+            "id": "78eec6cd-e643-40df-a19e-f86045870903",
+            "name": "Needs Processing?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                -1200,
+                208
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Preparar datos para obtener info de cada CxP\nlet prevData;\ntry {\n  prevData = $('Extract Pagos con CxP').first().json;\n} catch (e) {\n  prevData = $('Format Pago Data').first().json;\n}\n\nconst items = [];\n\nfor (const cxpId of prevData.cxpIds) {\n  items.push({\n    cxpId: cxpId,\n    pagoId: prevData.pagoId,\n    montoTotalPago: prevData.monto,\n    fechaPago: prevData.fechaPago,\n    conceptoPago: prevData.concepto\n  });\n}\n\nreturn items;"
+            },
+            "id": "741ea699-ab47-4613-9b28-de57c26c7364",
+            "name": "Prep CxP Fetch",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                -1008,
+                112
+            ]
+        },
+        {
+            "parameters": {
+                "url": "=https://api.notion.com/v1/pages/{{ $json.cxpId }}",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "id": "03e8527c-bea4-4057-9bc9-e897c1721d58",
+            "name": "Get CxP Details",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                -800,
+                112
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Recopilar todas las CxP y calcular asignaciones FIFO\nconst allCxP = $input.all();\n\n// Obtener datos del pago\nconst pagoId = $('Prep CxP Fetch').first().json.pagoId;\nconst montoTotalPago = $('Prep CxP Fetch').first().json.montoTotalPago;\nconst fechaPago = $('Prep CxP Fetch').first().json.fechaPago;\n\n// Obtener asignaciones existentes para este pago\nconst existingAsignaciones = $('Check Existing Asignaciones').first().json.results || [];\nconst cxpYaAsignadas = existingAsignaciones.map(a => \n  a.properties?.CxP?.relation?.[0]?.id\n).filter(id => id);\n\n// Calcular monto ya asignado\nconst montoYaAsignado = existingAsignaciones.reduce((sum, a) => \n  sum + (a.properties?.['Monto Asignado']?.number || 0), 0\n);\n\nlet montoRestante = montoTotalPago - montoYaAsignado;\nconst asignaciones = [];\n\n// Ordenar por fecha (FIFO)\nconst cxpOrdenadas = allCxP.map(item => {\n  const props = item.json.properties || {};\n  return {\n    id: item.json.id,\n    concepto: props['Factura n°']?.title?.[0]?.plain_text || 'Sin factura',\n    montoBase: props['Monto base']?.number || props['Monto']?.number || 0,\n    montoPagado: props['Monto Asignado Total']?.rollup?.number || props['Monto Pagado ']?.rollup?.number || 0,\n    fechaFactura: props['Fecha Factura']?.date?.start || '2000-01-01'\n  };\n}).sort((a, b) => a.fechaFactura.localeCompare(b.fechaFactura));\n\n// Distribuir el pago (FIFO) - solo para CxP que NO tienen asignación\nfor (const cxp of cxpOrdenadas) {\n  if (cxpYaAsignadas.includes(cxp.id)) continue;\n  \n  if (montoRestante <= 0) break;\n  \n  const saldoPendiente = cxp.montoBase - cxp.montoPagado;\n  if (saldoPendiente <= 0) continue;\n  \n  const montoAsignar = Math.min(montoRestante, saldoPendiente);\n  \n  asignaciones.push({\n    cxpId: cxp.id,\n    cxpConcepto: cxp.concepto,\n    montoAsignado: montoAsignar,\n    pagoId: pagoId,\n    fechaPago: fechaPago,\n    quedaPagada: (cxp.montoPagado + montoAsignar) >= cxp.montoBase,\n    saldoAFavor: 0,\n    montoTotalPago: montoTotalPago\n  });\n  \n  montoRestante -= montoAsignar;\n}\n\n// Si hay asignaciones, agregar el saldo a favor al último item\nif (asignaciones.length > 0) {\n  asignaciones[asignaciones.length - 1].saldoAFavor = montoRestante;\n} else {\n  // Si no hay asignaciones pero hay monto, todo es saldo a favor\n  return [{\n    pagoId: pagoId,\n    cxpId: null,\n    cxpConcepto: 'Sin asignación',\n    montoAsignado: 0,\n    fechaPago: fechaPago,\n    quedaPagada: false,\n    saldoAFavor: montoRestante,\n    montoTotalPago: montoTotalPago,\n    soloSaldoAFavor: true\n  }];\n}\n\nreturn asignaciones;"
+            },
+            "id": "1815d609-2f52-458a-8532-6c4872b0b930",
+            "name": "Calculate Asignaciones (FIFO)",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                -608,
+                112
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "id": "tiene-cxp",
+                            "leftValue": "={{ $json.soloSaldoAFavor }}",
+                            "rightValue": true,
+                            "operator": {
+                                "type": "boolean",
+                                "operation": "notEquals"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                },
+                "options": {}
+            },
+            "id": "tiene-cxp-if",
+            "name": "Tiene CxP?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                -500,
+                112
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "https://api.notion.com/v1/pages",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={\n  \"parent\": {\"database_id\": \"2eec81c3-5804-8198-837b-c13a979dd872\"},\n  \"properties\": {\n    \"Concepto\": {\"title\": [{\"text\": {\"content\": \"Pago -> {{ $json.cxpConcepto }}\"}}]},\n    \"Monto Asignado\": {\"number\": {{ $json.montoAsignado }}},\n    \"CxP\": {\"relation\": [{\"id\": \"{{ $json.cxpId }}\"}]},\n    \"Pago\": {\"relation\": [{\"id\": \"{{ $json.pagoId }}\"}]},\n    \"Fecha\": {\"date\": {\"start\": \"{{ $json.fechaPago }}\"}}\n  }\n}",
+                "options": {}
+            },
+            "id": "220d68e9-f618-44d4-b5f7-539dbb292137",
+            "name": "Create Asignacion",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                -400,
+                112
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "id": "is-pagada",
+                            "leftValue": "={{ $('Calculate Asignaciones (FIFO)').item.json.quedaPagada }}",
+                            "rightValue": true,
+                            "operator": {
+                                "type": "boolean",
+                                "operation": "equals"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                },
+                "options": {}
+            },
+            "id": "79be6db6-e69c-44a5-a2ae-2bfe55d30958",
+            "name": "CxP Queda Pagada?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                -208,
+                112
+            ]
+        },
+        {
+            "parameters": {
+                "method": "PATCH",
+                "url": "=https://api.notion.com/v1/pages/{{ $('Calculate Asignaciones (FIFO)').item.json.cxpId }}",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={\n  \"properties\": {\n    \"Estado\": {\"select\": {\"name\": \"Pagado\"}}\n  }\n}",
+                "options": {}
+            },
+            "id": "5ebb196c-6698-42f1-8ece-b1eb75cf0353",
+            "name": "Update CxP to Pagado",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                0,
+                0
+            ]
+        },
+        {
+            "parameters": {
+                "pollTimes": {
+                    "item": [
+                        {
+                            "mode": "everyMinute"
+                        }
+                    ]
+                },
+                "event": "pagedUpdatedInDatabase",
+                "databaseId": {
+                    "__rl": true,
+                    "value": "2e0c81c3-5804-81b1-bff1-f1ced39bf4ac",
+                    "mode": "list",
+                    "cachedResultName": "Registro de Pagos",
+                    "cachedResultUrl": "https://www.notion.so/2e0c81c3580481b1bff1f1ced39bf4ac"
+                }
+            },
+            "type": "n8n-nodes-base.notionTrigger",
+            "typeVersion": 1,
+            "position": [
+                -1792,
+                208
+            ],
+            "id": "3c626029-4f91-488e-be09-e2f8c4fdc4a0",
+            "name": "Notion Trigger - Pagos",
+            "credentials": {
+                "notionApi": {
+                    "id": "8KUBwiJZsnsnp2a5",
+                    "name": "Notion API - ERP"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "pollTimes": {
+                    "item": [
+                        {
+                            "mode": "everyMinute"
+                        }
+                    ]
+                },
+                "event": "pagedUpdatedInDatabase",
+                "databaseId": {
+                    "__rl": true,
+                    "value": "2e0c81c3-5804-8123-b1ae-d9b3579e0410",
+                    "mode": "list",
+                    "cachedResultName": "Cuentas por Pagar",
+                    "cachedResultUrl": "https://www.notion.so/2e0c81c358048123b1aed9b3579e0410"
+                }
+            },
+            "type": "n8n-nodes-base.notionTrigger",
+            "typeVersion": 1,
+            "position": [
+                -1888,
+                -32
+            ],
+            "id": "484e261d-991c-4e30-b6d8-1e7fbced8eb4",
+            "name": "Notion Trigger - CxP",
+            "credentials": {
+                "notionApi": {
+                    "id": "8KUBwiJZsnsnp2a5",
+                    "name": "Notion API - ERP"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "jsCode": "const data = $input.item.json;\n\n// Obtener el pago vinculado a esta CxP (viene de la relación \"Pagos\")\nconst pagosRelation = data['Pagos'] || [];\n\n// Si no tiene pagos vinculados, no procesar\nif (pagosRelation.length === 0) {\n  return [];\n}\n\n// Devolver info para procesar cada pago vinculado\nreturn pagosRelation.map(pagoId => ({\n  pagoId: pagoId,\n  cxpId: data.id,\n  cxpConcepto: data['Concepto'] || 'Sin concepto'\n}));"
+            },
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                -1680,
+                -32
+            ],
+            "id": "592e62ba-eb33-4965-a8a2-b341eba0fdb0",
+            "name": "Code in JavaScript"
+        },
+        {
+            "parameters": {
+                "url": "=https://api.notion.com/v1/pages/{{ $json.pagoId }}",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.3,
+            "position": [
+                -1472,
+                -32
+            ],
+            "id": "9968dfab-0b21-4bde-b7db-2fa310acaf3e",
+            "name": "HTTP Request"
+        },
+        {
+            "parameters": {
+                "jsCode": "const pagoData = $input.item.json;\nconst prevItem = $('Code in JavaScript').first().json;\n\nconst props = pagoData.properties || {};\nconst cxpRelation = props['Cuenta Por Pagar']?.relation || [];\nconst monto = props['Monto']?.number || 0;\n\nif (monto > 0) {\n  return [{\n    pagoId: pagoData.id,\n    monto: monto,\n    cxpIds: cxpRelation.map(r => r.id),\n    fechaPago: props['Fecha Pago']?.date?.start || new Date().toISOString().split('T')[0],\n    concepto: props['Concepto']?.title?.[0]?.plain_text || 'Pago'\n  }];\n}\n\nreturn [];"
+            },
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                -1264,
+                0
+            ],
+            "id": "dfb59f77-633b-4fbc-ae8e-a1dd26f14ca0",
+            "name": "Format Pago Data"
+        },
+        {
+            "parameters": {
+                "jsCode": "// Agregar todos los items para encontrar el saldo a favor final\nconst allItems = $input.all();\n\n// Buscar el item que tiene el saldo a favor (es el último con asignación o el único si es soloSaldoAFavor)\nlet saldoAFavor = 0;\nlet pagoId = null;\nlet montoTotalPago = 0;\n\nfor (const item of allItems) {\n  if (item.json.saldoAFavor > 0) {\n    saldoAFavor = item.json.saldoAFavor;\n  }\n  pagoId = item.json.pagoId;\n  montoTotalPago = item.json.montoTotalPago || 0;\n}\n\n// Retornar un solo item con el saldo a favor\nreturn [{\n  pagoId: pagoId,\n  saldoAFavor: saldoAFavor,\n  montoTotalPago: montoTotalPago\n}];"
+            },
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                208,
+                112
+            ],
+            "id": "calc-saldo-favor-final",
+            "name": "Calculate Saldo Final"
+        },
+        {
+            "parameters": {
+                "method": "PATCH",
+                "url": "=https://api.notion.com/v1/pages/{{ $json.pagoId }}",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_NOTION_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Notion-Version",
+                            "value": "2022-06-28"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={\n  \"properties\": {\n    \"Saldo a favor\": {\"number\": {{ $json.saldoAFavor }}}\n  }\n}",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                416,
+                112
+            ],
+            "id": "update-saldo-favor",
+            "name": "Update Saldo a Favor"
+        }
+    ],
+    "connections": {
+        "Extract Pagos con CxP": {
+            "main": [
+                [
+                    {
+                        "node": "Check Existing Asignaciones",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Check Existing Asignaciones": {
+            "main": [
+                [
+                    {
+                        "node": "Needs Processing?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Needs Processing?": {
+            "main": [
+                [
+                    {
+                        "node": "Prep CxP Fetch",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Prep CxP Fetch": {
+            "main": [
+                [
+                    {
+                        "node": "Get CxP Details",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get CxP Details": {
+            "main": [
+                [
+                    {
+                        "node": "Calculate Asignaciones (FIFO)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Calculate Asignaciones (FIFO)": {
+            "main": [
+                [
+                    {
+                        "node": "Tiene CxP?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Tiene CxP?": {
+            "main": [
+                [
+                    {
+                        "node": "Create Asignacion",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "Calculate Saldo Final",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Create Asignacion": {
+            "main": [
+                [
+                    {
+                        "node": "CxP Queda Pagada?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Notion Trigger - Pagos": {
+            "main": [
+                [
+                    {
+                        "node": "Extract Pagos con CxP",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Notion Trigger - CxP": {
+            "main": [
+                [
+                    {
+                        "node": "Code in JavaScript",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Code in JavaScript": {
+            "main": [
+                [
+                    {
+                        "node": "HTTP Request",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "HTTP Request": {
+            "main": [
+                [
+                    {
+                        "node": "Format Pago Data",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Format Pago Data": {
+            "main": [
+                [
+                    {
+                        "node": "Check Existing Asignaciones",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "CxP Queda Pagada?": {
+            "main": [
+                [
+                    {
+                        "node": "Update CxP to Pagado",
+                        "type": "main",
+                        "index": 0
+                    },
+                    {
+                        "node": "Calculate Saldo Final",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "Calculate Saldo Final",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Calculate Saldo Final": {
+            "main": [
+                [
+                    {
+                        "node": "Update Saldo a Favor",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "pinData": {},
+    "meta": {
+        "templateCredsSetupCompleted": true,
+        "instanceId": "05b3663bd9ccdd0d43d5a07d5cb09aa0aed3473d1b7931236e41d554867a88b6"
+    }
+}

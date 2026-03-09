@@ -1,0 +1,212 @@
+{
+    "name": "Sync Trello v2",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "GET",
+                "path": "sync-trello-v2",
+                "responseMode": "lastNode",
+                "options": {}
+            },
+            "id": "webhook",
+            "name": "Webhook",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1.1,
+            "position": [
+                250,
+                300
+            ],
+            "webhookId": "sync-trello-v2"
+        },
+        {
+            "parameters": {
+                "url": "https://api.trello.com/1/boards/612f6ea39c967b8bef5c2186/cards?key=f529e10ec3bac9427b5c1abcfa2ec821&token=ATTA4a2d8d0148cae05d395044b7779d80db44ae465d82aecdb32b0067daf008eeea7221D17C&fields=name,dateLastActivity",
+                "options": {}
+            },
+            "id": "get-cards",
+            "name": "Get Cards",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                450,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "operation": "getAll",
+                "databaseId": "2e0c81c3-5804-8159-b677-fd8b76761e2f",
+                "returnAll": true,
+                "options": {}
+            },
+            "id": "get-projects",
+            "name": "Get Projects",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "const tarjetas = $('Get Cards').all();\nconst proyectos = $('Get Projects').all();\n\nconst existentes = new Set();\nfor (const p of proyectos) {\n  try {\n    const nombre = p.json.properties?.Nombre?.title?.[0]?.text?.content;\n    if (nombre) existentes.add(nombre);\n  } catch {}\n}\n\nconst nuevas = [];\nfor (const t of tarjetas) {\n  if (!existentes.has(t.json.name)) {\n    nuevas.push({ json: { name: t.json.name } });\n  }\n}\n\nif (nuevas.length === 0) {\n  return [{ json: { message: 'No hay tarjetas nuevas para sincronizar', count: 0, success: true } }];\n}\n\nreturn nuevas;"
+            },
+            "id": "filter",
+            "name": "Filter New",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                850,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "id": "check",
+                            "leftValue": "={{ $json.name }}",
+                            "rightValue": "",
+                            "operator": {
+                                "type": "string",
+                                "operation": "exists"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            },
+            "id": "if-name",
+            "name": "Has Name?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                1050,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "operation": "create",
+                "databaseId": "2e0c81c3-5804-8159-b677-fd8b76761e2f",
+                "title": "={{ $json.name }}",
+                "propertiesUi": {
+                    "propertyValues": [
+                        {
+                            "key": "Estado",
+                            "selectValue": "Cotización"
+                        }
+                    ]
+                }
+            },
+            "id": "create",
+            "name": "Create Project",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                1250,
+                200
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "const count = $input.all().length;\nreturn [{ json: { success: true, message: `${count} proyectos creados`, count: count } }];"
+            },
+            "id": "result",
+            "name": "Result",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1450,
+                200
+            ]
+        }
+    ],
+    "connections": {
+        "Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "Get Cards",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get Cards": {
+            "main": [
+                [
+                    {
+                        "node": "Get Projects",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get Projects": {
+            "main": [
+                [
+                    {
+                        "node": "Filter New",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Filter New": {
+            "main": [
+                [
+                    {
+                        "node": "Has Name?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Has Name?": {
+            "main": [
+                [
+                    {
+                        "node": "Create Project",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                []
+            ]
+        },
+        "Create Project": {
+            "main": [
+                [
+                    {
+                        "node": "Result",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "pinData": {},
+    "settings": {
+        "executionOrder": "v1"
+    },
+    "staticData": null,
+    "tags": [],
+    "triggerCount": 0,
+    "updatedAt": "2026-01-12T17:20:00.000Z",
+    "versionId": "2"
+}

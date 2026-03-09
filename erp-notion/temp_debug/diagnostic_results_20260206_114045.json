@@ -1,0 +1,141 @@
+{
+  "timestamp": "2026-02-06T11:40:39.319567",
+  "tests": [
+    {
+      "test": "Token Notion",
+      "status": "PASS",
+      "details": "Token parece válido",
+      "timestamp": "2026-02-06T11:40:39.319609"
+    },
+    {
+      "test": "URL Notion",
+      "status": "PASS",
+      "details": "URL configurada: https://api.notion.com/v1",
+      "timestamp": "2026-02-06T11:40:39.319617"
+    },
+    {
+      "test": "Config NOTION_PROJECTS_DB",
+      "status": "PASS",
+      "details": "ID configurado: 2e0c81c3...",
+      "timestamp": "2026-02-06T11:40:39.319625"
+    },
+    {
+      "test": "Config NOTION_CXC_DB",
+      "status": "PASS",
+      "details": "ID configurado: 2e0c81c3...",
+      "timestamp": "2026-02-06T11:40:39.319629"
+    },
+    {
+      "test": "Config NOTION_CXP_DB",
+      "status": "PASS",
+      "details": "ID configurado: 2e0c81c3...",
+      "timestamp": "2026-02-06T11:40:39.319632"
+    },
+    {
+      "test": "Conexión Notion API",
+      "status": "PASS",
+      "details": "Conectado como: Unknown",
+      "timestamp": "2026-02-06T11:40:41.452765",
+      "data": {
+        "user": "Unknown",
+        "status_code": 200
+      }
+    },
+    {
+      "test": "BD Proyectos/Centros",
+      "status": "PASS",
+      "details": "Acceso correcto, 1 registros encontrados",
+      "timestamp": "2026-02-06T11:40:42.484624",
+      "data": {
+        "db_id": "2e0c81c3-5804-81e7-80a0-dc51608efdd4",
+        "record_count": 1
+      }
+    },
+    {
+      "test": "BD Cuentas por Cobrar",
+      "status": "PASS",
+      "details": "Acceso correcto, 1 registros encontrados",
+      "timestamp": "2026-02-06T11:40:43.120563",
+      "data": {
+        "db_id": "2e0c81c3-5804-8199-8d24-ded823eae751",
+        "record_count": 1
+      }
+    },
+    {
+      "test": "BD Cuentas por Pagar",
+      "status": "PASS",
+      "details": "Acceso correcto, 1 registros encontrados",
+      "timestamp": "2026-02-06T11:40:43.599993",
+      "data": {
+        "db_id": "2e0c81c3-5804-81e0-94b3-e507ea920f15",
+        "record_count": 1
+      }
+    },
+    {
+      "test": "Campos CxC",
+      "status": "WARN",
+      "details": "Campos faltantes: Monto, Estado, Cliente",
+      "timestamp": "2026-02-06T11:40:44.867325",
+      "data": {
+        "found": [],
+        "missing": [
+          "Monto",
+          "Estado",
+          "Cliente"
+        ]
+      }
+    },
+    {
+      "test": "Campos CxP",
+      "status": "WARN",
+      "details": "Campos faltantes: Monto, Estado, Proveedor",
+      "timestamp": "2026-02-06T11:40:45.305554",
+      "data": {
+        "found": [],
+        "missing": [
+          "Monto",
+          "Estado",
+          "Proveedor"
+        ]
+      }
+    },
+    {
+      "test": "Archivo simple_dashboard_server.py",
+      "status": "PASS",
+      "details": "Servidor encontrado",
+      "timestamp": "2026-02-06T11:40:45.307518"
+    },
+    {
+      "test": "Archivo notion_dashboard_real.py",
+      "status": "PASS",
+      "details": "Servidor encontrado",
+      "timestamp": "2026-02-06T11:40:45.307683"
+    },
+    {
+      "test": "Archivo simple_notion_server.py",
+      "status": "PASS",
+      "details": "Servidor encontrado",
+      "timestamp": "2026-02-06T11:40:45.307778"
+    },
+    {
+      "test": "Dashboard data/dashboards/dashboard.html",
+      "status": "PASS",
+      "details": "Archivo HTML encontrado",
+      "timestamp": "2026-02-06T11:40:45.307896"
+    },
+    {
+      "test": "Dashboard data/dashboards/dashboard_standalone.html",
+      "status": "PASS",
+      "details": "Archivo HTML encontrado",
+      "timestamp": "2026-02-06T11:40:45.308037"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Campos CxC: Campos faltantes: Monto, Estado, Cliente",
+    "Campos CxP: Campos faltantes: Monto, Estado, Proveedor"
+  ],
+  "recommendations": [
+    "Revisar advertencias para mejorar funcionamiento"
+  ]
+}

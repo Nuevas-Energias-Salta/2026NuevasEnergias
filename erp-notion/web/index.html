@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Rango CxC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        input[type="date"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .mensaje {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mensaje.exito {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .mensaje.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .mensaje.procesando {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .loader {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .resultado {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .resultado h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .resultado-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .resultado-item:last-child {
+            border-bottom: none;
+        }
+
+        .resultado-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .resultado-valor {
+            color: #333;
+            font-weight: 700;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📊 Calcular Rango CxC</h1>
+        <p class="subtitle">Ingresá las fechas para calcular los totales</p>
+
+        <form id="formulario">
+            <div class="form-group">
+                <label for="fechaInicio">📅 Fecha Inicio</label>
+                <input type="date" id="fechaInicio" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fechaFin">📅 Fecha Fin</label>
+                <input type="date" id="fechaFin" required>
+            </div>
+
+            <button type="submit" class="btn" id="btnCalcular">
+                Calcular Totales
+            </button>
+        </form>
+
+        <div id="mensaje" class="mensaje"></div>
+
+        <div id="resultado" class="resultado">
+            <h3>✅ Resultados</h3>
+            <div class="resultado-item">
+                <span class="resultado-label">Monto Total:</span>
+                <span class="resultado-valor" id="montoTotal">-</span>
+            </div>
+            <div class="resultado-item">
+                <span class="resultado-label">Monto Cobrado:</span>
+                <span class="resultado-valor" id="montoCobrado">-</span>
+            </div>
+            <div class="resultado-item">
+                <span class="resultado-label">Saldo Pendiente:</span>
+                <span class="resultado-valor" id="saldoPendiente">-</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Webhook de n8n en producción
+        const WEBHOOK_URL = 'https://n8n.odontia.tech/webhook/calcular-cxc';
+
+        const formulario = document.getElementById('formulario');
+        const btnCalcular = document.getElementById('btnCalcular');
+        const mensaje = document.getElementById('mensaje');
+        const resultado = document.getElementById('resultado');
+
+        // Establecer fecha por defecto (último mes)
+        const hoy = new Date();
+        const primerDiaMes = new Date(hoy.getFullYear(), hoy.getMonth(), 1);
+        const ultimoDiaMes = new Date(hoy.getFullYear(), hoy.getMonth() + 1, 0);
+
+        document.getElementById('fechaInicio').valueAsDate = primerDiaMes;
+        document.getElementById('fechaFin').valueAsDate = ultimoDiaMes;
+
+        function mostrarMensaje(texto, tipo) {
+            mensaje.textContent = texto;
+            mensaje.className = `mensaje ${tipo}`;
+            mensaje.style.display = 'block';
+        }
+
+        function ocultarMensaje() {
+            mensaje.style.display = 'none';
+        }
+
+        function formatearMoneda(valor) {
+            return new Intl.NumberFormat('es-AR', {
+                style: 'currency',
+                currency: 'ARS',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(valor);
+        }
+
+        function mostrarResultado(data) {
+            document.getElementById('montoTotal').textContent = formatearMoneda(data.montoTotal);
+            document.getElementById('montoCobrado').textContent = formatearMoneda(data.montoCobrado);
+            document.getElementById('saldoPendiente').textContent = formatearMoneda(data.saldoPendiente);
+            resultado.style.display = 'block';
+        }
+
+        formulario.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const fechaInicio = document.getElementById('fechaInicio').value;
+            const fechaFin = document.getElementById('fechaFin').value;
+
+            // Validar fechas
+            if (!fechaInicio || !fechaFin) {
+                mostrarMensaje('❌ Por favor completá ambas fechas', 'error');
+                return;
+            }
+
+            if (new Date(fechaInicio) > new Date(fechaFin)) {
+                mostrarMensaje('❌ La fecha de inicio debe ser anterior a la fecha de fin', 'error');
+                return;
+            }
+
+            // Mostrar estado de procesamiento
+            btnCalcular.disabled = true;
+            btnCalcular.innerHTML = '<span class="loader"></span>Calculando...';
+            mostrarMensaje('⏳ Procesando solicitud...', 'procesando');
+            resultado.style.display = 'none';
+
+            try {
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        fechaInicio: fechaInicio,
+                        fechaFin: fechaFin
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud');
+                }
+
+                const data = await response.json();
+
+                mostrarMensaje('✅ Cálculo completado exitosamente', 'exito');
+                mostrarResultado(data);
+
+            } catch (error) {
+                console.error('Error:', error);
+                mostrarMensaje('❌ Error al procesar la solicitud. Verificá que n8n esté corriendo.', 'error');
+            } finally {
+                btnCalcular.disabled = false;
+                btnCalcular.innerHTML = 'Calcular Totales';
+            }
+        });
+    </script>
+</body>
+
+</html>

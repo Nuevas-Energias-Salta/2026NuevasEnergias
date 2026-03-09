@@ -1,0 +1,63 @@
+Para configurar un OCR que extraiga con precisión los consumos de este resumen de Banco Macro, debes programar la lógica de captura basada en una lista continua multitarjeta. El sistema no debe buscar tablas separadas, sino una secuencia de filas que cambian de "dueño" solo cuando aparece una línea de totalización.
+
+Aquí tienes la descripción técnica del formato de consumos:
+
+📋 Estructura de Captura de Tarjetas
+
+Organización Vertical: Las tarjetas no están en columnas; se presentan una debajo de otra en una sola lista de transacciones.
+
+
+Identificador de Tarjeta (Ancla): El nombre del titular y los últimos 4 dígitos de la tarjeta aparecen después de sus consumos, no antes. El OCR debe agrupar todas las líneas leídas anteriormente bajo el nombre encontrado en la línea que dice: Total Consumos de [NOMBRE] TARJETA [XXXX].
+
+
+Separadores: No existen líneas físicas entre transacciones; el separador es el salto de línea.
+
+📝 Formato Exacto de la Línea de Consumo
+Cada fila de consumo sigue este patrón de 4 columnas virtuales:
+
+
+Fecha (Variable): * Formato para consumos recientes: DD Mes (ej: 08 Enero).
+
+Formato para consumos de meses anteriores (cuotas): DD Mes YY (ej: 07 Agosto 24).
+
+
+Cuerpo del Movimiento (Texto y Números): * Código de Comercio: Un número de 6 dígitos que suele ir al inicio o final del texto (ej: 007192, 458534).
+
+
+Descripción: Nombre del comercio en mayúsculas (ej: PINTURERIAS MARTEL).
+
+
+Cuotas: Indicado como C.XX/XX (ej: C.03/03).
+
+
+Monto en Pesos ($): * Aparece a la derecha de la descripción.
+
+
+Formato: 1.234.567,89 (punto para miles, coma para decimales). No incluye el signo $ en la columna.
+
+
+Monto en Dólares (U$S): * Ubicado en el extremo derecho de la fila.
+
+Solo se completa si el consumo fue en moneda extranjera (ej: 20,00).
+
+⚠️ Dónde falla el OCR (Consumos "Escondidos")
+El error de conteo ocurre porque el resumen colapsa la información al final de la página 1. Para capturar los +40 movimientos, el OCR debe identificar estas variaciones:
+
+
+Bloques Compactos: Al final del listado, los consumos de las tarjetas 6646, 7180 y 3428 están escritos en un formato de párrafo denso en lugar de filas claras.
+
+Ejemplos de datos compactados que debes buscar:
+
+
+TARJETA 6646 Total Consumos de MARCIA M AGUERO 439386,13 25 004977 VIUMI RENTEC 78333,33 19 Agosto C.06/06.
+
+
+TARJETA 7180 Total Consumos de AGUSTIN ISASMENDI seguido de una lista de montos como 121690,41, 91001,14, etc.
+
+Intereses y Gastos: Después de los consumos de los usuarios, aparecen los cargos del banco que el OCR debe clasificar como "Otros Cargos": INTERESES FINANCIACION, COMIS. MANTENIMIENTO y DB IVA.
+
+💡 Ejemplo de Transcripción para Regla de OCR
+Configura tu regla de extracción para reconocer este patrón de texto sucio:
+
+
+21 Enero 26 508111 Servi Gas S.R.L Playa 21 Enero 83011,00 (Interpretación: Fecha: 21 Enero | Comprobante: 508111 | Comercio: Servi Gas S.R.L | Monto: 83011,00).

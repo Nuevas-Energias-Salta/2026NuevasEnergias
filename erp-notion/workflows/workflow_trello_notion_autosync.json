@@ -1,0 +1,339 @@
+{
+    "name": "Trello → Notion - Auto Sync",
+    "nodes": [
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "minutes",
+                            "minutesInterval": 15
+                        }
+                    ]
+                }
+            },
+            "id": "schedule-trigger",
+            "name": "Every 15 Minutes",
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.1,
+            "position": [
+                250,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "url": "=https://api.trello.com/1/boards/612f6ea39c967b8bef5c2186/cards?key=f529e10ec3bac9427b5c1abcfa2ec821&token=ATTA4a2d8d0148cae05d395044b7779d80db44ae465d82aecdb32b0067daf008eeea7221D17C&customFieldItems=true&fields=name,idList,dateLastActivity",
+                "options": {}
+            },
+            "id": "get-trello-cards",
+            "name": "Get Trello Cards",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                450,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Filtrar tarjetas de últimos 15 minutos\nconst ahora = new Date();\nconst hace15min = new Date(ahora.getTime() - 16 * 60 * 1000);\n\nconst tarjetasNuevas = [];\n\nfor (const item of $input.all()) {\n  const lastActivity = new Date(item.json.dateLastActivity);\n  \n  if (lastActivity > hace15min) {\n    tarjetasNuevas.push({\n      json: item.json\n    });\n  }\n}\n\nreturn tarjetasNuevas;"
+            },
+            "id": "filter-recent",
+            "name": "Filter Recent Cards",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "operation": "getAll",
+                "databaseId": "2e0c81c3-5804-8159-b677-fd8b76761e2f",
+                "returnAll": true,
+                "options": {}
+            },
+            "id": "get-existing-projects",
+            "name": "Get Existing Projects",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                850,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Verificar si el proyecto ya existe\nconst tarjeta = $input.item.json;\nconst proyectosExistentes = $('Get Existing Projects').all();\n\nconst nombreTarjeta = tarjeta.name;\n\n// Buscar si ya existe\nconst existe = proyectosExistentes.some(p => {\n  try {\n    const title = p.json.properties?.Nombre?.title?.[0]?.text?.content;\n    return title === nombreTarjeta;\n  } catch {\n    return false;\n  }\n});\n\nif (existe) {\n  return null; // Saltar duplicado\n}\n\nreturn { json: tarjeta };"
+            },
+            "id": "check-duplicate",
+            "name": "Check if Exists",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1050,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "url": "=https://api.trello.com/1/boards/612f6ea39c967b8bef5c2186/customFields?key=f529e10ec3bac9427b5c1abcfa2ec821&token=ATTA4a2d8d0148cae05d395044b7779d80db44ae465d82aecdb32b0067daf008eeea7221D17C",
+                "options": {}
+            },
+            "id": "get-custom-fields",
+            "name": "Get Custom Field Defs",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                1250,
+                200
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Extraer custom fields (email, celular, monto)\nconst tarjeta = $input.item.json;\nconst customFieldDefs = $('Get Custom Field Defs').all()[0].json;\n\n// Crear mapa de IDs a nombres\nconst cfMap = {};\nfor (const cf of customFieldDefs) {\n  cfMap[cf.id] = cf.name;\n}\n\nlet email = null;\nlet celular = null;\nlet monto = 0;\n\nfor (const cf of (tarjeta.customFieldItems || [])) {\n  const fieldName = cfMap[cf.idCustomField] || '';\n  const val = cf.value || {};\n  \n  if (fieldName.includes('Mail') && val.text) {\n    email = val.text;\n  }\n  if (fieldName.includes('Celular') && val.number) {\n    celular = val.number;\n  }\n  if (fieldName.toLowerCase().includes('monto') && val.number) {\n    monto = parseFloat(val.number);\n  }\n}\n\n// Extraer nombre del cliente (primera parte antes del guion)\nconst nombreCliente = tarjeta.name.split('-')[0].trim();\n\nreturn {\n  nombreTarjeta: tarjeta.name,\n  nombreCliente: nombreCliente,\n  email: email,\n  celular: celular,\n  monto: monto\n};"
+            },
+            "id": "extract-data",
+            "name": "Extract Card Data",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1250,
+                400
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "databasePage",
+                "operation": "getAll",
+                "databaseId": "2e0c81c3-5804-8199-8d24-ded823eae751",
+                "returnAll": false,
+                "limit": 1,
+                "filterType": "manual",
+                "matchType": "allFilters",
+                "filters": {
+                    "conditions": [
+                        {
+                            "key": "Nombre",
+                            "condition": "equals",
+                            "string": "={{ $json.nombreCliente }}"
+                        }
+                    ]
+                }
+            },
+            "id": "find-client",
+            "name": "Find Client",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                1450,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "id": "client-exists",
+                            "leftValue": "={{ $json.id }}",
+                            "rightValue": "",
+                            "operator": {
+                                "type": "string",
+                                "operation": "exists"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            },
+            "id": "client-exists-if",
+            "name": "Client Exists?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                1650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "page",
+                "databaseId": "2e0c81c3-5804-8199-8d24-ded823eae751",
+                "title": "={{ $('Extract Card Data').item.json.nombreCliente }}",
+                "propertiesUi": {
+                    "propertyValues": []
+                }
+            },
+            "id": "create-client",
+            "name": "Create Client",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                1850,
+                400
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "page",
+                "databaseId": "2e0c81c3-5804-8159-b677-fd8b76761e2f",
+                "title": "={{ $('Extract Card Data').item.json.nombreTarjeta }}",
+                "propertiesUi": {
+                    "propertyValues": [
+                        {
+                            "key": "Estado",
+                            "selectValue": "Cotización"
+                        },
+                        {
+                            "key": "Cliente",
+                            "relationValue": "={{ [$json.id] }}"
+                        },
+                        {
+                            "key": "Monto Contrato",
+                            "numberValue": "={{ $('Extract Card Data').item.json.monto }}"
+                        }
+                    ]
+                }
+            },
+            "id": "create-project",
+            "name": "Create Project",
+            "type": "n8n-nodes-base.notion",
+            "typeVersion": 2,
+            "position": [
+                2050,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Every 15 Minutes": {
+            "main": [
+                [
+                    {
+                        "node": "Get Trello Cards",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get Trello Cards": {
+            "main": [
+                [
+                    {
+                        "node": "Filter Recent Cards",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Filter Recent Cards": {
+            "main": [
+                [
+                    {
+                        "node": "Get Existing Projects",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get Existing Projects": {
+            "main": [
+                [
+                    {
+                        "node": "Check if Exists",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Check if Exists": {
+            "main": [
+                [
+                    {
+                        "node": "Get Custom Field Defs",
+                        "type": "main",
+                        "index": 0
+                    },
+                    {
+                        "node": "Extract Card Data",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Extract Card Data": {
+            "main": [
+                [
+                    {
+                        "node": "Find Client",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Find Client": {
+            "main": [
+                [
+                    {
+                        "node": "Client Exists?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Client Exists?": {
+            "main": [
+                [
+                    {
+                        "node": "Create Project",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "Create Client",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Create Client": {
+            "main": [
+                [
+                    {
+                        "node": "Create Project",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "pinData": {},
+    "settings": {
+        "executionOrder": "v1"
+    },
+    "staticData": null,
+    "tags": [],
+    "triggerCount": 0,
+    "updatedAt": "2026-01-09T14:32:00.000Z",
+    "versionId": "1"
+}

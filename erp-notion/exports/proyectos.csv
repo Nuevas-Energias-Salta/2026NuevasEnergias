@@ -1,0 +1,295 @@
+ID,Nombre,Cliente,Estado,Centro_Costo,Monto_Contrato,Fecha_Creacion
+2e3c81c3-5804-8102-9201-f146caa0a652,Mercedes Latre,2e3c81c3-5804-8185-8bf4-dfc1d46677d3,En Ejecución,,85000,2026-01-09
+2e3c81c3-5804-8102-b79e-fead2c007340,Esteban Cabanillas - Prueba piloto,2e3c81c3-5804-81cd-a64c-e2cccda93f9b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8104-87d7-e36e388cf97c,Luciana Proyecto Norte - Cedro 100DF,2e3c81c3-5804-810a-9471-dcc59f4a1547,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8105-9c8f-e2279a4281d5,Ana Perez (Montes) - Visita posventa colectores solares,2e3c81c3-5804-81ee-b3a0-c21533796305,En Ejecución,,85000,2026-01-09
+2e3c81c3-5804-8105-b22d-f4ad43a68dad,Claudio Cardozo - Tubos de vidrio,2e3c81c3-5804-815f-bfd6-dac798eca63e,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8106-9443-c7d3893f9942,Martin Lecuona,2e3c81c3-5804-8162-8421-c282f5387fa9,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8106-a75e-c33e1ddf13a0,P 1135 - Nico Elizalde Bahia - Julieta Saa,2e3c81c3-5804-81eb-b4f8-dfdab521335d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8108-9dff-f21eb46f1a0b,Alvaro Cornejo,2e3c81c3-5804-8192-ac16-ebbd431a32f9,Cancelado,,186775,2026-01-09
+2e3c81c3-5804-8109-9bf3-e5d26e65e3e7,Hugo Bunge,2e3c81c3-5804-81cf-a58e-cc5c59dab41a,Cancelado,,0,2026-01-09
+2e3c81c3-5804-810a-a0a5-fd6922e05f36,Juliana Valve B6 - Ñuke,2e3c81c3-5804-8152-b4ef-e2b762ecff24,Finalizado,,0,2026-01-09
+2e3c81c3-5804-810b-aa29-c6a3cde0c2af,Juan Muñoz - Ingenieria Electrica,2e3c81c3-5804-81bf-91b1-d670fd4c80e0,Cancelado,,0,2026-01-09
+2e3c81c3-5804-810f-8f0f-e96c783acf0e,Negro Cornejo Vero Mendizabal,2e3c81c3-5804-817b-b8d2-f19bbf47b263,Aprobado,,1703478,2026-01-09
+2e3c81c3-5804-8110-8b2b-f363aae1d886,Martin Medrano - PRE,2e3c81c3-5804-8115-865f-f89f46258448,Finalizado,,2000000,2026-01-09
+2e3c81c3-5804-8111-b6f2-fb726ae404f4,Marcos Etchart,2e3c81c3-5804-81b5-9cf2-c5f69a5f6c48,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8112-aa56-cba89e241607,49-Pto75-Fran Podts,2e3c81c3-5804-814a-9320-d0a17469255e,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-8113-92c3-ec586f496f9c,Fernando Mateo,2e3c81c3-5804-81bc-87fd-c88819b0f19e,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8113-b305-dadaf9ad2c74,Mercedes Patron Costas - Madryn 70,2e3c81c3-5804-8198-8cfb-c843de015b88,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8113-be20-ebfd6d5db82b,Osvaldo Domingo - ampliacion animana,2e3c81c3-5804-8198-b171-c8d90f36dfd8,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8114-820a-d2112bf82a09,Hernan Solier - Juarez A45,2e3c81c3-5804-81b9-be24-fadd15426045,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8114-afdf-fb1fc6a296bd,Ing. Isola - Pile Valle Escondido,2e3c81c3-5804-81bb-a699-c6c762976a00,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8116-9d41-cf8e5388ed57,Viti Laconi bba solar pichanal,2e3c81c3-5804-81bd-ae70-dfe97bc919da,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8117-8b77-f9bdd1fac061,Santiago Di Tella - Off grid para Starlink,2e3c81c3-5804-8119-b7f3-ffc7ebcf0574,Cancelado,,11840670,2026-01-09
+2e3c81c3-5804-8117-9cd2-dfa61294fd59,El Baqueano - Powermeter Cerro San Bernardo,2e3c81c3-5804-81dd-aee4-e40c7b6dd592,Finalizado,,0,2026-01-09
+2e3c81c3-5804-8117-a903-f5c2414e67ed,Ivan/Demetrio - Termoarq - Cable radiante,2e3c81c3-5804-819e-8d77-e7b6aaaf2abc,Finalizado,,175000,2026-01-09
+2e3c81c3-5804-8118-a2f0-e3a4ee79d7f6,Alvaro Cornejo,2e3c81c3-5804-8192-ac16-ebbd431a32f9,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8118-b99e-c776faffbeaf,Agustin Sanz Navamuhel - Ampliacion paneles La Aurelia,2e3c81c3-5804-817a-a577-ec6e92d5fa6b,Finalizado,,9275000,2026-01-09
+2e3c81c3-5804-811a-828a-ccdcebee0875,Pedro Arias,2e3c81c3-5804-814b-a2f4-cfeb28eec947,Cancelado,,0,2026-01-09
+2e3c81c3-5804-811b-8b11-cd7d78129866,LEC A51 - Jose Ramon - Hernan Solier,2e3c81c3-5804-818e-97a8-f3badb7fb565,Cancelado,,0,2026-01-09
+2e3c81c3-5804-811d-9cea-f8123ef46440,- Agustin Isasmendi - Funda Fogon 80 P,,Aprobado,,69905,2026-01-09
+2e3c81c3-5804-811d-b441-f207c49b5eca,Alejandra Rodriguez,2e3c81c3-5804-81f0-a797-d1f3e4a0acbe,Cancelado,,0,2026-01-09
+2e3c81c3-5804-811f-b35d-fac7a1062c29,Carlos Nallim - Facundo Urtubey - Viñas en flor- FV,2e3c81c3-5804-8113-97d3-fc99d0a5196d,Finalizado,,77389000,2026-01-09
+2e3c81c3-5804-8120-84f6-e4725dedfdd5,Fernando Echazu - Casa en Cachi adentro PRE,2e3c81c3-5804-81a0-a587-ff69e57e5b6d,En Ejecución,,10543000,2026-01-09
+2e3c81c3-5804-8120-880e-d4d9584e6f6f,Diagnostico Salta - Alvaro GN,2e3c81c3-5804-8151-ba09-ec49edd2637d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8120-a22e-e72f253801e3,Segheba #4 Duplex Av. del Libertadores,2e3c81c3-5804-81a7-a183-edb0efe973bd,Finalizado,,0,2026-01-09
+2e3c81c3-5804-8120-b8d4-e8caf365150e,Rufino Cossio - PN - Luces Las Chuñas - Alumbrado publico,2e3c81c3-5804-811a-abb3-d1d7cf30f32f,Finalizado,,38959200,2026-01-09
+2e3c81c3-5804-8121-9e2e-f1759e80779a,Joaquin Elizalde,2e3c81c3-5804-814f-b34e-f4e7a3dbaba4,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8121-a056-e5a3966a4e91,Jonas Beccar Varela - Coronel Suarez,2e3c81c3-5804-81dd-b35c-cfe1916dc0d4,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8122-9b2d-c04a242f95e4,Moncho Perez Alsina,2e3c81c3-5804-81f4-83d9-edf57540e3a7,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8124-ac92-c6bbfece84b0,Pancho Pisani Termo Solar 150 HP,2e3c81c3-5804-8189-bf42-d39f8dcd497f,Finalizado,,2000000,2026-01-09
+2e3c81c3-5804-8125-a5bb-c56e16c3a373,Colo,2e3c81c3-5804-8183-844e-e201cf769a9b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8126-8f64-febadcece186,Francisco Kvedaras Kvedaras,2e3c81c3-5804-814b-96c2-e41f4390f592,Finalizado,,4000000,2026-01-09
+2e3c81c3-5804-8126-a911-e78dfa45d5fa,Mike Follet - Termostatos wifi,2e3c81c3-5804-81c5-8f28-c54a1d1173d7,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8127-8fdd-f0c3ec2afc2c,Van Valwick - Sansone,2e3c81c3-5804-8113-bfda-dd45b585da30,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8128-8110-c1f3a2570762,Ivan Sundblad,2e3c81c3-5804-8130-9b72-c2429256347b,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-8128-a73b-e12ed7b3e512,Hernan Solier Madryn 60,2e3c81c3-5804-81ad-a3f6-d355981936c6,Cancelado,,1258740.33,2026-01-09
+2e3c81c3-5804-8128-aa29-d88518c814ad,Alicia San Millan Virgili,2e3c81c3-5804-81f0-b545-d580b4ff432f,Cancelado,,0,2026-01-09
+2e3c81c3-5804-812a-8344-f4d2831ae966,Esteban Cabanillas 4 cables,2e3c81c3-5804-8174-aaae-d839be15e25a,Cancelado,,0,2026-01-09
+2e3c81c3-5804-812a-90fc-c3457d5677e1,La Merced del Alto - Diego Patrón - fotovoltaicos,2e3c81c3-5804-8182-a36a-fa8586f02fea,Cancelado,,0,2026-01-09
+2e3c81c3-5804-812a-bd85-e0e21be2bd9d,Lilac Solutions #4 - Instalacion cables trecing 16-06,2e3c81c3-5804-81a8-91de-c7d4e8a1a583,Cancelado,,0,2026-01-09
+2e3c81c3-5804-812b-8d36-dc8a7039a59d,Javier Matus #2 - ACS + Bomba de Calor,2e3c81c3-5804-8188-9584-d318afd38ff3,Cancelado,,0,2026-01-09
+2e3c81c3-5804-812b-937d-d11dc2daf7ed,P1170 - Mario Basso,2e3c81c3-5804-81fd-8be8-f832342a2737,Cancelado,,0,2026-01-09
+2e3c81c3-5804-812d-a585-febabd49c6ca,Tomas Cornejo - Baterías - Roque (contacto),2e3c81c3-5804-8118-a00a-ccc201bfbd2b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-812d-a908-cd26a2608ae5,Estudio A - Porto - Vanesa,2e3c81c3-5804-81e7-863c-cb3e5290d513,Cancelado,,0,2026-01-09
+2e3c81c3-5804-812d-b9b2-f796d6c5cd43,Claudio Gonzalez / Vilma- Caldera Dual + 7 radiadores roma,2e3c81c3-5804-81d6-b69e-c1fbfc619d5b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8131-a719-e4b0ea05e875,Matias Lopez,2e3c81c3-5804-8147-abeb-f447d41f153d,En Ejecución,,3542930,2026-01-09
+2e3c81c3-5804-8132-b9ca-e348c335b61e,Martina Briones - Gustavo Paredes,2e3c81c3-5804-8182-8639-c21c37633a81,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-8133-a37d-c943445877c2,Maximo Cornejo,2e3c81c3-5804-810c-9802-dc6b600bb3b6,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8134-88aa-eb6bf07024e1,Carlos Nallim,2e3c81c3-5804-8113-97d3-fc99d0a5196d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8134-8f28-cf12168ae64b,Ignacio Socompa,2e3c81c3-5804-8172-b9d3-f1e0f0521ffe,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8134-a0ed-e514697719fd,Agustina Rovaletti,2e3c81c3-5804-81a5-bf9b-c62e1cb6e7f5,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8134-aea1-cad220f99ceb,Hugo Saravia FV Off Grid,2e3c81c3-5804-8130-8425-f86e8dec92ea,Finalizado,,0,2026-01-09
+2e3c81c3-5804-8135-9eb0-e5a876704a47,Paola Morales,2e3c81c3-5804-818f-8f25-d780b6b2442f,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8135-afe6-e8e277c952ea,Ruben Psenda,2e3c81c3-5804-8149-a302-e5d25b8f6abf,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8136-a8ba-d6ba97520a97,Juani Garcia Lobo - Hotel Altos de la Balcarce,2e3c81c3-5804-81ec-8828-cb1e2d5a88da,Finalizado,,0,2026-01-09
+2e3c81c3-5804-8138-b9e2-e1af9da6e9ea,Gerardo Miguez,2e3c81c3-5804-818d-a04e-cf2e94032463,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8139-b668-cb69e076ffcd,Arq Cecilia Balut - PRE - Cafayate,2e3c81c3-5804-81d9-97f3-e9ff82fbae76,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-813a-9f20-d5b5e8a6f400,Natalia Bidonde - Vereda Bariloche,2e3c81c3-5804-81c9-b450-ec8dbf693cd7,Cancelado,,0,2026-01-09
+2e3c81c3-5804-813b-bd92-e567cfdfee90,Maria Campero Larran,2e3c81c3-5804-8166-9e04-fdec436e72ce,Cancelado,,0,2026-01-09
+2e3c81c3-5804-813b-be68-f004d7d20236,Heladeras Coca - Marcos Patron,2e3c81c3-5804-816b-b812-f441a1d0556a,Aprobado,,6058000,2026-01-09
+2e3c81c3-5804-813c-9eaf-e7526d637480,Recategorizacion Potencia Cartoon. Jorge Romano,2e3c81c3-5804-8182-9468-e796fff5810f,Cancelado,,4500000,2026-01-09
+2e3c81c3-5804-813c-b11e-d743b7ef1652,Kent y Jane Russell - Estancia Cafayate - POSTVENTA,2e3c81c3-5804-8184-ae2f-d39850422565,Cancelado,,0,2026-01-09
+2e3c81c3-5804-813d-9e91-c8147108d142,P1168 - Viti Laconi - VIP,2e3c81c3-5804-8129-86bf-dc50279c2626,Cancelado,,0,2026-01-09
+2e3c81c3-5804-813d-a06a-f6762089ff96,Javier Matus - Toalleros,2e3c81c3-5804-81a2-bf59-f9f8c04520d4,Cancelado,,0,2026-01-09
+2e3c81c3-5804-813d-be32-c9741070dda0,Miguel Torino,2e3c81c3-5804-818f-b9dd-d2ef5b6b0a89,Cancelado,,0,2026-01-09
+2e3c81c3-5804-813e-aa44-e7b30bd60572,Galle Cima ttq solar,2e3c81c3-5804-8163-b496-d93c088748a2,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-8142-80a6-d16a0fc65dd4,Mario Bernaski - Diagnotico Museo,2e3c81c3-5804-811f-a3be-d62330ff5d60,Finalizado,,2611890,2026-01-09
+2e3c81c3-5804-8143-8a8d-e5c4e27ef049,Laura Seleme - Lucas Guzman - Tucuman,2e3c81c3-5804-810d-9fb4-dc00e938357b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8143-8d4f-c55442edb4f3,Abelardo Usandivaras - Instalacion Madryn 85,2e3c81c3-5804-8156-bc47-c583df87b5f8,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8144-b779-d553af349c4c,Mercedes Patron Costas,2e3c81c3-5804-8198-8cfb-c843de015b88,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8145-992f-d92e41cb1c84,Belen Arzelan,2e3c81c3-5804-81d5-b78d-c2332c74d45b,Cancelado,,2995307.77,2026-01-09
+2e3c81c3-5804-8146-beed-f25bcdd8bd8f,Fernando Echazu - Casa en Cachi adentro Termos Solar,2e3c81c3-5804-81a0-a587-ff69e57e5b6d,En Ejecución,,10543000,2026-01-09
+2e3c81c3-5804-8148-a0d6-c91b6f0ad7f0,Arq Alejandra Yañez/Agustina Ahumada,2e3c81c3-5804-81db-ba79-d852791bff3b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-814a-8d7c-e7cec4cdb6b7,Ana Laura Capitanio (INOBRA) - Radiadores Metan,2e3c81c3-5804-8160-a72f-ffc4dc4e2889,Cancelado,,0,2026-01-09
+2e3c81c3-5804-814a-ad05-cca2bc355b0c,Lilac Solutions #2 - Limpieza estufas,2e3c81c3-5804-81e5-ad7f-d8050cc2986f,Cancelado,,0,2026-01-09
+2e3c81c3-5804-814c-8b24-efef1599401a,Mag De Santo,2e3c81c3-5804-8182-820c-f5ef76b7f3b0,Cancelado,,0,2026-01-09
+2e3c81c3-5804-814c-9add-ef2afaee7f05,Edificio DF 1088 Pileta saltapor,2e3c81c3-5804-8145-9db3-ebec6fdf68d5,Cancelado,,0,2026-01-09
+2e3c81c3-5804-814d-8387-e314b28519fd,Cendis - FV trifasico,2e3c81c3-5804-8183-b79f-e2d2058d2dd7,Finalizado,,69135300,2026-01-09
+2e3c81c3-5804-814d-ad63-cb201088ce2f,Colo Fleming - Nicho bomba de agua,2e3c81c3-5804-816e-aef8-dd0a46a8d66b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-814e-b49c-cfc632fa9f01,Juan Pablo Peñalba - Horno 60 de embutir,2e3c81c3-5804-81aa-b453-e548a694ed1f,Cancelado,,0,2026-01-09
+2e3c81c3-5804-814f-9b37-c445e2528a4a,Carolina Higa - Pileta,2e3c81c3-5804-8187-b2bb-eae28e937de0,Cancelado,,0,2026-01-09
+2e3c81c3-5804-814f-a640-caa2f5eb9951,Ramiro Barbosa - La Carolina,2e3c81c3-5804-81b5-ac91-dedd053eb981,En Ejecución,,2957415.54,2026-01-09
+2e3c81c3-5804-814f-bc17-c9dafd9b8f11,Hernan Solier calefon electrico,2e3c81c3-5804-8158-9149-e04566bfb673,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8150-94ae-f47e87588098,Osvaldo Domingo - ampliacion Arenosa,2e3c81c3-5804-8198-b171-c8d90f36dfd8,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8150-b832-dbf591e78e35,San Roman Ancely - Miguel Cruz,2e3c81c3-5804-816b-9977-cb8234058330,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8151-9815-e37f267463ee,Tano Andreussi - Paneles,2e3c81c3-5804-81c8-b450-ce2c635e790d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8151-ab3d-d3b9a4d0bcdf,Andrea Buchsbaum - Casa en LEC,2e3c81c3-5804-81c9-b839-dd62609b18d5,Aprobado,,8014104,2026-01-09
+2e3c81c3-5804-8152-9e38-e6d3489c4ae2,Inversor Viñas En Flor Urtubey,2e3c81c3-5804-8104-a444-fd6c63360e4c,Finalizado,,11359095,2026-01-09
+2e3c81c3-5804-8152-b752-e6cdf6f93bcc,Juan Pablo Peñalba Kit Instalacaion + Instalacion,2e3c81c3-5804-813d-8f45-f9a768742aeb,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8153-af16-c1f5a6aae245,P 1149 - Leo Massafra Termotanque,2e3c81c3-5804-815c-b183-c09c746f066e,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8155-a2c8-e4b21a19d4ba,CEYBA SRL - FV,2e3c81c3-5804-8101-b736-f82d81bd5ee0,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8156-84ef-fe190e1e87fb,Malena Caro - Sistema Fv,2e3c81c3-5804-81ae-ae01-c80c0d02545d,En Ejecución,,12927882.84,2026-01-09
+2e3c81c3-5804-8156-8ea8-dcc5c543bfef,Jose Pileta Quijano,2e3c81c3-5804-81ab-a414-f68cbccadcfa,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8156-9f23-dfa6ad01575d,Gustavo Ruiz Termotanques LEC,2e3c81c3-5804-81d2-b45e-df149db37279,En Ejecución,,6542219.88,2026-01-09
+2e3c81c3-5804-8157-9c57-c52a999196db,Lucía Gorleri - visita a obra,2e3c81c3-5804-812e-ac07-ff03e2644b2d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8157-a29f-f42c2d233dd0,Hernan Solier - Pileta,2e3c81c3-5804-81b9-be24-fadd15426045,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8158-a70c-e14a51586c75,Saltapor reparacion cable Matus,2e3c81c3-5804-8182-83bd-dba5887d8558,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8158-af0e-c6e5c212b490,Nestor Rise Colectores solares,2e3c81c3-5804-813e-8473-dc1bd21a5230,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8158-b8b2-e6f069c96ba6,Juli Segura - Fogon 80,2e3c81c3-5804-8127-a478-ecf3752f8e42,Finalizado,,379567.5,2026-01-09
+2e3c81c3-5804-8159-a383-d7ddfd807bc9,Martin Bull - Bomba de calor - Siria,2e3c81c3-5804-8100-9b11-cd38028be8b0,Cancelado,,0,2026-01-09
+2e3c81c3-5804-815a-8bf9-d982e4640829,Miguel Cruz - Ornella - Termotanque 300 lts presurizable,2e3c81c3-5804-819f-a1a6-e2741e7884b2,Cancelado,,0,2026-01-09
+2e3c81c3-5804-815a-a496-f7c5c78958f7,Natalia Ruiz,2e3c81c3-5804-81be-90bb-f9bbc35318b2,Cancelado,,0,2026-01-09
+2e3c81c3-5804-815a-a4a5-f607784a6873,Alumbrado publico Las Chuñas - Adicional,2e3c81c3-5804-8111-964a-d84e0e3772a2,Finalizado,,9389866.5,2026-01-09
+2e3c81c3-5804-815a-b079-c4da89136402,Rodrigo Romano - Duplex Peña Cafayate - Viti Laconi,2e3c81c3-5804-819a-b13b-db574a8f6e34,Cancelado,,0,2026-01-09
+2e3c81c3-5804-815b-b417-eaf8056eb88e,- Prueba trello gonza,,Aprobado,,145,2026-01-09
+2e3c81c3-5804-815e-8b3c-eda64bfbf105,Fabricio Alanis (Glamping) / Mica,2e3c81c3-5804-8164-9124-f6ba4def8cfb,Cancelado,,0,2026-01-09
+2e3c81c3-5804-815e-acfd-fbd3f696e316,Luis Andres Valdecantos (Checho),2e3c81c3-5804-81d4-8fde-ee3451a24ebc,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8160-a9de-d65a8d9c98e4,Fede Russo - Instalacion Bomba de Calor,2e3c81c3-5804-81e8-a5b7-e8392eaa7f33,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8161-8d94-ec3614eb3f44,Miguel Torino Madryn 70,2e3c81c3-5804-81a1-98a3-dfbc9bafd9de,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8161-9fb0-ed28117c34f0,Fernando Mateo - Caños,2e3c81c3-5804-81bc-87fd-c88819b0f19e,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8161-befe-e55cb70fdf89,Damian Martinez,2e3c81c3-5804-81d6-bcb6-c23dd8b72f16,En Ejecución,,141678000,2026-01-09
+2e3c81c3-5804-8163-83e9-fa4eeb873c7e,Checklist,2e3c81c3-5804-81e5-b321-c86f49a495ac,Cotización,,0,2026-01-09
+2e3c81c3-5804-8163-9737-c6e948a70c9b,Carolina Geist - Controladora TK-8 y anodo,2e3c81c3-5804-81ab-8b5a-f3e4b3046e35,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8163-a53e-e2a46429b7fb,Agustina Ancely San Roman - Praderas,2e3c81c3-5804-81f7-be4b-f124a37dfe6c,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8165-8c5c-c58834565f1a,Carola Abelleyra,2e3c81c3-5804-8180-b45a-f7ef24ec1606,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8165-ade3-fda1a86f8005,Chato San Millan - Pileta,2e3c81c3-5804-81ee-98a3-e224d1906bd9,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8166-8fa7-d23b6c282fb1,Caro - Chacras de Santa Maria - Juan Nougues,2e3c81c3-5804-810b-8dd6-f22644cf0b1b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8167-9724-f70e3f46151b,84-Pto 144-edificio Ameghino,2e3c81c3-5804-815a-af47-ce3ff9e05509,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8167-a40f-e2825d39cb7d,Santi Nougues,2e3c81c3-5804-8127-b6ee-e0d7af86feb0,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8168-97d5-c18d5288ab91,Julian Segura - Aclimatare,2e3c81c3-5804-81ee-8d56-c857316f8b74,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8169-ac5c-ea67495a3704,Hugo Bunge - Etapa 2 FV,2e3c81c3-5804-81cf-a58e-cc5c59dab41a,Cancelado,,0,2026-01-09
+2e3c81c3-5804-816c-a019-e49c444bd4b6,Fernando Echazu - Casa en Cachi adentro Biomasa,2e3c81c3-5804-81a0-a587-ff69e57e5b6d,En Ejecución,,10543000,2026-01-09
+2e3c81c3-5804-816d-9912-da4f9920a352,Doris - Javier Farfan,2e3c81c3-5804-8155-8fbf-f6dba4ecebd3,Cancelado,,0,2026-01-09
+2e3c81c3-5804-816e-aa3f-e2b1321b3b56,Paola Salinas,2e3c81c3-5804-81a1-9b5d-c9d0261fdf63,Cancelado,,0,2026-01-09
+2e3c81c3-5804-816f-8948-ed96aa691303,Carlos Bustamente (ex Patricia),2e3c81c3-5804-8182-b6d0-f0cddb0b091f,Cancelado,,1,2026-01-09
+2e3c81c3-5804-8170-8271-f59661fdfa3a,- Agustin Isasmendi - FV para casa,,Aprobado,,0,2026-01-09
+2e3c81c3-5804-8171-8907-df5ef7ce1fc1,Polen Norte - Cambio de termostato.,2e3c81c3-5804-812a-b7c5-c15f78d22a9d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8171-92e3-d3a1a6175f9e,Peña - Viti Laconi La Reserva lote 149/150,2e3c81c3-5804-8199-865d-e6fc545e8f63,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8171-aeba-f5fea6b6e9b3,38-Pto 67-Francisco Rodriguez Pasquini. (Ana Santillan),2e3c81c3-5804-81c0-bef5-de871612ab82,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8171-bf94-cfce78cdf749,Juliana Valve B6 - Termotanque solar y calefon electrico,2e3c81c3-5804-8152-b4ef-e2b762ecff24,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8172-88dd-d850228f5f3b,Javier Matus- pileta,2e3c81c3-5804-81a2-bf59-f9f8c04520d4,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8173-8e17-f41fd105273f,Mateo Durañona,2e3c81c3-5804-81cc-897c-f97b8edcb338,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8174-b1d3-fa2624ad2eaa,Nati Bidonde - Gaudio,2e3c81c3-5804-817a-ac59-df39bc9ebf5b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8176-83d0-f712c3613183,Charla UCASal - Luis Rengifo,2e3c81c3-5804-813a-9798-ee7898426856,Finalizado,,212000,2026-01-09
+2e3c81c3-5804-8177-bd05-ed7139d1f976,Patricio Cornejo Fv,2e3c81c3-5804-8137-b716-d9afcf12a0b8,En Ejecución,,7615997,2026-01-09
+2e3c81c3-5804-8177-bdcb-c44260f41f3c,- Javier grane,,Aprobado,,16260603,2026-01-09
+2e3c81c3-5804-8178-b725-fa62d62803e5,Alberto Aragone Reparacion casa,2e3c81c3-5804-8172-836f-e47f1e8c0b6e,Cancelado,,440000,2026-01-09
+2e3c81c3-5804-8179-9a37-dfaff23c48ad,Santiago Di tella - Casa y Oficina,2e3c81c3-5804-8119-b7f3-ffc7ebcf0574,Cancelado,,11033000,2026-01-09
+2e3c81c3-5804-817b-bae0-e0078a11576d,Jose Pineda - bomba solar,2e3c81c3-5804-81bf-b30b-e346829fc70f,Cancelado,,0,2026-01-09
+2e3c81c3-5804-817c-ab56-ff3d08840f00,Josefina Massafra,2e3c81c3-5804-8175-8090-d7474069dbfb,Finalizado,,3170454,2026-01-09
+2e3c81c3-5804-817d-8f01-df58256504a7,Arturo - Estufa,2e3c81c3-5804-81b3-bc58-ef366c636db8,En Ejecución,,2500800,2026-01-09
+2e3c81c3-5804-817d-b8b2-f161571a9228,Las Achiras - Ruffo - Luminarias,2e3c81c3-5804-81a5-a4dc-dbe28e2842eb,Cancelado,,2625000,2026-01-09
+2e3c81c3-5804-8183-a7ea-f689c885ea83,Dani Romero,2e3c81c3-5804-8148-ad7e-d7471e17c772,Finalizado,,3973299,2026-01-09
+2e3c81c3-5804-8183-bd06-fd82ceb1639f,Luis Maria Cornejo Costas Off Grid,2e3c81c3-5804-81ed-9c8c-c9f47e93df37,Finalizado,,0,2026-01-09
+2e3c81c3-5804-8184-bd07-c48cf059463c,Mary Carey - proyecto,2e3c81c3-5804-819d-a085-e55ffcca3f2d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8185-8a1a-c2124c57fc9f,Mirta Gonzalez - Termotanque y estufa Ñuke,2e3c81c3-5804-8100-a659-d064ad14b0f8,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8185-9d6c-e650ae8ba611,Santiago Saenz SA,2e3c81c3-5804-8167-aa28-c5999d16a4fa,Finalizado,,0,2026-01-09
+2e3c81c3-5804-8185-bda5-d9ec442e5463,Juliana Valve B6 - PRE,2e3c81c3-5804-8152-b4ef-e2b762ecff24,Finalizado,,0,2026-01-09
+2e3c81c3-5804-8188-a17e-cbc58b7992e7,Jero Bigi,2e3c81c3-5804-810b-b892-da7d25496fdd,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8188-b738-e98ce6b8674e,Tano Andreussi - Adicional panel 555,2e3c81c3-5804-81c8-b450-ce2c635e790d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-818a-8f3a-e1787d5dcc83,Ruben Ahanduni,2e3c81c3-5804-8190-a208-f4ba38de1c38,Cancelado,,0,2026-01-09
+2e3c81c3-5804-818a-9385-f9539636203a,Gonzalo Maestro - Fabrica Forja Guemes,2e3c81c3-5804-8186-ba14-edf7ce8dce04,En Ejecución,,9832000,2026-01-09
+2e3c81c3-5804-818a-badf-df4ceea842a0,Julio Ortega,2e3c81c3-5804-8192-9abb-d876b9c8424d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-818b-a989-d354a99befeb,Osvaldo Domingo FV Offgrid,2e3c81c3-5804-817f-86a3-da55dc4b6626,Cancelado,,102629.7,2026-01-09
+2e3c81c3-5804-818b-ba50-c36c6d8e049f,Claudia Tolaba Mariano Tolaba R. Lerma,2e3c81c3-5804-81d0-a1b2-dcd0c623d80f,Finalizado,,49400000,2026-01-09
+2e3c81c3-5804-818c-88a9-d0f0d54ec142,Hector Pocho - San Luis,2e3c81c3-5804-810e-bdb3-ed04eee50ed3,Cancelado,,0,2026-01-09
+2e3c81c3-5804-818c-89d9-d1b62d6b10d8,Mario Paez,2e3c81c3-5804-81fb-bf7b-c7afa27f9173,Cancelado,,0,2026-01-09
+2e3c81c3-5804-818c-8edd-e800338d83d1,Belu Ovejero - Tambo de Martorell,2e3c81c3-5804-8106-912b-d84ccbb8df6e,En Ejecución,,16602600,2026-01-09
+2e3c81c3-5804-818c-b1ce-c6ec5d387996,Arturo - Candelaria Mariño,2e3c81c3-5804-81b3-bc58-ef366c636db8,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-818d-96ac-e0ba454cf03b,Mercedes Patron Costas,2e3c81c3-5804-8198-8cfb-c843de015b88,Cancelado,,0,2026-01-09
+2e3c81c3-5804-818d-bc49-f6b169c03c67,Fortis - Bodega Peña - Termotanque,2e3c81c3-5804-8134-92ff-f3ccd9895bab,Cancelado,,0,2026-01-09
+2e3c81c3-5804-818e-b688-f9f099f1f22d,Alejandro Moncorvo,2e3c81c3-5804-8139-ba3b-ce1baf245a63,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8190-b3e6-dbdfc2a152e5,Timer Digital Viti Laconi Pileta Peña,2e3c81c3-5804-813a-9317-eab9b735ea2b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8190-b512-edbd9874e96d,Sebastian Jakulica Ñuke,2e3c81c3-5804-8159-842f-f57c5ea01155,Finalizado,,2300000,2026-01-09
+2e3c81c3-5804-8191-9381-ce77d20c7537,Candela del Estudio Miguel Cruz.,2e3c81c3-5804-81e4-8b3c-dbf2ac86ba88,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8191-bec4-d786cfca2195,Magda Day FV,2e3c81c3-5804-8166-82e3-fc4cc0aaf6ee,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-8192-8e00-c0b7d9237380,Marisel Urdininea,2e3c81c3-5804-81b6-aeca-e2a6716c2bae,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8192-9087-d8f4c31415bb,Vicky Villamayor - Juan Moises,2e3c81c3-5804-8103-afa3-e911f48a399f,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8192-a523-f02bcfcaa52b,Eduardo Yarad - Guillermo Torres,2e3c81c3-5804-81bf-8d8d-c5510ee6f0e8,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8194-88c5-c608f775445e,Gustavo Ruiz Fv Lec H6 Termo,2e3c81c3-5804-814a-b62d-fe94a129fae8,En Ejecución,,11611257.13,2026-01-09
+2e3c81c3-5804-8197-9590-f88686e53bd3,Lilac Solutions #3 - Cables electricos trecing 16-06-23,2e3c81c3-5804-81fc-863b-d60b9749d617,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8197-acfa-cac0485fd6ad,Nicolas Cabanillas - PV mantenim. Ttq,2e3c81c3-5804-81f5-8151-d2ea5adced85,En Ejecución,,85000,2026-01-09
+2e3c81c3-5804-8199-9335-cbaa13ad8a7d,P 1109 - Magdalena Day Piletas EL TIPAL,2e3c81c3-5804-81ba-93ba-de75d3f4cf9f,Cancelado,,0,2026-01-09
+2e3c81c3-5804-8199-99d1-d0b233d45384,P 1107 - Pto 248-Salvano - 120121,2e3c81c3-5804-812a-8d3c-e8d83887db96,Cancelado,,0,2026-01-09
+2e3c81c3-5804-819b-b251-db3641d9dd29,La Moraleja Puesta en Marcha Et1,2e3c81c3-5804-81cd-9407-d003373a6500,Aprobado,,2869000,2026-01-09
+2e3c81c3-5804-819c-b089-f79183b8481f,Jorge Barrantes,2e3c81c3-5804-81dc-9c40-fe56ce6cd525,Cancelado,,0,2026-01-09
+2e3c81c3-5804-819d-a19f-d7c9ca19038b,Nando De Freitas,2e3c81c3-5804-81f9-962f-cc20c0a53f59,Cancelado,,0,2026-01-09
+2e3c81c3-5804-819f-a5f2-f35f89abd9bf,Ivan Beccar Varela - Praderas,2e3c81c3-5804-8111-b24f-e84a5d2b1781,Cancelado,,0,2026-01-09
+2e3c81c3-5804-819f-bde1-ffc4b36cf0e3,Javier grane FV,2e3c81c3-5804-81f0-bd8c-d87a4461bf8b,Aprobado,,0,2026-01-09
+2e3c81c3-5804-81a1-83ea-cde799c5dd4b,Joaquin Driollet Laspiur,2e3c81c3-5804-812f-81ce-e3e43b8e77ab,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81a1-907d-cfb5a0f76147,IMAC Rosario de Lerma - Saavedra,2e3c81c3-5804-814c-baf9-d3f241873c72,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81a3-8ff8-e19793378b30,Ana Sol Campastro Casa Audra Calefon electrico y termotanque solar,2e3c81c3-5804-818d-a884-c5db332876dd,Finalizado,,0,2026-01-09
+2e3c81c3-5804-81a3-a248-e8a63a8c5af9,Lu Muñoz,2e3c81c3-5804-81f6-bd17-e3ea82676af4,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81a5-91ba-ecbf655c58fa,P 1166 - Carlos Bustamente (ex Patricia),2e3c81c3-5804-81c4-86d9-cb0362b46d98,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81a6-a024-e4449c47ea7b,Esteban Cabanillas - Cable puna 2° Etapa,2e3c81c3-5804-81cd-a64c-e2cccda93f9b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81a8-958a-eefd33dbfa78,Lau Gonzalez Bonorino Proyecto,2e3c81c3-5804-812f-a71d-cd096eadbe5e,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81a8-a219-c4f9a844bebf,Osvaldo Cerrillos,2e3c81c3-5804-8108-88c0-da489fb2fa03,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81aa-b17b-c02a2134b20b,fogon 80P Agus,2e3c81c3-5804-81fa-8afd-d84d92147c6a,Finalizado,,300000,2026-01-09
+2e3c81c3-5804-81aa-b6aa-dc4fb2cd4c1e,Graciela Gorriti - Jorge Romano,2e3c81c3-5804-81a5-920a-d8a080a89e50,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81ab-8cc7-f976cecee6e0,Claudio Gonzalez - Cambio bomba de calor Nazareno,2e3c81c3-5804-8113-b366-d89f6c732395,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81ab-9722-f1edfc09d3c9,Joaquin Rojkes - Casita en Ros de la fro,2e3c81c3-5804-818e-9838-f641f1229020,Cancelado,,10000000,2026-01-09
+2e3c81c3-5804-81ac-9a17-d9a13ab6517f,Francisca Saravia,2e3c81c3-5804-815c-a124-e3bf3b38d514,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81ac-adcf-cd72e8d312ab,Campo Quijano FV Autoconsumo,2e3c81c3-5804-819d-804b-edc413de4909,Finalizado,,0,2026-01-09
+2e3c81c3-5804-81ad-a525-f6914714a45f,Arturo Marguery FV,2e3c81c3-5804-8154-8732-e1b341cfc5b5,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81af-970f-df8bd7059c7b,Luis Zavaleta - Cura Walter,2e3c81c3-5804-8186-8a43-e0be438b333e,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81b0-899d-fd63b718fed3,Osvaldo Domingo instalacion paneles,2e3c81c3-5804-81a0-b0e5-dd692f712b00,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81b1-8d01-f013d8eefa56,Hernan Solier - Yanotti A50,2e3c81c3-5804-81b9-be24-fadd15426045,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81b1-9dfa-d80be6ca9a0c,Andres Muñoz - L26 - Pileta,2e3c81c3-5804-819d-82d3-e0f090dea519,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81b2-8d39-dbc4e8336c28,P 1115 - Cristina Seleme (jockey Club) PRE GrupoG,2e3c81c3-5804-8147-b14d-ee6cf6ee18c7,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81b3-8f31-cac73ac18d11,Saltapor CFI Pque Ind - Linea c,2e3c81c3-5804-8161-ac96-f0e8e925c072,Finalizado,,0,2026-01-09
+2e3c81c3-5804-81b3-bbd0-cfb08bab06e2,Matias Caso - Controladora Tholz,2e3c81c3-5804-8162-9974-fd85f61f7be3,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81b4-a5c4-dabf57e3ce3d,Valeria F22,2e3c81c3-5804-819f-b8e0-ea6ae4350229,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81b5-96c2-e8cdc04d4911,Juan Manuel Bigi - Estufa Ñuke,2e3c81c3-5804-8167-a493-d79f575ab824,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81b6-bb8b-c608db8c8e07,Armando Isasmendi - JNOD KE55,2e3c81c3-5804-81c1-8fb5-f634f6a72f0a,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81b7-b4f8-e4d00d043b5b,La Moraleja - Relevamiento FV 1,2e3c81c3-5804-81f3-be3f-dd7bd23439a5,Finalizado,,742500,2026-01-09
+2e3c81c3-5804-81b8-88a7-f4dfd20a2ca4,Nory ilay De Robles Chicoana Productor Tabaco,2e3c81c3-5804-8181-ba9b-e9ea2207e828,Finalizado,,68347352.79,2026-01-09
+2e3c81c3-5804-81b8-8987-f4bb0d7767dd,P 1050 - Valeria Scannone,2e3c81c3-5804-81ed-a4e1-d70340e83dbe,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81b9-b3aa-c8ae237710f8,Gonza Maestro - Distribuidora Maestro Pedernera,2e3c81c3-5804-8140-abc0-e04211b0f310,Finalizado,,13443202.84,2026-01-09
+2e3c81c3-5804-81bc-a29a-d6ab23d9842f,Ricardo Delfrari - Bomba de calor - Castellanos,2e3c81c3-5804-8193-84d1-d9ff2cfde444,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81bd-8677-f35f393dcd21,Lisandro Avila - Switch para alimentar una bomba de 3 HP,2e3c81c3-5804-815e-ad7a-ee653a0034f2,Finalizado,,740000,2026-01-09
+2e3c81c3-5804-81bd-9329-c03b6f7902f1,Lisandro Avila - FV,2e3c81c3-5804-815e-ad7a-ee653a0034f2,Finalizado,,18032000,2026-01-09
+2e3c81c3-5804-81bd-a9de-cfff34ad5595,Esteban Cabanillas - Cables Puna,2e3c81c3-5804-81cd-a64c-e2cccda93f9b,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81be-8017-c4e4a232d84c,Leonardo Faila - Agustina Ahumada,2e3c81c3-5804-813f-9f0a-f6973fc6bd5d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81bf-ab34-d6ecc55b242f,Claudio González - Nazareno,2e3c81c3-5804-812a-9ffe-db8185b38ec6,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81c0-80ad-f18508e76742,Silvio Torielli,2e3c81c3-5804-81e9-95df-cb38a36782b4,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81c0-b3ad-e9721084a367,Ivan - calefactor Lapacho 50,2e3c81c3-5804-8140-9b7c-faf65d402026,Finalizado,,1365000,2026-01-09
+2e3c81c3-5804-81c1-846b-c6af99754d2d,CPA - Iluminacion solar - Lagunas,2e3c81c3-5804-8101-9431-c94b96e522a0,Aprobado,,35097640,2026-01-09
+2e3c81c3-5804-81c1-88fe-f115c71cebb4,Lisandro Avila,2e3c81c3-5804-815e-ad7a-ee653a0034f2,Cancelado,,2922393.6,2026-01-09
+2e3c81c3-5804-81c1-bcc1-e8b18a72cc7e,Claudio Lucca,2e3c81c3-5804-8181-acf3-c837a9c99acf,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81c3-91ac-d26e86e2fcb2,Julio Ortega Postventa - Postventa,2e3c81c3-5804-811b-8d2e-fda22aca9ad6,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81c3-a43a-d799ad376a33,Pedro Arias - Bomba de Calor Dique,2e3c81c3-5804-814b-a2f4-cfeb28eec947,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81c5-8769-f6dd226b285d,Juan Paris - FV para bomba de pileta,2e3c81c3-5804-81d8-bdbc-ec271806b48a,En Ejecución,,5001582,2026-01-09
+2e3c81c3-5804-81c7-b722-d54619910250,Matias Bisonard,2e3c81c3-5804-81e4-ba7e-d9932ad7e903,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81c7-b7b9-e2e403b9684e,Lilac Solutions #5 - 6 radiadores electricos,2e3c81c3-5804-81b5-bded-f6635c0963fd,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81ca-8a7c-c5f029c15937,Proyecto Norte - Condominio La Trinidad,2e3c81c3-5804-819a-84e3-f0c449c2b6b4,En Ejecución,,16520000,2026-01-09
+2e3c81c3-5804-81ca-b1c7-dad23d64c617,Abelardo Usandivaras - Madryn 85,2e3c81c3-5804-8156-bc47-c583df87b5f8,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81cb-a995-ccd0f31b3f3a,Proyecto Norte - Punto Corp - FV,2e3c81c3-5804-819a-84e3-f0c449c2b6b4,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81cb-b9b9-f3f7492adfbd,Jose Caride - Calefon electrico JNOD FA90,2e3c81c3-5804-81d6-9d0c-c440bd6589c3,Finalizado,,1150000,2026-01-09
+2e3c81c3-5804-81cf-a3ba-caceba8cc65a,Norma - PRE edificio existente,2e3c81c3-5804-8188-b9d5-daf520a44edb,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81cf-b11d-c6e483b03f09,Javier Mazza,2e3c81c3-5804-81da-8378-c178db2ad8e1,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81d1-88c2-cfce387a9d74,MADE - Belen Arzelan - Cables Puna,2e3c81c3-5804-8152-ae6c-ccf135ec0bf5,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81d1-adca-c80107f2d025,cartoon - inversor nuevo,2e3c81c3-5804-8110-8583-f86e1ea4cdc8,En Ejecución,,14914469,2026-01-09
+2e3c81c3-5804-81d2-b239-dad2cad599d3,Santiago Saenz SA 2da etapa,2e3c81c3-5804-81d9-b8b3-f8e8f527fc52,En Ejecución,,5709649,2026-01-09
+2e3c81c3-5804-81d4-b265-d1650e048a53,Agustin Sanz Navamuel CFI,2e3c81c3-5804-810e-9ff2-cd6e4eefb9f9,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81d6-8d41-cc143c630bf0,Gonzalo Maestro radiadores electricos,2e3c81c3-5804-8155-b2fd-d1651b57acd5,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81d6-b9cd-cde377ff84f8,Esteban Cabanillas Estufa Ñuke,2e3c81c3-5804-8148-9226-cada783d3bb6,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81da-a1d6-c292005698ad,Juan Pablo Olivero - FV,2e3c81c3-5804-8182-a990-c2679140f9c3,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81da-b32a-c67e0949b3d5,SALTA REFRESCOS - COCA COLA -ARCA CONTINENTAL,2e3c81c3-5804-8137-a17c-e3ddda1e4201,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-81db-b899-c5ea43f7704c,Maria Claudio - Bolivia,2e3c81c3-5804-81be-9145-e36fee534706,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81dc-8992-e4766fbdd190,Federico Obeid,2e3c81c3-5804-81f3-86d8-da7dfea23fa2,Finalizado,,0,2026-01-09
+2e3c81c3-5804-81dd-9749-c58fc5cef1d6,- Matias Castaños  - Funda fogon 80P,,Aprobado,,80000,2026-01-09
+2e3c81c3-5804-81de-86da-f40501fe44e4,Mati castaños - Fogon 80 P,2e3c81c3-5804-8146-9338-f0880fe862b6,Finalizado,,521000,2026-01-09
+2e3c81c3-5804-81df-9c54-e124f9935d73,Mercedes Lopez Lastre - PUESTA en MARCHA,2e3c81c3-5804-819d-b246-ed823e82749a,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81df-bec3-d34de4efbef0,David Kasem - Off Grid FV,2e3c81c3-5804-81d1-8f0f-c3d28a7bebcb,En Ejecución,,9583632,2026-01-09
+2e3c81c3-5804-81e0-80ec-cf6752926b1d,Hernan Solier - Muñoz - L26,2e3c81c3-5804-81b9-be24-fadd15426045,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81e1-9333-c84c2188405f,Gustavo Paul,2e3c81c3-5804-8120-8928-c63d068e7861,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81e1-aeb6-e2d57e187914,- Julian Segura - Horno 90 embutir,,Aprobado,,1672490,2026-01-09
+2e3c81c3-5804-81e1-af03-e923bd56e8e8,Graciela Cornejo de Arias,2e3c81c3-5804-812d-ad03-e79959b83c27,En Ejecución,,6300000,2026-01-09
+2e3c81c3-5804-81e3-8b23-e7dc5cac817f,Jose Pineda,2e3c81c3-5804-81bf-b30b-e346829fc70f,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81e4-8acf-f6e1588bd17a,Viviana Salomon PRE,2e3c81c3-5804-81e8-9c06-e682a87cab6c,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-81e5-81ce-ffafbb7abc26,Hugo Bunge - Termos solares,2e3c81c3-5804-81cf-a58e-cc5c59dab41a,Cancelado,,5253300,2026-01-09
+2e3c81c3-5804-81e5-8822-f9b5f929f73f,Julian Segura - Aclimatare UPS,2e3c81c3-5804-81ee-8d56-c857316f8b74,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-81e5-8e6c-e1c1eb6b1476,Moncho - Cables para tanque de agua,2e3c81c3-5804-81c4-b74f-cf196c44136c,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81e8-bcfd-ffeafd0beafd,Alfredo Cernusco,2e3c81c3-5804-81e9-abf7-c0f27e18349f,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81e9-bd9e-c0c1d10ca3d2,P 1155 - Daniel Mingorance pileta,2e3c81c3-5804-811b-b2d3-f53f718ee4b4,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81eb-8ce0-caa584224140,- Proyecto BN - La Guapeada,,Aprobado,,3450000,2026-01-09
+2e3c81c3-5804-81eb-a1a3-fb8c6d42653d,Palacio de las Golosinas -,2e3c81c3-5804-81d6-90a0-c5159f50313a,Aprobado,,9675000,2026-01-09
+2e3c81c3-5804-81eb-a313-f0199edf5aab,Nico Dominguez,2e3c81c3-5804-81ae-a395-dccb9d1f5e5a,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81ec-8864-ddc8d48456b6,Alvaro Cornejo,2e3c81c3-5804-8192-ac16-ebbd431a32f9,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81ee-a0d2-f21c37f3f914,Gaston Beccar Varela (PN),2e3c81c3-5804-81b0-99f5-cd6388d92ee5,Finalizado,,0,2026-01-09
+2e3c81c3-5804-81ee-a533-da6fcc95f541,Torelli - Edificio Ameghino Adicional,2e3c81c3-5804-8149-a873-d7c9c58e3030,Finalizado,,0,2026-01-09
+2e3c81c3-5804-81ee-bbd4-c0214554867b,Santiago Ditella Termo Solar Tambo,2e3c81c3-5804-81e0-94ec-ef27c8bc4a4b,Finalizado,,3297000,2026-01-09
+2e3c81c3-5804-81ef-a1a4-e9139a890c89,Alejandra Rodriguez - BBC - Posventa,2e3c81c3-5804-81f0-a797-d1f3e4a0acbe,Finalizado,,85000,2026-01-09
+2e3c81c3-5804-81ef-bc3f-f6a54c71b4c2,Domino - Miguel Cruz - Lapacho 70 Candela,2e3c81c3-5804-81ec-beef-caf38438fb2e,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81f0-ba6f-f151bd362d44,Farmacia San Francisco Chapa Pulo,2e3c81c3-5804-8173-b5e3-c4131b3e0a98,Finalizado,,0,2026-01-09
+2e3c81c3-5804-81f2-b098-ec962efbdf3b,Rosa Garcia - Muñeca,2e3c81c3-5804-8131-843c-f57023f68b6d,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81f2-b5fe-c337df2d6b62,Oscar nicho pileta,2e3c81c3-5804-81f5-8e86-e6f92081a3ca,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81f5-9ec2-fe4741eba68d,Maximiliano - Horno,2e3c81c3-5804-81bd-aa9a-c32786ab6917,Cancelado,,1475000,2026-01-09
+2e3c81c3-5804-81f5-be3d-d1be4769913d,Osvaldo Domingo paneles para bomba,2e3c81c3-5804-8172-81e0-e50539e9799e,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81f6-a55e-dbce8657ccfd,Leo Massafra - Horno 90 embutir Chicoana,2e3c81c3-5804-818c-9263-f2bc6dfa1151,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81f6-b41f-c37e75a33cfa,Pablo Sanchez pileta de su casa,2e3c81c3-5804-8116-9446-c93a84385514,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81f7-8d11-cba8b82a32fa,Ana Sol Campastro - Casa Audra - Colectores Solares,2e3c81c3-5804-81ef-99b9-ee34ff74dd2e,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-81f8-a701-e6e24a793b7e,David Miy - Vansea Arguello,2e3c81c3-5804-8173-86aa-df49e25621d1,Finalizado,,2087022,2026-01-09
+2e3c81c3-5804-81f8-aa37-d39e1db3537b,Pablo Gonzalez - PRE (Tafi del Valle),2e3c81c3-5804-8198-a64e-e8270e4c5bc7,En Ejecución,,0,2026-01-09
+2e3c81c3-5804-81f9-ae3c-f90188bd1273,Javier Matus - PRE,2e3c81c3-5804-81a2-bf59-f9f8c04520d4,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81fb-8ecd-d6820ca9de0f,Samuel Portal - Ofen,2e3c81c3-5804-8165-acb8-c26e43b2a3d8,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81fb-91d5-e714f657213b,Abelardo Usandivaras - Bomba 60 mts Anta,2e3c81c3-5804-8156-bc47-c583df87b5f8,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81fb-ac5a-ff100afd6e92,Ruben Ahanduni - 2 colectores de repuesto,2e3c81c3-5804-8190-a208-f4ba38de1c38,Finalizado,,555000,2026-01-09
+2e3c81c3-5804-81fc-9bad-f7c868849fee,Mario Paez - WIFI,2e3c81c3-5804-81fb-bf7b-c7afa27f9173,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81fd-a45f-c9ab9e4d9655,Juan Bel - Cambio tubo de vidrio,2e3c81c3-5804-81d8-b99e-c763239b081a,Cancelado,,0,2026-01-09
+2e3c81c3-5804-81fd-b14c-dad24000dcbe,Santiago Di Tella - Tambo FV,2e3c81c3-5804-8119-b7f3-ffc7ebcf0574,Finalizado,,23000000,2026-01-09
+2e3c81c3-5804-81ff-8a1d-e14b28c46825,PN - Luces de 200 W adicionales LAs chuñas,2e3c81c3-5804-81a3-bd75-c23bbeb7e07f,Finalizado,,6500000,2026-01-09
+2e3c81c3-5804-81ff-8b87-de7c4ad8ddaf,Tano Andreussi - Relevamiento,2e3c81c3-5804-81c8-b450-ce2c635e790d,Cancelado,,0,2026-01-09
+2e7c81c3-5804-8101-8aef-d5e838fda559,Andrea Buchsbaum - Casa en LEC,2e7c81c3-5804-81b6-9e8f-c13de3280b42,,,0,2026-01-13
+2e7c81c3-5804-813e-983f-ee5bc0a953b3,Andrea Buchsbaum - Casa en LEC,,,,0,2026-01-13

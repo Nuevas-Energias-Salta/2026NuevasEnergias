@@ -1,0 +1,35 @@
+2026-02-06 09:25:00 | INFO     | ALERTS | ✅ Regla de alerta agregada: Alta Tasa de Errores
+2026-02-06 09:25:00 | INFO     | ALERTS | ✅ Regla de alerta agregada: Monto Pendiente Elevado
+2026-02-06 09:25:00 | INFO     | ALERTS | ✅ Regla de alerta agregada: Múltiples Fallos
+2026-02-06 09:27:06 | INFO     | ALERTS | ✅ Regla de alerta agregada: Alta Tasa de Errores
+2026-02-06 09:27:06 | INFO     | ALERTS | ✅ Regla de alerta agregada: Monto Pendiente Elevado
+2026-02-06 09:27:06 | INFO     | ALERTS | ✅ Regla de alerta agregada: Múltiples Fallos
+2026-02-06 09:27:06 | INFO     | ALERTS | ✅ Regla de alerta agregada: API Lenta
+2026-02-06 11:40:41 | INFO     | src.utils.api_client | 🔄 Ejecutando función: make_request
+2026-02-06 11:40:41 | INFO     | APIClient-api | 🌐 Llamada API: POST databases/2e0c81c3-5804-81e7-80a0-dc51608efdd4/query (intento 1)
+2026-02-06 11:40:42 | INFO     | src.utils.api_client | ✅ ✅ Función make_request completada | {"duration_seconds": 1.0255}
+2026-02-06 11:40:42 | INFO     | src.utils.api_client | 🔄 Ejecutando función: make_request
+2026-02-06 11:40:42 | INFO     | APIClient-api | 🌐 Llamada API: POST databases/2e0c81c3-5804-8199-8d24-ded823eae751/query (intento 1)
+2026-02-06 11:40:43 | INFO     | src.utils.api_client | ✅ ✅ Función make_request completada | {"duration_seconds": 0.632719}
+2026-02-06 11:40:43 | INFO     | src.utils.api_client | 🔄 Ejecutando función: make_request
+2026-02-06 11:40:43 | INFO     | APIClient-api | 🌐 Llamada API: POST databases/2e0c81c3-5804-81e0-94b3-e507ea920f15/query (intento 1)
+2026-02-06 11:40:43 | INFO     | src.utils.api_client | ✅ ✅ Función make_request completada | {"duration_seconds": 0.47797}
+2026-02-06 11:40:43 | INFO     | src.utils.api_client | 🔄 Ejecutando función: make_request
+2026-02-06 11:40:43 | INFO     | APIClient-api | 🌐 Llamada API: POST databases/2e0c81c3-5804-8199-8d24-ded823eae751/query (intento 1)
+2026-02-06 11:40:44 | INFO     | src.utils.api_client | ✅ ✅ Función make_request completada | {"duration_seconds": 1.263678}
+2026-02-06 11:40:44 | INFO     | src.utils.api_client | 🔄 Ejecutando función: make_request
+2026-02-06 11:40:44 | INFO     | APIClient-api | 🌐 Llamada API: POST databases/2e0c81c3-5804-81e0-94b3-e507ea920f15/query (intento 1)
+2026-02-06 11:40:45 | INFO     | src.utils.api_client | ✅ ✅ Función make_request completada | {"duration_seconds": 0.436415}
+2026-02-06 14:01:29 | INFO     | ALERTS | ✅ Regla de alerta agregada: Alta Tasa de Errores
+2026-02-06 14:01:29 | INFO     | ALERTS | ✅ Regla de alerta agregada: Monto Pendiente Elevado
+2026-02-06 14:01:29 | INFO     | ALERTS | ✅ Regla de alerta agregada: Múltiples Fallos
+2026-02-06 14:01:29 | INFO     | ALERTS | ✅ Regla de alerta agregada: API Lenta
+2026-02-06 14:01:34 | INFO     | ALERTS | ✅ Regla de alerta agregada: Alta Tasa de Errores
+2026-02-06 14:01:34 | INFO     | ALERTS | ✅ Regla de alerta agregada: Monto Pendiente Elevado
+2026-02-06 14:01:34 | INFO     | ALERTS | ✅ Regla de alerta agregada: Múltiples Fallos
+2026-02-06 14:01:58 | INFO     | src.utils.api_client | 🔄 Ejecutando función: make_request
+2026-02-06 14:01:58 | INFO     | APIClient-api | 🌐 Llamada API: POST databases/2e0c81c3-5804-8123-b1ae-d9b3579e0410/query (intento 1)
+2026-02-06 14:02:02 | INFO     | src.utils.api_client | ✅ ✅ Función make_request completada | {"duration_seconds": 3.13702}
+2026-02-06 14:02:02 | INFO     | src.utils.api_client | 🔄 Ejecutando función: make_request
+2026-02-06 14:02:02 | INFO     | APIClient-api | 🌐 Llamada API: POST databases/2e0c81c3-5804-8123-b1ae-d9b3579e0410/query (intento 1)
+2026-02-06 14:02:04 | INFO     | src.utils.api_client | ✅ ✅ Función make_request completada | {"duration_seconds": 2.332716}
