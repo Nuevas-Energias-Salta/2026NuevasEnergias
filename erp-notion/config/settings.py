@@ -16,8 +16,8 @@ class Config:
     """Clase de configuración centralizada"""
     
     # API Tokens y Keys
-    NOTION_TOKEN = os.getenv("NOTION_TOKEN", "YOUR_NOTION_TOKEN_HERE")
-    TRELLO_API_KEY = os.getenv("TRELLO_API_KEY", "f529e10ec3bac9427b5c1abcfa2ec821")
+    NOTION_TOKEN = os.getenv("NOTION_TOKEN", "")
+    TRELLO_API_KEY = os.getenv("TRELLO_API_KEY", "")
     TRELLO_TOKEN = os.getenv("TRELLO_TOKEN", "")  # Este debe ser configurado por usuario
     
     # URLs Base
