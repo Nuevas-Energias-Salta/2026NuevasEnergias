@@ -1,4 +1,44 @@
+# Ignorar entornos virtuales
 .env
-node_modules/
-.DS_Store
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Archivos de caché
 __pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Credenciales y archivos secretos (¡CRÍTICO!)
+secret*
+*.pem
+credentials.json
+token.json
+client_secret.json
+
+# Archivos residuales de ERP local (logs, json de prueba, exports temporales)
+*.log
+resumenes/
+notion_export/
+exports/
+debug_*.txt
+*.csv
+*debug*.txt
+consumos*.json
+macro_*.json
+test_output.json
+extracted_movements*.json
+cxp_*.json
+
+# Archivos del Agente IA y entornos locales
+.agents/
+.gemini/
