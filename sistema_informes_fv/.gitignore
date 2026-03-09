@@ -1,0 +1,72 @@
+# Archivos de credenciales - NUNCA SUBIR A GIT
+.env
+*.env
+
+# Archivos con datos sensibles
+emails_clientes.json
+growatt_credenciales.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Credenciales de Google
+credentials.json
+token.json
+client_secret*.json
+
+# Archivos temporales
+tmp_*
+*.tmp
+*.log
+
+# Facturas y datos descargados
+edesa_facturas/
+facturas_descargadas/
+downloads/
+downloads_tarifas/
+Informes_*/
+github_pages/
+
+# Node modules (si existen)
+node_modules/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backups
+*.backup
+legacy_backup/
+
+# Excel temporales
+~$*.xlsx
