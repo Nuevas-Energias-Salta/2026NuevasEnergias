@@ -1,0 +1,29 @@
+﻿Unique Labels in NETrello:
+Number of Unique tags extracted: 11
+- Agus
+- Proyectonorte
+- Roberto - Instalador
+- Urgente
+- Walter - Instalador
+- a comprar
+- ana
+- en obra
+- para computar
+- paravicini
+- referido
+
+Top 10 most common Label strings (exact match):
+Labels
+ana               39
+referido          11
+Agus               8
+Proyectonorte      4
+paravicini         4
+a comprar          2
+Agus, referido     2
+ana, en obra       2
+Urgente            1
+ana, a comprar     1
+Name: count, dtype: int64
+
+Number of rows matching 'radiante', 'piso', 'electrico': 0

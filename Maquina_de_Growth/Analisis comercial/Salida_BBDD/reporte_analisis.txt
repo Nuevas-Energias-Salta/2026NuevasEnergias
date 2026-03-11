@@ -1,0 +1,65 @@
+RESUMEN DE ANALISIS DE BASES DE DATOS
+========================================
+
+Total Numeros de Celular / Telefono unicos: 7591
+Total Correos Electronicos (Mails) unicos: 1669
+Total Registros procesados (con posibles duplicados de nombres): 11744
+
+DISTRIBUCION POR CATEGORIA (T1 - T4):
+- T1 (B2C No Cliente): 10189
+- T2 (B2C Cliente): 464
+- T3 (B2B No Cliente): 883
+- T4 (B2B Cliente): 208
+
+DETALLE T1 (Arquitectos o Constructores):
+- Arquitectos/Constructores dentro de T1: 29
+- B2C Normal: 10160
+
+DETALLE T2 (Separacion por Productos - Contando Combos individualmente):
+- Sin Tag de Producto Claro: 7359
+- PRE / Piso Radiante Electrico: 2042
+- Climatizacion Piletas: 1582
+- Energia Solar FV: 1127
+- Biomasa: 688
+- Termotanque Solar (ACS): 509
+- Calefaccion (Tradicional/Otros): 0
+
+DETALLE T2 (Agrupaciones Originales y Combos encontrados):
+- Sin Tag de Producto Claro: 173
+- Climatizacion Piletas: 72
+- Biomasa: 51
+- Energia Solar FV: 42
+- PRE / Piso Radiante Electrico: 38
+- Termotanque Solar (ACS): 31
+- Biomasa, PRE / Piso Radiante Electrico: 15
+- Climatizacion Piletas, PRE / Piso Radiante Electrico: 13
+- Energia Solar FV, PRE / Piso Radiante Electrico: 8
+- PRE / Piso Radiante Electrico, Termotanque Solar (ACS): 7
+- Biomasa, PRE / Piso Radiante Electrico, Termotanque Solar (ACS): 2
+- Climatizacion Piletas, Energia Solar FV: 2
+- Climatizacion Piletas, PRE / Piso Radiante Electrico, Termotanque Solar (ACS): 2
+- Energia Solar FV, Termotanque Solar (ACS): 2
+- Biomasa, Climatizacion Piletas: 1
+- Biomasa, Energia Solar FV, Termotanque Solar (ACS): 1
+- Biomasa, Climatizacion Piletas, PRE / Piso Radiante Electrico: 1
+- Climatizacion Piletas, Energia Solar FV, PRE / Piso Radiante Electrico, Termotanque Solar (ACS): 1
+- Biomasa, Energia Solar FV, PRE / Piso Radiante Electrico, Termotanque Solar (ACS): 1
+- Biomasa, Climatizacion Piletas, PRE / Piso Radiante Electrico, Termotanque Solar (ACS): 1
+
+DETALLE T3 (Status y Leads):
+- Desconocido / Sin Estado: 425
+- Inactivo: 379
+- Activo en Funnel: 79
+
+De los T3 Inactivos:
+- Lead Anterior (Avanzado): 320
+- Prospecto en Frio: 59
+
+========================================
+OTROS DATOS DE INTERES (Insights):
+Top 5 Motivos de Perdida generales:
+- excede presupuesto: 86
+- licitacion perdida: 59
+- pospone para año entrante: 43
+- prefiere competencia: 22
+- Motivo Perdida: 1

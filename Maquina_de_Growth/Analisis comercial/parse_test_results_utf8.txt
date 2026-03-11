@@ -1,0 +1,35 @@
+﻿Total rows in KanbanPVTrello: 98
+
+Sample names:
+0                        92-Pto 53-Edificio Los Tarcos
+1               Juan Mu±oz Col pil 6 x 3.5 (2 piletas)
+2                             61-Pto132-Daniela Romero
+3                            Gaston Beccar Varela (PN)
+4    Aragone- arreglo de termotanque (cobrar a energe)
+5                                 Aragone Fotovoltaico
+6                          P 1043 - Normando Ra·l Diaz
+7              Carola Abelleyra. vaciado de colectores
+8                                     Mauricio Barrios
+9    Solatube - Ba±o de Servicio Lecuona-R00-080620...
+Name: Name, dtype: str
+
+Found 13 clients with a PRE project number.
+Maximum PRE project number found: 112.0
+
+--- Testing Description parsing for Combos ---
+Found 26 clients with multiple products in description.
+Name: Santiago Saravia
+Detected: ['Termotanque Solar (ACS)', 'Biomasa', 'PRE / Piso Radiante Electrico']
+-
+Name: P 1155 - Eugenia Figueroa Castilla
+Detected: ['Climatizacion Piletas', 'PRE / Piso Radiante Electrico']
+-
+Name: ENERGE-Silvita Romano - Jorge Jauregui.04/09/20- Cabra Corral
+Detected: ['Climatizacion Piletas', 'PRE / Piso Radiante Electrico']
+-
+Name: P 1097 - Gonza Giuri
+Detected: ['Termotanque Solar (ACS)', 'PRE / Piso Radiante Electrico']
+-
+Name: P 1135 - Nico Elizalde Bahia
+Detected: ['Climatizacion Piletas', 'Biomasa', 'PRE / Piso Radiante Electrico']
+-

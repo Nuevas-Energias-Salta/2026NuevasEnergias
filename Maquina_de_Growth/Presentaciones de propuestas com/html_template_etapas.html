@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia Energética Escalonada</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* CSS Reset & Email Boilerplate */
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            background-color: #F2F4F4;
+        }
+
+        /* Design Tokens - NE Branding */
+        :root {
+            --primary: #E13842;
+            /* Rojo NE */
+            --secondary: #FCC32F;
+            /* Amarillo Solar */
+            --tertiary: #8A8E7B;
+            /* Gris Técnico */
+            --text-main: #2C3E50;
+            /* Texto principal */
+            --bg-alt: #F2F4F4;
+            --white: #FFFFFF;
+        }
+
+        /* Base Typography */
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: #2C3E50;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #2C3E50;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: 20px;
+            color: #E13842;
+        }
+
+        /* Container & Layout */
+        .wrapper {
+            width: 100%;
+            background-color: #F2F4F4;
+            padding: 40px 0;
+        }
+
+        .main-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Header */
+        .header {
+            background-color: #2C3E50;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 5px solid #8A8E7B;
+            /* Variation for Phased */
+        }
+
+        .header-title {
+            color: #FFFFFF;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 300;
+            font-size: 24px;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* Content Area */
+        .content {
+            padding: 40px;
+        }
+
+        .greeting {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .highlight-box {
+            background-color: rgba(138, 142, 123, 0.1);
+            border-left: 4px solid #8A8E7B;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 600;
+            color: #2C3E50;
+        }
+
+        /* Phases Formatting */
+        .phase-container {
+            margin: 30px 0;
+            border: 1px solid #e1e3e3;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .phase-header {
+            background-color: #F2F4F4;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e1e3e3;
+        }
+
+        .phase-header h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #2C3E50;
+        }
+
+        .phase-body {
+            padding: 20px;
+            background-color: #FFFFFF;
+        }
+
+        .phase-body ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #555;
+        }
+
+        .phase-body li {
+            margin-bottom: 8px;
+        }
+
+        .phase-body li strong {
+            color: #2C3E50;
+        }
+
+        /* Footer / Signature */
+        .signature {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #F2F4F4;
+        }
+
+        .signature-name {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #2C3E50;
+            margin: 0;
+        }
+
+        .signature-title {
+            color: #8A8E7B;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .tagline {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 300;
+            font-style: italic;
+            font-variant: small-caps;
+            color: #E13842;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <table class="main-container" width="100%" cellpadding="0" cellspacing="0">
+            <!-- Logo Header -->
+            <tr>
+                <td style="background-color: #FFFFFF; padding: 30px 40px 10px 40px; text-align: center;">
+                    <img src="../BrandBook NE/Logos/logo_color_nuevasenergias.png" alt="Nuevas Energías"
+                        style="max-width: 180px;">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" style="border-top: none;">
+                    <h1 class="header-title" contenteditable="true">Estrategia Energética Escalonada</h1>
+                </td>
+            </tr>
+            <tr>
+                <td class="content">
+                    <p class="greeting" contenteditable="true">Hola [Nombre del Lead / Referente],</p>
+
+                    <p contenteditable="true">Tal como conversamos en [lugar / nuestra reunión], te comparto la
+                        estrategia energética que
+                        diseñamos desde Nuevas Energías para [Nombre Empresa].</p>
+
+                    <p contenteditable="true">Frente al avance de los costos operativos, la solución más integral es
+                        planificar una transición
+                        energética en etapas. Esto nos permite generar ahorro casi de inmediato, cuidar el flujo de
+                        caja, y preparar a la empresa para el objetivo final: <strong>llegar al ~100% de ahorro
+                            eléctrico anual.</strong></p>
+
+                    <div class="highlight-box">
+                        <p contenteditable="true">A continuación te presento nuestro Roadmap Energético de 3 Etapas:</p>
+                    </div>
+
+                    <!-- Phase 1 -->
+                    <div class="phase-container">
+                        <div class="phase-header">
+                            <h3 style="color: #FCC32F;" contenteditable="true">🎯 Etapa 1: Congelamiento Inmediato
+                                (Autoconsumo)</h3>
+                        </div>
+                        <div class="phase-body">
+                            <p style="margin-top:0;" contenteditable="true">Instalamos un sistema base dimensionado para
+                                cubrir exclusivamente
+                                tu consumo diurno.</p>
+                            <ul>
+                                <li contenteditable="true"><strong>Objetivo:</strong> Frenar de inmediato la compra de
+                                    energía durante las [X]
+                                    horas pico de asoleamiento (tu franja de "Horario Resto").</li>
+                                <li contenteditable="true"><strong>Tiempo de ejecución:</strong> Rápido. Se amortiza
+                                    directamente por el ahorro
+                                    sobre la factura vigente.</li>
+                                <li contenteditable="true"><strong>Acción:</strong> Empezás a ahorrar desde el día 1 de
+                                    encendido el equipo.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="phase-container">
+                        <div class="phase-header">
+                            <h3 style="color: #8A8E7B;" contenteditable="true">📝 Etapa 2: Trámite del Balance Neto
+                                (Generación Distribuida)
+                            </h3>
+                        </div>
+                        <div class="phase-body">
+                            <p style="margin-top:0;" contenteditable="true">En paralelo al inicio de la Etapa 1, nuestro
+                                equipo de ingenieros
+                                activa el expediente para inscribir tu planta bajo la Ley de Balance Neto.</p>
+                            <ul>
+                                <li contenteditable="true"><strong>¿Qué logramos?</strong> El permiso regulatorio para
+                                    poder inyectar sobrantes
+                                    de energía a la red.</li>
+                                <li contenteditable="true"><strong>Tiempos y Costos:</strong> Toma aproximadamente 6
+                                    meses de gestión y
+                                    auditorías de la distribuidora. Esta ingeniería ejecutiva tiene un costo de
+                                    <strong>USD 800</strong> para el sector corporativo (B2B).
+                                </li>
+                                <li contenteditable="true"><strong>El hito:</strong> Una vez aprobado, tu sistema de
+                                    Etapa 1 empieza a volcar
+                                    excedentes a la red, incrementando tu volumen de ahorro sin haber sumado un solo
+                                    panel adicional todavía.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="phase-container">
+                        <div class="phase-header">
+                            <h3 style="color: #E13842;" contenteditable="true">🚀 Etapa 3: Expansión Final (Ahorro del
+                                ~100%)</h3>
+                        </div>
+                        <div class="phase-body">
+                            <p style="margin-top:0;" contenteditable="true">Con el balance neto aprobado y el punto de
+                                retorno de inversión
+                                original asegurado, llega el momento de ampliar la capacidad instalada.</p>
+                            <ul>
+                                <li contenteditable="true"><strong>La jugada estratégica:</strong> Agregamos potencia al
+                                    techo sobre la misma
+                                    infraestructura, para generar un volumen de energía que iguale tu consumo
+                                    nocturno/días nublados y lo compense con créditos a favor en la factura.</li>
+                                <li contenteditable="true">El objetivo de esta etapa final es acercar la línea de costo
+                                    energético activo a
+                                    cero.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 contenteditable="true">Gestión de Datos Continua</h2>
+                    <p contenteditable="true">Durante todas las etapas contarás con telemetría en tiempo real y nuestro
+                        <strong>año bonificado
+                            de auditoría energética trimestral</strong>, para que sepas en todo momento en qué fase del
+                        repago operativo te encontrás.</p>
+
+                    <p contenteditable="true">¿Quieren que armemos una videollamada para repasar los números de la Etapa
+                        1 y el cronograma del
+                        trámite?</p>
+
+                    <!-- Signature -->
+                    <div class="signature">
+                        <p class="signature-name" contenteditable="true">[Tú Nombre]</p>
+                        <p class="signature-title" contenteditable="true">[Tu Cargo - ej. CEO] | Nuevas Energías</p>
+                        <p class="tagline">Eficiente es Sustentable</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
