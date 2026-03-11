@@ -1,0 +1,103 @@
+﻿Total files: 34
+---
+BBDD Cadisal 270226.csv: 42 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD Cafayate 270226.csv: 33 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Pagina
+---
+BBDD Capemisa 270226.csv: 127 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD CasaDir 270226.csv: 41 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD ClientesJujuy 270226.csv: 18 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD constructorasmineras 270226.csv: 118 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telefono;Provincia;Domicilio;mail
+---
+BBDD ContactosAgus 260226.xlsx: 3854 rows
+Headers: ['First Name', 'Middle Name', 'Last Name', 'Phonetic First Name', 'Phonetic Middle Name', 'Phonetic Last Name', 'Name Prefix', 'Name Suffix', 'Nickname', 'File As', 'Organization Name', 'Organization Title', 'Organization Department', 'Birthday', 'Notes', 'Photo', 'Labels', 'E-mail 1 - Label', 'E-mail 1 - Value', 'Phone 1 - Label', 'Phone 1 - Value', 'Phone 2 - Label']
+---
+BBDD CRM1Trello 260226.xlsx: 1269 rows
+Headers: ['List name', 'ID', 'Name', 'Description', 'Labels', 'URL', 'Celular', 'Creation date', 'Mail']
+---
+BBDD CRM2Trello 260226.xlsx: 578 rows
+Headers: ['List name', 'ID', 'Name', 'Description', 'Labels', 'URL', 'Celular', 'Creation date', 'Mail', 'Map coordinates']
+---
+BBDD Crmviejomails 270226.csv: 385 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD Doce23Trello 260226.xlsx: 27 rows
+Headers: ['List name', 'ID', 'Name', 'Description', 'Labels', 'URL']
+---
+BBDD EgresadosAgus 270226.csv: 35 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD Fortin 270226.csv: 16 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD FVInstagram 270226.csv: 129 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD Gestoresenergeticos 270226.csv: 37 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD KanbanTrello completa 260226.xlsx: 755 rows
+Headers: ['List name', 'ID', 'Name', 'Description', 'Labels', 'URL', 'Celular', 'Mail', 'Producto', 'Ubicaci¾n']
+---
+BBDD LeadsAmpliacionesBN 270226.csv: 146 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Ubicacion;#Productos;Proveniencia Lead;#Tipo de cliente;#Motivo Perdida;Step_ID;Amount;Currency;User;Created_by;Remind_date;Reminder_activity;Reminder_note;Last_update;Client_folder;tags;Description
+---
+BBDD LPTrello 260226.xlsx: 48 rows
+Headers: ['List name', 'ID', 'Name', 'Description', 'Labels', 'URL']
+---
+BBDD MailsPiletas 270226.csv: 81 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Pagina;Nombre Administrador/contacto
+---
+BBDD ManusGrandesConsumidores 270226.csv: 41 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto;NIS
+---
+BBDD NETrello 260226.xlsx: 214 rows
+Headers: ['List name', 'ID', 'Name', 'Description', 'Labels', 'URL']
+---
+BBDD noCRM Completa 260226.csv: 6204 rows
+Headers: Lead;ID;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto;NIS;Productos;Proveniencia Lead ;Tipo de cliente;Motivo Perdida;Negocios Especiales;Categoria Lead;Tipo Consultora;Pipeline;Step;Step_ID;Status;Amount;Currency;Probability;User;Team;Created_by;Starred;Remind_date;Reminder_activity;Reminder_note;Created_at;First_activity;Closed_at;Estimated_closing_date;Last_update;Client_folder;tags;Created_from;Description
+---
+BBDD PoetaTrello 260226.xlsx: 77 rows
+Headers: ['List name', 'ID', 'Name', 'Description', 'Labels', 'URL']
+---
+BBDD PosiblesClientesCafayate 270226.csv: 21 rows
+Headers: Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Pagina;Nombre Administrador/contacto
+---
+BBDD ProspectsCampa±asClientesPotencialesIG 270226.csv: 181 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;_Fecha de creacin;Correo electrnico;Origen;Formulario;Canal;Etapa;Propietario;#tags;Telfono;Nmero de telfono secundario
+---
+BBDD recomendadosempresas 270226.csv: 58 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Nueva columna;Domicilio;Ubicacion;Pagina
+---
+BBDD RedPromotoresODS  270226.csv: 93 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD sociospraderas 270226.csv: 226 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD Sociostipal 260226.csv: 272 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD SociosValle 270226.csv: 339 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD TucumanProductores 270226.csv: 8 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto
+---
+BBDD Turismo 270226.csv: 42 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Domicilio;Ubicacion;mail;Telfono;Pagina
+---
+BBDD Turismo2 270226.csv: 55 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telefono;Provincia;Domicilio;mail
+---
+BBDD ValledeLerma 270226.csv: 144 rows
+Headers: Lead;Estatus;Cancelados?;Color;Fecha de creacin;Nombre del lead;Telfono;mail;Domicilio;Ubicacion;Nombre Administrador/contacto

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Gestión Energética - Balance Neto</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* CSS Reset & Email Boilerplate */
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            background-color: #F2F4F4;
+        }
+
+        /* Design Tokens - NE Branding */
+        :root {
+            --primary: #E13842;
+            /* Rojo NE */
+            --secondary: #FCC32F;
+            /* Amarillo Solar */
+            --tertiary: #8A8E7B;
+            /* Gris Técnico */
+            --text-main: #2C3E50;
+            /* Texto principal */
+            --bg-alt: #F2F4F4;
+            --white: #FFFFFF;
+        }
+
+        /* Base Typography */
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: #2C3E50;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #2C3E50;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: 22px;
+            color: #E13842;
+            border-bottom: 2px solid #FCC32F;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        /* Container & Layout */
+        .wrapper {
+            width: 100%;
+            background-color: #F2F4F4;
+            padding: 40px 0;
+        }
+
+        .main-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Header */
+        .header {
+            background-color: #2C3E50;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 5px solid #FCC32F;
+            /* Variation for BN */
+        }
+
+        .header-title {
+            color: #FFFFFF;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 300;
+            font-size: 24px;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* Content Area */
+        .content {
+            padding: 40px;
+        }
+
+        .greeting {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .highlight-box {
+            background-color: rgba(44, 62, 80, 0.05);
+            border-left: 4px solid #E13842;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 600;
+            color: #2C3E50;
+        }
+
+        /* Value Pillars */
+        .pillar {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #F2F4F4;
+            border-radius: 4px;
+        }
+
+        .pillar strong {
+            color: #2C3E50;
+            font-family: 'Montserrat', sans-serif;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .pillar p {
+            margin: 0;
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* Amortization Chart (CSS based for email support) */
+        .chart-container {
+            background-color: #2C3E50;
+            border-radius: 6px;
+            padding: 25px;
+            margin: 35px 0;
+            color: #FFFFFF;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.4;
+            overflow-x: auto;
+        }
+
+        .chart-title {
+            color: #FCC32F;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .chart-legend {
+            margin-bottom: 15px;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+
+        .legend-item {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 12px;
+        }
+
+        .legend-color {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .color-debt {
+            background-color: #E13842;
+        }
+
+        .color-profit {
+            background-color: #8A8E7B;
+        }
+
+        /* Footer / Signature */
+        .signature {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #F2F4F4;
+        }
+
+        .signature-name {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #2C3E50;
+            margin: 0;
+        }
+
+        .signature-title {
+            color: #8A8E7B;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .tagline {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 300;
+            font-style: italic;
+            font-variant: small-caps;
+            color: #E13842;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <table class="main-container" width="100%" cellpadding="0" cellspacing="0">
+            <!-- Logo Header -->
+            <tr>
+                <td style="background-color: #FFFFFF; padding: 30px 40px 10px 40px; text-align: center;">
+                    <img src="../BrandBook NE/Logos/logo_color_nuevasenergias.png" alt="Nuevas Energías"
+                        style="max-width: 180px;">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" style="border-top: none;">
+                    <h1 class="header-title" contenteditable="true">Estrategia Energética Integral</h1>
+                </td>
+            </tr>
+            <tr>
+                <td class="content">
+                    <p class="greeting" contenteditable="true">Hola [Nombre del Lead / Referente],</p>
+
+                    <p contenteditable="true">Tal como conversamos en [lugar / nuestra reunión], te comparto la
+                        estrategia energética integral
+                        que preparamos desde Nuevas Energías para [Nombre Empresa].</p>
+
+                    <p contenteditable="true">Nuestro enfoque va mucho más allá de una instalación técnica: queremos
+                        llevar tu gasto eléctrico
+                        lo más cerca posible de cero y darte independencia frente al aumento de la matriz tarifaria.</p>
+
+                    <div class="highlight-box">
+                        <p contenteditable="true">Basados en el análisis de tu facturación y superficie disponible,
+                            nuestro depto. de
+                            ingeniería dimensionó un Sistema bajo la Ley de Balance Neto (Generación Distribuida).</p>
+                    </div>
+
+                    <h2 contenteditable="true">¿Cuál es el objetivo final?</h2>
+                    <p contenteditable="true">El sistema está diseñado milimétricamente no solo para cubrir tu consumo
+                        instantáneo de día, sino
+                        para inyectar los excedentes a la red pública. Esos créditos a favor compensarán lo que consumís
+                        durante la noche o días nublados.</p>
+                    <p style="font-weight: bold; color: #E13842; font-size: 18px; text-align: center; margin: 25px 0;"
+                        contenteditable="true">
+                        En el escenario ideal, el objetivo es anular el 100% del consumo de energía activa anual de tu
+                        empresa.
+                    </p>
+                    <p contenteditable="true"><em>(Adjunto a este correo vas a encontrar el Modelo Económico Resumido y
+                            la Ingeniería de
+                            Proyecto).</em></p>
+
+                    <h2 contenteditable="true">El Componente Clave: La Gestión</h2>
+                    <p contenteditable="true">Para asegurarnos de que la Ley de Balance Neto juegue a tu favor mes a
+                        mes, necesitamos datos
+                        cruzados y auditoría permanente:</p>
+
+                    <div class="pillar">
+                        <p contenteditable="true"><strong>1. Medición Inteligente Bidireccional:</strong> Instalamos un
+                            gateway (Dongle) para
+                            auditar cuánta energía compramos y cuánta vendemos en tiempo real.</p>
+                    </div>
+
+                    <div class="pillar">
+                        <p contenteditable="true"><strong>2. Auditoría de Facturación Trimestral (1 Año
+                                Bonificado):</strong> Un ingeniero de
+                            Nuevas Energías contrastará trimestralmente la liquidación de [EDESA/Distribuidora] vs
+                            nuestros propios registros en la nube (tu portal exclusivo). Cualquier error de lectura en
+                            tu contra, lo detectamos y auditamos automáticamente.</p>
+                    </div>
+
+                    <h2 contenteditable="true">Retorno de Inversión y Financiación</h2>
+                    <p contenteditable="true">Al apuntar al ahorro del 100% de la energía, el período de repago se
+                        vuelve extremadamente
+                        agresivo. Si apalancás este proyecto con un <strong>crédito bancario puente (líneas MiPyME o
+                            Finanzas Verdes)</strong>, la cuota se paga casi en su totalidad con el dinero que le dejás
+                        de transferir a la distribuidora mensual.</p>
+
+                    <p contenteditable="true">Generás tu propia energía por las próximas 2 décadas y media. El capital
+                        se amortiza en el primer
+                        tramo del proyecto:</p>
+
+                    <!-- Amortization Chart -->
+                    <div class="chart-container">
+                        <h4 class="chart-title">Ciclo de Vida vs. Amortización</h4>
+
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="legend-color color-debt"></span> Años de Amortización
+                                (Impacto Crédito - [X] Años)</span>
+                            <span class="legend-item"><span class="legend-color color-profit"></span> Rentabilidad Neta
+                                y Energía Libre</span>
+                        </div>
+
+                        <pre style="margin: 0;">
+[0]   [5]   [10]   [15]   [20]   [25 años]
+ ├─────┼──────┼──────┼──────┼──────┤
+ <span style="color:#E13842">█████</span><span style="color:#8A8E7B">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span> 
+           ^
+       Punto de Retorno
+</pre>
+                    </div>
+
+                    <p contenteditable="true">Este es un cambio estructural en los costos fijos de tu operación.
+                        Hablemos para repasar los
+                        números del modelo financiero cuando tengan disponibilidad esta semana.</p>
+
+                    <!-- Signature -->
+                    <div class="signature">
+                        <p class="signature-name" contenteditable="true">[Tú Nombre]</p>
+                        <p class="signature-title" contenteditable="true">[Tu Cargo - ej. CEO] | Nuevas Energías</p>
+                        <p class="tagline">Eficiente es Sustentable</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

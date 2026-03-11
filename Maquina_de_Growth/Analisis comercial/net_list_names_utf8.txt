@@ -1,0 +1,37 @@
+﻿Columns: ['List name', 'ID', 'Name', 'Description', 'Labels', 'URL']
+
+Unique List names in NETrello:
+List name
+Ðuke Terminados                88
+Proyectos de PRE terminados    44
+solar terminados               37
+Presupuestos enviados 2021     34
+solar                           6
+Obras varias                    5
+Name: count, dtype: int64
+
+Sample of 'Description' column:
+0    Lapacho 60 + kit de instalaci¾n de instalaci¾n...
+1    Roble 85\n\n1133468212\n\n55.900 $ por MP\n\ni...
+2    Caba±a II + kit enlozado para techo\n$25.322 -...
+3    Roble 60 con instalaci¾n en Praderas\nManzana ...
+4    1 Lanin con accesorios. para su casa de Prader...
+5    una lapacho 50 aparte de la lanin doble frente...
+6              una cipress con instalacion\n3876853159
+7    una Lanin Doble Frente para el living\n\npreci...
+8    son 2 Lapacho 70 para la aguada, una va al lot...
+9                  1 horno de embutir. Cliente de PN. 
+Name: Description, dtype: str
+
+Sample of 'Name' column:
+0                 Tin Mendioroz 2
+1                Javier Gristelli
+2        Marcela Adriana Serantes
+3    Carlos Gomez Rinc¾n (obra 2)
+4                     Jonas BV PN
+5        Mariu Taverna de Vasques
+6            Juan Pablo Rovaletti
+7                         Machuca
+8                     Miguel Cruz
+9              Ignacio Larran. PN
+Name: Name, dtype: str

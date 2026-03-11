@@ -1,0 +1,106 @@
+﻿--- noCRM Completa ---
+Unique values in Tipo de cliente:
+<StringArray>
+[                                                         'Agro',
+                                              'Residencial ABC1',
+                                               'Desarrolladoras',
+                                                       'Turismo',
+                                                     'Comercial',
+                                                'clinicas/Salud',
+                                            'Educacion / Clubes',
+                                            'Industria / Bodega',
+                                                       'Mineria',
+                                                  'Obra Publica',
+                              'Desarrolladoras,Residencial ABC1',
+                                    'Comercial,Residencial ABC1',
+                                  'Comercial,Industria / Bodega',
+                                       'Agro,Industria / Bodega',
+                                     'Comercial,Desarrolladoras',
+                                         'Agro,Residencial ABC1',
+                                      'Mineria,Residencial ABC1',
+                                      'Turismo,Residencial ABC1',
+ 'Comercial,Desarrolladoras,Industria / Bodega,Residencial ABC1',
+                          'Desarrolladoras,Mineria,Obra Publica']
+Length: 20, dtype: str
+Unique values in Categoria Lead:
+<StringArray>
+[           'Lead Caliente',               'PV/Manten.',
+               'Lead Tibio',                'Lead Frio',
+ 'Lead Caliente,PV/Manten.']
+Length: 5, dtype: str
+Unique values in Pipeline:
+<StringArray>
+['Ventas', 'ConsultorÝas']
+Length: 2, dtype: str
+Unique values in Step:
+<StringArray>
+[    'Primer Contacto',     'Cierre - Venta!', 'Presupuesto enviado',
+         'Negociaci¾n',          'Incubadora',             'vendido',
+   'Propuesta enviada']
+Length: 7, dtype: str
+Unique values in Status:
+<StringArray>
+['todo', 'won', 'standby', 'cancelled', 'lost']
+Length: 5, dtype: str
+Unique values in tags:
+<StringArray>
+[                 'Agro,Cliente,FV (solar fotovoltaico),Lead Caliente',
+                     'Agro,FV (solar fotovoltaico),Lead Caliente,Wega',
+                 'Cliente,Climat. Piletas,PV/Manten.,Residencial ABC1',
+                    'Agro,FV (solar fotovoltaico),Lead Tibio,Referido',
+          'FV (solar fotovoltaico),Lead Tibio,Propio,Residencial ABC1',
+          'Desarrolladoras,FV (solar fotovoltaico),Lead Frio,Referido',
+   'ACS (agua caliente sanitaria),Lead Frio,Referido,Residencial ABC1',
+                      'FV (solar fotovoltaico),Lead Frio,Turismo,Wega',
+                'Comercial,FV (solar fotovoltaico),Lead Frio,Referido',
+                 'Comercial,FV (solar fotovoltaico),Lead Tibio,Propio',
+                'Climat. Piletas,Lead Tibio,Referido,Residencial ABC1',
+ 'ACS (agua caliente sanitaria),Desarrolladoras,Empresa,Lead Caliente',
+                         'Agro,FV (solar fotovoltaico),Lead Frio,Wega',
+                       'Agro,Datero,FV (solar fotovoltaico),Lead Frio',
+                       'Agro,FV (solar fotovoltaico),Lead Frio,Propio',
+                     'Agro,Cliente,FV (solar fotovoltaico),Lead Tibio',
+        'Empresa,FV (solar fotovoltaico),Lead Caliente,clinicas/Salud',
+                  'Climat. Piletas,Empresa,Lead Frio,Residencial ABC1',
+     'Educacion / Clubes,FV (solar fotovoltaico),Lead Caliente,Propio',
+       'ACS (agua caliente sanitaria),Lead Frio,Residencial ABC1,Wega']
+Length: 20, dtype: str
+
+--- KanbanTrello ---
+Unique values in List name:
+<StringArray>
+['1-Proyecto nuevo (Cobrado anticipo)/ PostVenta Activado',
+                                              '2- Compras',
+                                                '2 - Obra',
+                             '2.1 - No Conforme/Postventa',
+                                                 '3 - Fin',
+                                             '4 - Freezer',
+                                              'Biblioteca',
+                                              'Checklists',
+                        '2-Comprar materiales y productos']
+Length: 9, dtype: str
+Unique values in Labels:
+<StringArray>
+[                                                               'PRE',
+                                                            'Cliente',
+                                         'Lead Caliente, Proyecto BN',
+                 'Cliente, Residencial ABC1, CC: Climat. piletas, PV',
+ 'CC: Solar Fotovoltaico, Lead Caliente, Cliente, Industria / Bodega',
+                                                            'Biomasa',
+         'PRE, Lead Caliente, Solar Fotovoltaico, Industria / Bodega',
+                                          'CC: Calefacci¾n elÚctrica',
+                                                      'CC: ACS Solar',
+                                                        'CC: Biomasa',
+                                             'CC: Solar Fotovoltaico',
+                           'CC: ACS Solar, CC: Calefacci¾n elÚctrica',
+                              'CC: Solar Fotovoltaico, CC: ACS Solar',
+                                                'CC: Climat. piletas',
+                                      'CC: Climat. piletas, POSVENTA',
+             'CC: Solar Fotovoltaico, CE Calef¾n ElÚctrico, POSVENTA',
+                                                           'POSVENTA',
+                                   'CC: Solar Fotovoltaico, POSVENTA',
+                                                        'BB de Calor',
+                                             'Lead Caliente, Biomasa']
+Length: 20, dtype: str
+Unique values in Producto:
+[]

@@ -1,0 +1,63 @@
+﻿Total rows in 'solar terminados': 37
+
+--- Name and Description Sample ---
+Name: Soledad Mu±oz 09/10/20
+Desc: pileta 17 m2 -  15 colectores bomba 1HP $165.500,00- ahora 12    contacto: +54 9 3874 57-4957 Barrio Los Pinos - Grand Bourg
+-
+Name: ENERGE- Tefy Cavolo 24/09/20
+Desc: Estß construyendo su casa en El Aybal. La pileta todavÝa no estß construÝda. La pileta va a tener 48m2- Se cotiz¾ 42 colectores solares + instalaci¾n. Va a pagar $100.000 en efectivo y $215.000 + iva en dos cheques 30, 60 dÝas.  Hay que facturar $215.000+iva (cada cheque deberÝa ser de $118.787) Antes de depositar los cheques hay q contactarse porque prefieren traer el efectivo. El Aybal- contacto: 3874035068
+-
+Name: Mercado Alfredo David
+Desc: Maipu 51 - La Puntilla-Chilesito (La Rioja)  CP5360 Tel Alfredo : 3825537111 Tel Julio : 3875854665 (hermano) 
+-
+Name: Edgar Contreras
+Desc: Quiere un termotanque solar termosifonico de 200 lts, lo viene a buscar de Sta Maria de catamarca, la semana que viene o la otra.   Contacto. Edgar hijo, vive acß: 3875147203
+-
+Name: AgustÝn Isasmendi
+Desc: Quiero poner un heat Pipe de 150 o lo que tengamos en stock
+-
+Name: Galle Cima ttq solar
+Desc: Va a instalar un termotanque termosifonico de 150 lts mas un kit elÚctrico mas una vßlvula mezcladora de salida.
+-
+Name: Pablo Cirigliano
+Desc: Compr¾ uno de 200 lts termosifonico
+-
+Name: Hortencia Arias
+Desc: termotanque ±uke atmosfÚrico de 200 lts  vßlvula mezcladora resistencia elÚctrica. 
+-
+Name: Dario pellegrini mantas solares
+Desc: 17 colectores solares para pileta x 3 mtrs
+-
+Name: Santi Lynch
+Desc: termotanque solar ±uke de 250 lts  + tanquecito de prellenado + valvula mezcladora + resistencia electrica  576 U$ + 138 U$ de accesorios   
+-
+Name: Machuca
+Desc: una Lanin Doble Frente para el living  precio 90.000 $ final contado  termotanque 240 lts heat pipe. + valvula + resistencia  23.000 instalaci¾n (hay que actualizar el precio)    
+-
+Name: Stella MAris Pucci
+Desc:  termotanque solar de 100 lts con sus accesorios (resistencia y valvula) instalado : $17.000 + 3208 + 628 +2563 + 13.000 de instalaci¾n = $ 36.399 menos 10% desc --> 32.800 $ 
+-
+Name: Colectores para Dario Pellegrini
+Desc: - 4 colectores solares de 30 tubos c/u heat pipe --> Presupuesto 55.000  - 4 termostatos sumergibles 30 dolares cada uno - 4 cables de 3400 --> 1000 U$  al final el termo solar de 300 no va 
+-
+Name: Pablo Rosa
+Desc: 3875827047  Compr¾ un termotanque solar ±uke atmosferico de 150 lts + valvula mezcladora + resistencia electrica.   Precio final 700 U$    
+-
+Name: Matias Benegas
+Desc: termo solar ±uke atmosfÚrico de 300 lts + resistencia + vßlvula  por ahora, sin instalaci¾n.   +1510+81+32 U$ --> precio de lista   
+-
+Name: Ruth Zacca
+Desc: termotanque Hissuma de 100 Lts + valvula mezcladora + resistencia  23.100 $ presupuesto.   Por ahora sin instalacion
+-
+Name: Fede Ramirez
+Desc: -11 colectores solares para pileta + 1 controlador (con dos sensores).   Sungreen, contacto: Renzo  
+-
+Name: Federico L¾pez
+Desc: Sistema de colectores solares para piletas.  Casa en Valle Escondido.  3875020280 --> Cel de Federico El proveedor es Green Connection de Buenos Aires.
+-
+Name: Josefina Lore
+Desc: Cambio de Resistencia TERMOTANQUE SOLAR SAIAR   Flia. Ramirez  - Lote 15 - Chacras de Santa Maria  3874101433 
+-
+Name: Luis Livelli
+Desc: 3874876543 Termotanque solar atmosferico de 200 lts  45.000$ termotanque + valvula + resistencia, + tanquecito de prellenado (creo que no lo vamos a necesitar, pero compralo igual)
+-
