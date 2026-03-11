@@ -1,5 +1,6 @@
 # Ignorar entornos virtuales
 .env
+*.env
 .venv
 env/
 venv/
@@ -21,9 +22,12 @@ Desktop.ini
 # Credenciales y archivos secretos (¡CRÍTICO!)
 secret*
 *.pem
-credentials.json
-token.json
-client_secret.json
+*credentials*.json
+*credenciales*.json
+*token*.json
+client_secret*.json
+emails_clientes.json
+growatt_*.json
 
 # Archivos residuales de ERP local (logs, json de prueba, exports temporales)
 *.log

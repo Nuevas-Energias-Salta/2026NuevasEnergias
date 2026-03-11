@@ -100,6 +100,9 @@ class UnifiedApp:
         self.do_emails = tk.BooleanVar(value=False)  # Por defecto desactivado para evitar envíos accidentales
         ttk.Checkbutton(phases_frame, text="📧 Fase 4: Emails", variable=self.do_emails).pack(side=tk.LEFT, padx=8)
         
+        self.do_growth = tk.BooleanVar(value=True)
+        ttk.Checkbutton(phases_frame, text="🎯 Fase 5: Oportunidades", variable=self.do_growth).pack(side=tk.LEFT, padx=8)
+        
         # Log
         self.log_text = scrolledtext.ScrolledText(main_frame, height=18, font=("Consolas", 9), bg="black", fg="white")
         self.log_text.pack(fill=tk.BOTH, expand=True, pady=8)
@@ -436,11 +439,44 @@ class UnifiedApp:
                     import traceback
                     traceback.print_exc()
 
-            # FASE 5: VALIDACIÓN FINAL Y RESUMEN
+            # FASE 5: MOTOR DE OPORTUNIDADES (Growth)
+            if self.do_growth.get() and not self.stop_requested:
+                self.log("")
+                self.log("🔹 Fase 5: Detectando Oportunidades Comerciales...")
+                
+                try:
+                    from detector_oportunidades import leer_datos, detectar_oportunidades, exportar_oportunidades
+                    
+                    self.log("🔍 Analizando métricas de clientes...")
+                    datos_growth = leer_datos()
+                    
+                    if datos_growth:
+                        ops = detectar_oportunidades(datos_growth)
+                        
+                        if ops:
+                            hoy_str = datetime.now().strftime("%Y%m%d")
+                            ruta_csv = BASE_DIR / "github_pages" / f"oportunidades_{hoy_str}.csv"
+                            exportar_oportunidades(ops, ruta_csv)
+                            
+                            self.log(f"✅ Se encontraron {len(ops)} oportunidades!")
+                            for o in ops:
+                                self.log(f"  [{o['Prioridad']}] {o['Cliente']} -> {o['Tipo']}")
+                            self.log(f"📁 Dashboard exportado a: github_pages/oportunidades_{hoy_str}.csv")
+                        else:
+                            self.log("ℹ️ No se detectaron oportunidades con los umbrales actuales.")
+                    else:
+                        self.log("⚠️ No se pudieron leer datos para el motor de Growth.")
+                        
+                except Exception as e:
+                    self.log(f"❌ Error en Fase Oportunidades: {e}")
+                    import traceback
+                    traceback.print_exc()
+
+            # FIN DEL PROCESO: VALIDACIÓN Y RESUMEN
             if not self.stop_requested:
                 self.log("")
                 self.log("="*60)
-                self.log("✅ FASE 4: VALIDACIÓN FINAL Y RESUMEN")
+                self.log("✅ FIN DEL PROCESO: RESUMEN GENERAL")
                 self.log("="*60)
                 
                 self.log(f"\n📊 Estadísticas del proceso:")

@@ -52,18 +52,25 @@
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📁 Estructura del Monorepo
 
+Este repositorio centraliza múltiples proyectos y automatizaciones de la empresa.
+
+```text
+2026NuevasEnergias/
+├── 📂 erp-notion/              # Sistema ERP (noCRM → Trello → Notion)
+├── 📂 sistema_informes_fv/     # Máquina de Growth: Generador de Reportes y Anomalías
+├── 📂 Maquina_de_Growth/       # Documentación y assets estratégicos
+├── 📂 recursos-marca/          # Manual de Identidad y Logos
+├── 📂 .agents/                 # Automatizaciones locales (ej: /git-pr-workflow)
+└── .gitignore                  # Oculta todas las credenciales (.env)
 ```
-Notion-project/
-├── 📂 src/                     # Código fuente organizado
-├── 📂 config/                  # Configuraciones y setup
-├── 📂 docs/                    # 📚 Documentación completa
-│   └── 📂 branding/           # 🎨 Manual de Identidad y Assets
-├── 📂 workflows/               # JSONs de n8n workflows
-├── 📂 web/                     # Interfaces HTML
-└── 📂 ...
-```
+
+## 🔒 Reglas Básicas de Seguridad y Trabajo en Equipo
+
+1. **Nunca subas contraseñas a Git.** Cada proyecto tiene un `.env.template`. Cópialo localmente como `.env` y rellénalo con tus datos. El archivo `.env` está ignorado globalmente.
+2. **Crea siempre una rama para trabajar** (ej: `tu-nombre/nueva-funcion`).
+3. **No trabajes directamente en `main`.** Abre un Pull Request cuando termines.
 
 ## 🎯 Flujo Principal
 
@@ -76,15 +83,19 @@ Notion-project/
 
 ## 🚀 **INICIO RÁPIDO**
 
+Cada subproyecto tiene sus propios requerimientos. Entra a su carpeta específica para comenzar:
+
 ```bash
-# 1. Instalar dependencias
+# Ejemplo para Iniciar ERP Notion:
+cd erp-notion
 pip install -r requirements.txt
-
-# 2. Configurar tokens
-cp .env.example .env
-
-# 3. Ejecutar sistema mejorado
+cp .env.template .env # <- Rellenar credenciales
 python main.py
+
+# Ejemplo para Sistema de Informes (Máquina de Growth):
+cd sistema_informes_fv
+cp .env.template .env # <- Rellenar credenciales de Email y APIs
+python app_gestion_total.py
 ```
 
 ---
